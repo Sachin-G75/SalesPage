@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallnut OS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;500;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand: #5A01FF;
+            --brand-dark: #3a00a8;
+            --brand-light: #8b4dff;
+        }
+        body {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            background-color: #030008;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+        .serif { font-family: 'Instrument Serif', serif; }
+        .bg-brand { background-color: var(--brand); }
+        .text-brand { color: var(--brand); }
+        .border-brand { border-color: var(--brand); }
+        
+        .hero-gradient {
+            background: radial-gradient(circle at center, rgba(90, 1, 255, 0.15) 0%, rgba(3, 0, 8, 0) 70%);
+        }
+        
+        .glass-violet {
+            background: rgba(90, 1, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(90, 1, 255, 0.2);
+        }
+
+        .premium-shadow {
+            box-shadow: 0 0 40px rgba(90, 1, 255, 0.3);
+        }
+
+        .cta-bounce {
+            animation: soft-bounce 2s infinite;
+        }
+
+        @keyframes soft-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .reveal-text {
+            background: linear-gradient(to right, #fff 20%, #5A01FF 50%, #fff 80%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Subtle Announcement -->
+    <div class="w-full bg-brand py-2 text-center text-[10px] font-extrabold tracking-[0.3em] uppercase">
+        Founding Access: 46/100 Licenses Remaining
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-[100] px-6 py-4">
+        <div class="max-w-5xl mx-auto flex justify-between items-center glass-violet px-6 py-3 rounded-2xl">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-brand rounded-full animate-pulse"></div>
+                <span class="font-bold tracking-tighter text-xl italic">Wallnut OS</span>
+            </div>
+            <a href="#pricing" class="bg-brand hover:bg-white hover:text-brand transition-all duration-300 text-white px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider">
+                Get Access
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero: The Psychological Hook -->
+    <section class="relative pt-20 pb-32 px-6 hero-gradient overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-brand font-extrabold text-sm tracking-[0.4em] uppercase mb-8">Stop Playing Small. Start Automating.</h2>
+            <h1 class="text-5xl md:text-8xl font-extrabold mb-8 tracking-tighter leading-tight">
+                Escape the <span class="serif italic font-normal text-brand-light">Freelance Loop</span>. <br>
+                Build a <span class="reveal-text">Sovereign Machine.</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-zinc-400 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+                Wallnut OS is the digital nervous system for solopreneurs who are tired of trading hours for dollars. We don't give you "tips"—we give you <span class="text-white underline decoration-brand underline-offset-4">infrastructure</span>.
+            </p>
+
+            <div class="flex flex-col items-center gap-8">
+                <a href="#pricing" class="cta-bounce bg-brand text-white px-10 py-6 rounded-2xl font-extrabold text-xl md:text-2xl hover:scale-105 hover:bg-brand-light transition-all premium-shadow">
+                    I WANT FREEDOM →
+                </a>
+                <div class="flex items-center gap-4 text-zinc-500 text-xs font-semibold uppercase tracking-widest">
+                    <span>No Tech Skills Needed</span>
+                    <span class="text-brand">•</span>
+                    <span>One-Time $99</span>
+                    <span class="text-brand">•</span>
+                    <span>Lifetime ROI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Emotional Pivot (The Gap) -->
+    <section class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-4xl font-extrabold leading-tight">Your business is currently <span class="text-brand">leaking money</span> through manual effort.</h3>
+                    <p class="text-zinc-400 leading-relaxed text-lg">
+                        Every hour you spend "managing" is an hour you aren't "growing." Alex Hormozi says: "You don't get rich by working more; you get rich by making your work worth more."
+                    </p>
+                    <div class="space-y-4">
+                        <div class="p-6 glass-violet rounded-2xl flex items-center gap-6 group hover:border-brand transition">
+                            <span class="text-3xl grayscale group-hover:grayscale-0 transition">🧠</span>
+                            <div>
+                                <h4 class="font-bold">The Mental Load</h4>
+                                <p class="text-sm text-zinc-500">Eliminate the "What do I do next?" anxiety forever.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 glass-violet rounded-2xl flex items-center gap-6 group hover:border-brand transition">
+                            <span class="text-3xl grayscale group-hover:grayscale-0 transition">⏳</span>
+                            <div>
+                                <h4 class="font-bold">The Time Debt</h4>
+                                <p class="text-sm text-zinc-500">Buy back 10-20 hours every single week with AI.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-brand rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition"></div>
+                    <div class="relative bg-zinc-900 rounded-[2rem] p-10 border border-white/5">
+                        <div class="serif italic text-3xl text-brand-light mb-6">"This isn't a course. It's a business transplant."</div>
+                        <p class="text-zinc-400 italic">"I went from 60-hour weeks to 15-hour weeks while doubling my revenue. Wallnut OS didn't just help—it replaced my old, broken way of thinking."</p>
+                        <div class="mt-8 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-brand/20 rounded-full"></div>
+                            <span class="font-bold text-sm tracking-widest">BUILDER #042</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The 5 Engines: Ultra Value -->
+    <section class="py-32 px-6 bg-[#06000f]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-brand font-bold uppercase tracking-[0.3em] text-sm mb-4">The Architectural Core</h2>
+                <h3 class="text-4xl md:text-6xl font-extrabold">The 5 Engines of Autonomy</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="p-10 glass-violet rounded-[2.5rem] hover:bg-brand/10 transition duration-500">
+                    <div class="text-brand text-4xl mb-6 font-extrabold">01</div>
+                    <h4 class="text-2xl font-bold mb-4">Clarity Engine</h4>
+                    <p class="text-zinc-400 leading-relaxed">Most people fail because they are vague. We use high-precision frameworks to nail your $10k+ offer in minutes, not months.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="p-10 glass-violet rounded-[2.5rem] hover:bg-brand/10 transition duration-500">
+                    <div class="text-brand text-4xl mb-6 font-extrabold">02</div>
+                    <h4 class="text-2xl font-bold mb-4">Build Engine</h4>
+                    <p class="text-zinc-400 leading-relaxed">Your digital HQ. A plug-and-play system that organizes your leads, clients, and content into a single stream of truth.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="p-10 bg-brand rounded-[2.5rem] shadow-2xl shadow-brand/20 transform md:scale-105">
+                    <div class="text-white text-4xl mb-6 font-extrabold">03</div>
+                    <h4 class="text-2xl font-bold mb-4">Automation Engine</h4>
+                    <p class="text-brand-light font-bold mb-2 uppercase text-xs tracking-widest">The "Magic" Sauce</p>
+                    <p class="text-white leading-relaxed">Turn AI into your 24/7 unpaid employee. Automated lead nurturing, content scheduling, and CRM updates.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="p-10 glass-violet rounded-[2.5rem] hover:bg-brand/10 transition duration-500">
+                    <div class="text-brand text-4xl mb-6 font-extrabold">04</div>
+                    <h4 class="text-2xl font-bold mb-4">Growth Engine</h4>
+                    <p class="text-zinc-400 leading-relaxed">High-leverage attraction. Build an audience of "True Fans" using systems that don't require you to be on camera 24/7.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="p-10 glass-violet rounded-[2.5rem] hover:bg-brand/10 transition duration-500">
+                    <div class="text-brand text-4xl mb-6 font-extrabold">05</div>
+                    <h4 class="text-2xl font-bold mb-4">Freedom Engine</h4>
+                    <p class="text-zinc-400 leading-relaxed">The Exit Strategy. How to step back and let the OS run while you focus on high-level strategy or living your actual life.</p>
+                </div>
+                <!-- Call to Action Card -->
+                <div class="p-10 border-2 border-dashed border-brand/40 rounded-[2.5rem] flex flex-col justify-center items-center text-center">
+                    <h4 class="text-xl font-bold mb-4">Ready to install?</h4>
+                    <a href="#pricing" class="text-brand font-black hover:underline">CLAIM YOUR LICENSE →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Grand Slam Offer (Pricing) -->
+    <section id="pricing" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="serif italic text-5xl md:text-7xl mb-4">The No-Brainer Exchange</h2>
+                <p class="text-zinc-500 font-bold uppercase tracking-widest text-sm">Value > Price. Always.</p>
+            </div>
+
+            <div class="relative glass-violet rounded-[3rem] p-8 md:p-16 premium-shadow overflow-hidden">
+                <!-- Background Decoration -->
+                <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-brand rounded-full blur-[100px] opacity-20"></div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <h3 class="text-3xl font-extrabold">The Wallnut OS Bundle</h3>
+                            <p class="text-zinc-400">Everything you need to stop manual labor and start systemic growth.</p>
+                        </div>
+                        
+                        <div class="space-y-4 text-sm font-medium">
+                            <div class="flex items-center gap-3"><span class="text-brand">✔</span> The 5 Engine Playbooks ($997)</div>
+                            <div class="flex items-center gap-3"><span class="text-brand">✔</span> Automation Workflow Library ($497)</div>
+                            <div class="flex items-center gap-3"><span class="text-brand">✔</span> Plug-and-Play Notion Templates ($297)</div>
+                            <div class="flex items-center gap-3"><span class="text-brand">✔</span> Lifetime Foundational Updates (Priceless)</div>
+                        </div>
+                        
+                        <div class="pt-6 border-t border-brand/20">
+                            <p class="text-xs text-zinc-500 mb-2 uppercase tracking-widest font-bold">Total Real World Value</p>
+                            <span class="text-2xl font-bold line-through text-zinc-700">$1,791.00</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand p-10 rounded-[2rem] text-center shadow-2xl relative">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-brand px-4 py-1 rounded-full text-[10px] font-black tracking-widest uppercase">Founding Price</div>
+                        <div class="text-7xl font-extrabold mb-2">$99</div>
+                        <p class="text-brand-light font-bold text-xs uppercase tracking-widest mb-10">One Time. No Subs.</p>
+                        
+                        <button class="w-full bg-white text-brand py-6 rounded-2xl font-black text-xl hover:scale-105 transition-transform shadow-xl" onclick="alert('Accessing the Sovereign Portal...')">
+                            YES, GIVE ME FREEDOM
+                        </button>
+                        
+                        <div class="mt-6 flex flex-col items-center gap-2">
+                            <div class="flex gap-1">
+                                <span class="text-yellow-400">★</span><span class="text-yellow-400">★</span><span class="text-yellow-400">★</span><span class="text-yellow-400">★</span><span class="text-yellow-400">★</span>
+                            </div>
+                            <p class="text-[10px] text-white/70 font-bold uppercase tracking-widest">4.9/5 Average Rating</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final FOMO -->
+    <section class="py-24 px-6 text-center">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-8 leading-tight">Every hour you wait is another hour you <span class="text-brand">burn</span> on tasks an AI could do better.</h2>
+            <p class="text-zinc-500 mb-12 italic">Join the 50+ builders who have already deleted the word "burnout" from their vocabulary.</p>
+            <a href="#pricing" class="inline-block border-b-2 border-brand text-brand font-black text-xl hover:text-white hover:border-white transition-all pb-2">
+                Join Wallnut OS Today →
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-brand/10 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-zinc-600 text-[10px] font-black uppercase tracking-[0.2em]">
+            <div class="flex items-center gap-4">
+                <span class="text-brand">Wallnut OS</span>
+                <span>All Rights Reserved 2024</span>
+            </div>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-brand transition">Terms</a>
+                <a href="#" class="hover:text-brand transition">Privacy</a>
+                <a href="#" class="hover:text-brand transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
