@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallnut.info | Premium Founder Onboarding</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --bg: #070707;
+            --emerald: #10b981;
+            --emerald-muted: #064e3b;
+            --zinc-800: #27272a;
+            --zinc-900: #18181b;
+            --text-main: #f4f4f5;
+            --text-muted: #71717a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--emerald);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo-text span { color: var(--text-muted); }
+
+        /* Progress Bar */
+        .progress-container {
+            display: flex;
+            gap: 8px;
+        }
+
+        .progress-dot {
+            height: 6px;
+            width: 40px;
+            background: var(--zinc-800);
+            border-radius: 10px;
+            transition: all 0.5s ease;
+        }
+
+        .progress-dot.active {
+            background: var(--emerald);
+            width: 60px;
+        }
+
+        .progress-dot.completed { background: var(--emerald-muted); }
+
+        /* Form Styling */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 1024px) {
+            .grid-layout { grid-template-columns: 300px 1fr; }
+        }
+
+        .sidebar h2 { font-size: 32px; margin-bottom: 16px; }
+        .sidebar p { color: var(--text-muted); line-height: 1.6; }
+
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 32px;
+            padding: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .step-content { display: none; animation: slideUp 0.4s ease-out; }
+        .step-content.active { display: block; }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .field-group { margin-bottom: 24px; }
+        label {
+            display: block;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--zinc-800);
+            border-radius: 16px;
+            padding: 16px;
+            color: white;
+            outline: none;
+            transition: all 0.2s;
+            font-size: 16px;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: var(--emerald);
+            box-shadow: 0 0 0 1px var(--emerald);
+        }
+
+        textarea { height: 120px; resize: none; }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        button {
+            padding: 14px 28px;
+            border-radius: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-prev { background: transparent; color: var(--text-muted); }
+        .btn-prev:hover { background: rgba(255,255,255,0.05); color: white; }
+        .btn-prev.hidden { visibility: hidden; }
+
+        .btn-next { background: white; color: black; }
+        .btn-next:hover { transform: scale(1.02); }
+        .btn-next:disabled { background: var(--zinc-800); color: var(--text-muted); cursor: not-allowed; }
+
+        .btn-submit { background: var(--emerald); color: black; box-shadow: 0 0 20px rgba(16,185,129,0.3); }
+
+        /* Success Screen */
+        #success-screen {
+            display: none;
+            text-align: center;
+            max-width: 500px;
+            margin: 100px auto;
+        }
+
+        .check-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+            color: var(--emerald);
+        }
+
+        .error-msg {
+            color: #f87171;
+            font-size: 13px;
+            margin-top: 12px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main-ui" class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">W</div>
+                <div class="logo-text">Wallnut<span>.info</span></div>
+            </div>
+            <div class="progress-container" id="progress-nav">
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+            </div>
+        </header>
+
+        <div class="grid-layout">
+            <div class="sidebar">
+                <span id="step-tag" style="color:var(--emerald); font-weight: 800; font-size: 12px; letter-spacing: 1px;">PHASE 01</span>
+                <h2 id="step-title">The Identity</h2>
+                <p id="step-desc">We need the basics to map out your industry positioning and find your specific market niche.</p>
+                <div id="form-error" class="error-msg">Please fill in all fields to sync your voice.</div>
+            </div>
+
+            <div class="glass-panel">
+                <form id="onboarding-form">
+                    <!-- Step 1 -->
+                    <div class="step-content active" data-step="0">
+                        <div class="field-group">
+                            <label>Full Name</label>
+                            <input type="text" name="fullName" placeholder="e.g. Zach Smith" required>
+                        </div>
+                        <div class="field-group">
+                            <label>LinkedIn URL</label>
+                            <input type="url" name="linkedinUrl" placeholder="linkedin.com/in/..." required>
+                        </div>
+                        <div class="field-group">
+                            <label>Primary Niche</label>
+                            <input type="text" name="primaryNiche" placeholder="AI Automation for SaaS" required>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-content" data-step="1">
+                        <div class="field-group">
+                            <label>Core Business Philosophy</label>
+                            <textarea name="corePhilosophy" placeholder="What is the one truth your industry ignores?" required></textarea>
+                        </div>
+                        <div class="field-group">
+                            <label>An Unpopular Opinion</label>
+                            <textarea name="unpopularOpinion" placeholder="What do you believe that others find 'cringe' or wrong?" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-content" data-step="2">
+                        <div class="field-group">
+                            <label>Ideal Client Persona</label>
+                            <input type="text" name="idealClient" placeholder="e.g. Series A CEOs" required>
+                        </div>
+                        <div class="field-group">
+                            <label>Recent Win / Case Study</label>
+                            <textarea name="recentWin" placeholder="Describe a result you got for a client recently..." required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="step-content" data-step="3">
+                        <div class="field-group">
+                            <label>Tone Preference</label>
+                            <select name="tonePreference">
+                                <option>Professional but Provocative</option>
+                                <option>Minimalist & Authoritative</option>
+                                <option>Data-Driven & Technical</option>
+                                <option>High-Energy & Relatable</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label>Blacklisted Words</label>
+                            <input type="text" name="avoidWords" placeholder="Synergy, leverage, pivot...">
+                        </div>
+                        <div class="field-group">
+                            <label>Brand Motto</label>
+                            <input type="text" name="personalMotto" placeholder="Build in public or stay invisible.">
+                        </div>
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button type="button" class="btn-prev hidden" id="prev-btn">
+                            <i data-lucide="chevron-left"></i> Back
+                        </button>
+                        <button type="button" class="btn-next" id="next-btn">
+                            Continue <i data-lucide="chevron-right"></i>
+                        </button>
+                        <button type="submit" class="btn-next btn-submit" id="submit-btn" style="display:none">
+                            Sync Digital Twin <i data-lucide="send"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="success-screen">
+        <div class="check-icon"><i data-lucide="check-circle-2" size="48"></i></div>
+        <h1 style="font-size: 40px; margin-bottom: 16px;">System Calibrated.</h1>
+        <p style="color: var(--text-muted); line-height: 1.6; font-size: 18px;">
+            Your Voice DNA has been extracted. We are currently training your Digital Twin. 
+            Check your Notion portal this Thursday for your first batch.
+        </p>
+        <button onclick="location.reload()" style="margin: 40px auto; background: var(--zinc-900); color: white;">Restart</button>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // --- CONFIG ---
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzNLkvRWzUsegviPKQImIqiNSKYTQz1Pys4Lpv9z6VM4KeYl1sYmPysGGidtlu5dxoH/exec"; // PASTE YOUR APPS SCRIPT URL HERE
+
+        let currentStep = 0;
+        const steps = document.querySelectorAll('.step-content');
+        const dots = document.querySelectorAll('.progress-dot');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const form = document.getElementById('onboarding-form');
+
+        const stepData = [
+            { tag: "PHASE 01", title: "The Identity", desc: "Basic mapping of your industry positioning." },
+            { tag: "PHASE 02", title: "Voice DNA", desc: "This is the core. Be raw and avoid 'safe' marketing speak." },
+            { tag: "PHASE 03", title: "Strategy", desc: "Defining exactly who we want to attract with your content." },
+            { tag: "PHASE 04", title: "Guardrails", desc: "Fine-tuning filters to ensure we never sound like a bot." }
+        ];
+
+        // --- PERSISTENCE: LOAD DATA ---
+        function loadSavedData() {
+            const saved = localStorage.getItem('wallnut_html_data');
+            if (saved) {
+                const data = JSON.parse(saved);
+                Object.keys(data).forEach(key => {
+                    const input = form.querySelector(`[name="${key}"]`);
+                    if (input) input.value = data[key];
+                });
+            }
+        }
+
+        // --- PERSISTENCE: SAVE DATA ---
+        form.addEventListener('input', () => {
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            localStorage.setItem('wallnut_html_data', JSON.stringify(data));
+        });
+
+        function updateUI() {
+            steps.forEach((s, i) => s.classList.toggle('active', i === currentStep));
+            dots.forEach((d, i) => {
+                d.classList.toggle('active', i === currentStep);
+                d.classList.toggle('completed', i < currentStep);
+            });
+
+            const current = stepData[currentStep];
+            document.getElementById('step-tag').innerText = current.tag;
+            document.getElementById('step-title').innerText = current.title;
+            document.getElementById('step-desc').innerText = current.desc;
+
+            prevBtn.classList.toggle('hidden', currentStep === 0);
+            
+            if (currentStep === steps.length - 1) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'flex';
+            } else {
+                nextBtn.style.display = 'flex';
+                submitBtn.style.display = 'none';
+            }
+        }
+
+        function validateStep() {
+            const activeStep = steps[currentStep];
+            const inputs = activeStep.querySelectorAll('input[required], textarea[required]');
+            let valid = true;
+            inputs.forEach(input => {
+                if (!input.value.trim() || (input.tagName === 'TEXTAREA' && input.value.length < 10)) {
+                    valid = false;
+                    input.style.borderColor = 'rgba(248, 113, 113, 0.5)';
+                } else {
+                    input.style.borderColor = '';
+                }
+            });
+            return valid;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (validateStep()) {
+                currentStep++;
+                updateUI();
+                document.getElementById('form-error').style.display = 'none';
+            } else {
+                document.getElementById('form-error').style.display = 'block';
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentStep--;
+            updateUI();
+        });
+
+        // --- SUBMISSION ---
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (!validateStep()) return;
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Syncing... <i data-lucide="loader-2" class="spin"></i>';
+            lucide.createIcons();
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                if (GOOGLE_SCRIPT_URL) {
+                    await fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: JSON.stringify(data)
+                    });
+                }
+                
+                // Simulation of processing
+                setTimeout(() => {
+                    localStorage.removeItem('wallnut_html_data');
+                    document.getElementById('main-ui').style.display = 'none';
+                    document.getElementById('success-screen').style.display = 'block';
+                }, 1500);
+                
+            } catch (err) {
+                alert("Connection error. Data is saved locally, please try again.");
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Sync Digital Twin <i data-lucide="send"></i>';
+                lucide.createIcons();
+            }
+        });
+
+        // Enter Key Navigation
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                if (currentStep < steps.length - 1) {
+                    e.preventDefault();
+                    nextBtn.click();
+                }
+            }
+        });
+
+        loadSavedData();
+        updateUI();
+    </script>
+</body>
+</html>
