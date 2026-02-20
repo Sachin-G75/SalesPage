@@ -60,10 +60,6 @@
                 radial-gradient(circle at 10% 10%, rgba(168, 85, 247, 0.12) 0%, transparent 40%),
                 radial-gradient(circle at 90% 90%, rgba(59, 130, 246, 0.12) 0%, transparent 40%);
         }
-        .step-line {
-            position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
-            background: linear-gradient(to bottom, transparent, rgba(168, 85, 247, 0.5), transparent);
-        }
         [x-cloak] { display: none !important; }
     </style>
 </head>
@@ -82,8 +78,8 @@
             </div>
             <div class="hidden md:flex gap-8 font-medium text-gray-400">
                 <a href="#why" class="hover:text-white transition-colors">The Problem</a>
-                <a href="#process" class="hover:text-white transition-colors">The Workflow</a>
-                <a href="#pricing" class="hover:text-white transition-colors font-bold text-purple-400">Pricing</a>
+                <a href="#transformation" class="hover:text-white transition-colors">The Framework</a>
+                <a href="#process" class="hover:text-white transition-colors text-purple-400 font-bold">Workflow</a>
             </div>
             <a href="#pricing" class="bg-white text-black px-6 py-3 rounded-full font-bold text-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-white/10">
                 Claim Your Slot 🚀
@@ -92,9 +88,9 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-44 pb-24 px-6">
-        <div class="max-w-7xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm mb-10 animate-bounce-subtle">
+    <section class="relative pt-44 pb-24 px-6 text-center">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm mb-10">
                 <i data-lucide="sparkles" class="w-4 h-4"></i> Trusted by Founders building in public
             </div>
             
@@ -104,9 +100,9 @@
             </h1>
 
             <p class="text-gray-400 text-xl md:text-2xl max-w-3xl mx-auto mb-12 font-medium leading-relaxed">
-                Most ghostwriters sell "Reach." I sell <span class="text-white font-bold italic">Intent.</span> <br class="hidden md:block">
+                Most ghostwriters sell "Reach." I sell <span class="text-white font-bold italic">Intent.</span> <br>
                 I build the assets that trigger "I need this" DMs while you 
-                <span class="bg-white/10 px-2 py-1 rounded text-white border border-white/10">stay off-camera.</span>
+                <span class="bg-white/10 px-2 py-1 rounded text-white border border-white/10 italic">stay off-camera.</span>
             </p>
 
             <div class="flex flex-col md:flex-row items-center justify-center gap-6">
@@ -114,136 +110,156 @@
                    Claim Your Slot 🚀 <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
+        </div>
+    </section>
 
-            <!-- Floating Proof Badges -->
-            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 opacity-50">
-                <div class="flex flex-col items-center"><span class="text-2xl font-bold">100%</span><span class="text-xs uppercase tracking-widest">Async</span></div>
-                <div class="flex flex-col items-center"><span class="text-2xl font-bold">0</span><span class="text-xs uppercase tracking-widest">Client Calls</span></div>
-                <div class="flex flex-col items-center"><span class="text-2xl font-bold">12h</span><span class="text-xs uppercase tracking-widest">Avg. Response</span></div>
-                <div class="flex flex-col items-center"><span class="text-2xl font-bold">2026</span><span class="text-xs uppercase tracking-widest">Compliant</span></div>
+    <!-- NEW SECTION: The Transformation Framework -->
+    <section id="transformation" class="py-24 px-6 border-y border-white/5 bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">THE <span class="text-purple-500 italic underline">BEFORE & AFTER</span></h2>
+                <p class="text-gray-400 text-xl max-w-2xl mx-auto">See how we transform "Generic Reach" into "Systemic Intent." Same expertise, different framework.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                <!-- Old Post (Before) -->
+                <div class="flex flex-col">
+                    <div class="mb-4 flex items-center gap-2 text-red-400 font-bold uppercase text-xs tracking-widest">
+                        <i data-lucide="alert-circle" class="w-4 h-4"></i> Generic "Value" Post
+                    </div>
+                    <div class="glass p-8 rounded-[32px] border-red-500/20 flex-grow relative overflow-hidden bg-red-500/[0.01]">
+                        <div class="absolute top-0 right-0 p-4 opacity-10">
+                            <i data-lucide="trending-down" class="w-24 h-24"></i>
+                        </div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-full bg-gray-800"></div>
+                            <div>
+                                <div class="w-32 h-2 bg-gray-700 rounded mb-1"></div>
+                                <div class="w-20 h-2 bg-gray-800 rounded"></div>
+                            </div>
+                        </div>
+                        <div class="text-gray-400 text-sm leading-relaxed space-y-4">
+                            <p>“No one ever taught us this…”</p>
+                            <p>When it comes to money — most of us were told: <br> >Work hard. >> Save what’s left. >>>Hope it’s enough.</p>
+                            <p>But no one explained how money actually grows... or how the wealthy protect it.</p>
+                            <p>That’s exactly what I teach people every day — the stuff we should’ve learned in school.</p>
+                            <p>...</p>
+                            <p class="text-red-500/50 italic border-t border-white/5 pt-4">Outcome: High likes, zero targeted DMs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Post (The Framework After) -->
+                <div class="flex flex-col">
+                    <div class="mb-4 flex items-center gap-2 text-green-400 font-bold uppercase text-xs tracking-widest">
+                        <i data-lucide="zap" class="w-4 h-4"></i> The LinkedInFlow Framework
+                    </div>
+                    <div class="glass p-8 rounded-[32px] border-green-500/40 flex-grow relative overflow-hidden shadow-[0_0_40px_rgba(34,197,94,0.05)] bg-green-500/[0.03]">
+                        <div class="absolute top-0 right-0 p-4 opacity-20 text-green-500">
+                            <i data-lucide="target" class="w-24 h-24"></i>
+                        </div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 to-blue-500"></div>
+                            <div>
+                                <div class="w-32 h-2 bg-white rounded mb-1"></div>
+                                <div class="w-20 h-2 bg-gray-700 rounded"></div>
+                            </div>
+                        </div>
+                        <div class="text-white text-sm leading-relaxed space-y-4">
+                            <p class="font-bold text-lg">“Work hard. Save what’s left. Hope it’s enough.”</p>
+                            <p>That was the "Financial Blueprint" we were all handed in school. It’s also the fastest way to stay stuck on the treadmill. 🏃‍♂️💨</p>
+                            <p>They focus on pouring more water (income) in... But they never plug the leaks (taxes, inflation, and zero-growth cash).</p>
+                            <p class="font-bold text-purple-400">Wealth isn't built in the 41st hour of your work week. It's built in the 15 minutes you spend strategizing.</p>
+                            <p class="bg-white/5 p-3 rounded-lg border border-white/10 text-xs italic">
+                                👇 Comment "READY" below, and I’ll send you the link to grab one of the 3 spots.
+                            </p>
+                            <p class="text-green-400 font-bold border-t border-white/5 pt-4">Outcome: Triggered "Intent" & Warm Leads.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- The "Gap" Section - Why this matters -->
-    <section id="why" class="py-24 px-6 bg-white/[0.01] border-y border-white/5">
+    <!-- The Problem Section -->
+    <section id="why" class="py-24 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-black tracking-tight mb-6 uppercase">The 2026 Engagement <br><span class="text-red-500 italic">Is a Trap.</span></h2>
                     <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-                        The 2024 LinkedIn playbook (hacks, baiting, templates) is being demoted. The algorithm now favors <span class="text-white underline decoration-blue-500 underline-offset-4">Deep Intent Signals.</span>
+                        The 2024 LinkedIn playbook (hacks, templates) is being demoted. The algorithm now favors <span class="text-white underline decoration-blue-500 underline-offset-4">Deep Intent Signals.</span>
                     </p>
                     <div class="space-y-4">
                         <div class="flex items-start gap-4 glass p-4 rounded-2xl">
                             <div class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center shrink-0"><i data-lucide="x-circle" class="text-red-500 w-5 h-5"></i></div>
-                            <p class="text-sm text-gray-300"><strong>Generic Reach:</strong> 10k views, 0 conversations. A waste of your time.</p>
+                            <p class="text-sm text-gray-300"><strong>Generic Reach:</strong> 10k views, 0 conversations.</p>
                         </div>
                         <div class="flex items-start gap-4 glass p-4 rounded-2xl border-green-500/20">
                             <div class="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center shrink-0"><i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i></div>
-                            <p class="text-sm text-gray-300"><strong>Intent Reach:</strong> 500 views, 15 "I want this" comments.</p>
+                            <p class="text-sm text-gray-300"><strong>Intent Reach:</strong> 500 views, 15 "I need this" comments.</p>
                         </div>
                     </div>
                 </div>
                 <div class="relative">
                     <div class="glass p-8 rounded-[40px] transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-12 h-12 rounded-full bg-gray-800 border border-white/10 flex items-center justify-center">
-                                <i data-lucide="user" class="text-gray-400"></i>
-                            </div>
-                            <div>
-                                <div class="w-24 h-2 bg-gray-700 rounded mb-1"></div>
-                                <div class="w-16 h-2 bg-gray-800 rounded"></div>
-                            </div>
-                        </div>
-                        <p class="text-white font-medium italic mb-4">"Hey! I just saw your 'SaaS Workflow' post. Can you send me the link? This is exactly what we need."</p>
+                        <p class="text-white font-medium italic mb-4">"Hey! I just saw your 'Tactical Blueprint' post. Can you send me the link? This is exactly what we need."</p>
                         <div class="flex items-center gap-2 text-purple-400 font-bold text-xs uppercase tracking-tighter">
                             <i data-lucide="message-square" class="w-4 h-4"></i> New DM Intent Triggered
                         </div>
                     </div>
-                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-purple-600/20 blur-3xl rounded-full"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Workflow (Creative Visuals) -->
+    <!-- The Workflow -->
     <section id="process" class="py-24 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-5xl font-black uppercase tracking-tighter mb-4">How the Engine <span class="text-gradient">Runs</span></h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">No Zoom. No Slack noise. Just a high-output production line.</p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-4 relative">
-                <!-- Line -->
-                <div class="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-white/5 -translate-y-1/2 z-0"></div>
-
-                <!-- Step 1 -->
-                <div class="glass p-8 rounded-3xl relative z-10 hover:bg-white/5 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center mb-6 shadow-lg shadow-purple-600/30">
-                        <span class="text-xl font-black">01</span>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">The Intake</h4>
-                    <p class="text-gray-400 text-sm">Fill a 2-min Typeform. No kickoff calls. We clone your voice instantly.</p>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="glass p-8 rounded-3xl relative z-10 hover:bg-white/5 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center mb-6 shadow-lg shadow-blue-600/30">
-                        <span class="text-xl font-black">02</span>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">The Portal</h4>
-                    <p class="text-gray-400 text-sm">Review drafts in your private Notion board. Click "Approve" & move on.</p>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="glass p-8 rounded-3xl relative z-10 hover:bg-white/5 transition-all border-purple-500/20">
-                    <div class="w-12 h-12 rounded-xl bg-green-600 flex items-center justify-center mb-6 shadow-lg shadow-green-600/30">
-                        <span class="text-xl font-black">03</span>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">Asset Creation</h4>
-                    <p class="text-gray-400 text-sm">We build the "Lead Magnets" (PDFs/Notion docs) that drive the DMs.</p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="glass p-8 rounded-3xl relative z-10 hover:bg-white/5 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-white text-black flex items-center justify-center mb-6 shadow-lg shadow-white/30 animate-pulse">
-                        <i data-lucide="mail-open" class="w-6 h-6"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">The Handover</h4>
-                    <p class="text-gray-400 text-sm">Check your inbox. Every comment is an lead waiting for your asset.</p>
-                </div>
-            </div>
+        <div class="max-w-7xl mx-auto text-center mb-20">
+            <h2 class="text-5xl font-black uppercase tracking-tighter mb-4">How the Engine <span class="text-gradient">Runs</span></h2>
+            <p class="text-gray-500 max-w-2xl mx-auto">No Zoom calls. No Slack noise. Just high-output production.</p>
         </div>
-    </section>
 
-    <!-- Async Proof -->
-    <section class="py-12 px-6 border-y border-white/5 bg-white/[0.02]">
-        <div class="max-w-5xl mx-auto flex flex-wrap justify-center gap-12 grayscale opacity-60">
-            <div class="flex items-center gap-2 font-bold text-lg"><i data-lucide="check-circle" class="w-5 h-5"></i> NOTION</div>
-            <div class="flex items-center gap-2 font-bold text-lg"><i data-lucide="check-circle" class="w-5 h-5"></i> STRIPE</div>
-            <div class="flex items-center gap-2 font-bold text-lg"><i data-lucide="check-circle" class="w-5 h-5"></i> LOOM</div>
-            <div class="flex items-center gap-2 font-bold text-lg"><i data-lucide="check-circle" class="w-5 h-5"></i> TYPEFORM</div>
+        <div class="grid md:grid-cols-4 gap-4 relative max-w-7xl mx-auto">
+            <div class="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-white/5 -translate-y-1/2 z-0"></div>
+            
+            <div class="glass p-8 rounded-3xl relative z-10 hover:bg-white/5 transition-all">
+                <div class="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center mb-6 shadow-lg shadow-purple-600/30 font-black">01</div>
+                <h4 class="text-xl font-bold mb-2">The Intake</h4>
+                <p class="text-gray-400 text-sm">2-min Typeform. We clone your voice & service framework instantly.</p>
+            </div>
+            <div class="glass p-8 rounded-3xl relative z-10 hover:bg-white/5 transition-all">
+                <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center mb-6 shadow-lg shadow-blue-600/30 font-black">02</div>
+                <h4 class="text-xl font-bold mb-2">The Portal</h4>
+                <p class="text-gray-400 text-sm">Review drafts in your private Notion board. Click "Approve".</p>
+            </div>
+            <div class="glass p-8 rounded-3xl relative z-10 hover:bg-white/5 transition-all border-purple-500/20">
+                <div class="w-12 h-12 rounded-xl bg-green-600 flex items-center justify-center mb-6 shadow-lg shadow-green-600/30 font-black">03</div>
+                <h4 class="text-xl font-bold mb-2">Asset Creation</h4>
+                <p class="text-gray-400 text-sm">We build the PDFs/Lead Magnets that trigger the DMs.</p>
+            </div>
+            <div class="glass p-8 rounded-3xl relative z-10 hover:bg-white/5 transition-all">
+                <div class="w-12 h-12 rounded-xl bg-white text-black flex items-center justify-center mb-6 shadow-lg animate-pulse"><i data-lucide="mail-open" class="w-6 h-6"></i></div>
+                <h4 class="text-xl font-bold mb-2">The Handover</h4>
+                <p class="text-gray-400 text-sm">Check your inbox. Every comment is a lead for your asset.</p>
+            </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-32 px-6 relative">
+    <section id="pricing" class="py-32 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-6xl md:text-8xl font-black tracking-tighter mb-4 uppercase">CHOOSE YOUR LEVERAGE 💎</h2>
-                <p class="text-gray-400 text-xl italic max-w-2xl mx-auto">Premium "Done-For-You" Intent Content. Every plan is 100% Asynchronous. Limited to 4 Slots.</p>
+                <h2 class="text-6xl md:text-8xl font-black tracking-tighter mb-4 uppercase text-gradient">CHOOSE YOUR LEVERAGE 💎</h2>
+                <p class="text-gray-400 text-xl italic max-w-2xl mx-auto">Premium "Done-For-You" Intent Content. 100% Async. Limited to 4 Slots.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <!-- Entry Level -->
                 <div class="glass p-12 rounded-[50px] border border-white/10 flex flex-col items-center hover:bg-white/[0.05] transition-all group">
                     <div class="bg-gray-800 text-white px-4 py-1 rounded-full text-xs font-bold mb-8 uppercase tracking-widest border border-white/10">The Pilot</div>
                     <h3 class="text-3xl font-black mb-2 italic text-blue-400">Growth Engine</h3>
                     <div class="flex items-baseline gap-2 mb-10">
-                        <span class="text-6xl font-black">$499</span>
-                        <span class="text-gray-400 text-xl font-medium">/mo</span>
+                        <span class="text-6xl font-black">$499</span><span class="text-gray-400 text-xl font-medium">/mo</span>
                     </div>
                     <ul class="w-full space-y-4 mb-12 text-gray-300">
                         <li class="flex items-center gap-3"><i data-lucide="check" class="text-blue-500 w-5 h-5"></i> 12 Intent-Based Posts/mo</li>
@@ -251,16 +267,14 @@
                         <li class="flex items-center gap-3"><i data-lucide="check" class="text-blue-500 w-5 h-5"></i> 2-Step CTA Management</li>
                         <li class="flex items-center gap-3"><i data-lucide="check" class="text-blue-500 w-5 h-5"></i> 100% Async Notion Delivery</li>
                     </ul>
-                    <a href="https://typeform.com" class="w-full py-4 border border-white/20 rounded-2xl group-hover:bg-blue-600 group-hover:border-blue-600 transition-all text-center font-bold">Apply for Pilot</a>
+                    <a href="#" class="w-full py-4 border border-white/20 rounded-2xl group-hover:bg-blue-600 group-hover:border-blue-600 transition-all text-center font-bold">Apply for Pilot</a>
                 </div>
 
-                <!-- Pro Level -->
                 <div class="relative glass p-12 rounded-[50px] border-2 border-purple-500/50 flex flex-col items-center scale-105 bg-purple-500/[0.03] hover:bg-purple-500/[0.07] transition-all group">
-                    <div class="absolute top-0 -translate-y-1/2 bg-purple-600 text-white px-6 py-1 rounded-full text-xs font-black uppercase tracking-widest shadow-lg shadow-purple-600/30">Revenue Focus (Only 1 Slot)</div>
-                    <h3 class="text-4xl font-black mb-2 italic text-purple-400 text-gradient">The DM Machine</h3>
+                    <div class="absolute top-0 -translate-y-1/2 bg-purple-600 text-white px-6 py-1 rounded-full text-xs font-black uppercase tracking-widest">Only 1 Slot Left</div>
+                    <h3 class="text-4xl font-black mb-2 italic text-purple-400">The DM Machine</h3>
                     <div class="flex items-baseline gap-2 mb-10">
-                        <span class="text-7xl font-black">$999</span>
-                        <span class="text-gray-400 text-xl font-medium">/mo</span>
+                        <span class="text-7xl font-black">$999</span><span class="text-gray-400 text-xl font-medium">/mo</span>
                     </div>
                     <ul class="w-full space-y-5 mb-12">
                         <li class="flex items-center gap-3 text-lg font-bold"><i data-lucide="zap" class="text-purple-500 w-6 h-6"></i> 20 Intent-Based Posts/mo</li>
@@ -269,41 +283,60 @@
                         <li class="flex items-center gap-3 text-lg font-bold"><i data-lucide="zap" class="text-purple-500 w-6 h-6"></i> LinkedIn SEO Optimization</li>
                         <li class="flex items-center gap-3 text-lg font-bold"><i data-lucide="zap" class="text-purple-500 w-6 h-6"></i> Weekly Loom Performance Audit</li>
                     </ul>
-                    <a href="https://typeform.com" class="w-full py-6 bg-white text-black text-2xl font-black rounded-3xl hover:bg-purple-600 hover:text-white transition-all text-center shadow-2xl shadow-purple-500/20 active:scale-95">Start the Engine 🚀</a>
+                    <a href="#" class="w-full py-6 bg-white text-black text-2xl font-black rounded-3xl hover:bg-purple-600 hover:text-white transition-all text-center">Start the Engine 🚀</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Boundary -->
-    <section class="py-24 px-6 border-t border-white/5">
-        <div class="max-w-3xl mx-auto">
-            <h3 class="text-3xl font-black mb-12 text-center uppercase tracking-tighter">Wait, why No Meetings?</h3>
-            <div class="space-y-6">
-                <div class="glass p-6 rounded-2xl">
-                    <h5 class="font-bold mb-2">1. Speed.</h5>
-                    <p class="text-sm text-gray-400 italic">"I can draft 12 posts in the time it takes to schedule a Zoom. You get results faster."</p>
-                </div>
-                <div class="glass p-6 rounded-2xl">
-                    <h5 class="font-bold mb-2">2. Accuracy.</h5>
-                    <p class="text-sm text-gray-400 italic">"Async feedback in Notion is permanent. We don't lose ideas in a phone call."</p>
-                </div>
-                <div class="glass p-6 rounded-2xl">
-                    <h5 class="font-bold mb-2">3. Economics.</h5>
-                    <p class="text-sm text-gray-400 italic">"By removing meetings, I can charge $1,999 instead of $5,000 agency rates. You win."</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <footer class="py-24 border-t border-white/10 px-6 bg-black relative">
+<section class="py-24 px-6 border-t border-white/5">
+
+<div class="max-w-3xl mx-auto">
+
+<h3 class="text-3xl font-black mb-12 text-center uppercase tracking-tighter">Wait, why No Meetings?</h3>
+
+<div class="space-y-6">
+
+<div class="glass p-6 rounded-2xl">
+
+<h5 class="font-bold mb-2">1. Speed.</h5>
+
+<p class="text-sm text-gray-400 italic">"I can draft 12 posts in the time it takes to schedule a Zoom. You get results faster."</p>
+
+</div>
+
+<div class="glass p-6 rounded-2xl">
+
+<h5 class="font-bold mb-2">2. Accuracy.</h5>
+
+<p class="text-sm text-gray-400 italic">"Async feedback in Notion is permanent. We don't lose ideas in a phone call."</p>
+
+</div>
+
+<div class="glass p-6 rounded-2xl">
+
+<h5 class="font-bold mb-2">3. Economics.</h5>
+
+<p class="text-sm text-gray-400 italic">"By removing meetings, I can charge $1,999 instead of $5,000 agency rates. You win."</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+    <footer class="py-24 border-t border-white/10 px-6 bg-black">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="text-center md:text-left">
                 <div class="text-2xl font-extrabold tracking-tighter mb-2 uppercase">LINKEDIN<span class="text-purple-500">FLOW</span></div>
                 <p class="text-gray-500 text-sm italic">Engineered for the 2026 Attention Economy. © 2026</p>
             </div>
-            <div class="flex gap-8 text-gray-500 font-medium">
-                <a href="https://www.linkedin.com/in/sachin-g5" target="_blank" class="hover:text-white transition-all hover:underline underline-offset-4 decoration-purple-500">Founder Connect</a>
+            <div class="flex gap-8 text-gray-500 font-medium text-sm">
+                <a href="https://www.linkedin.com/in/sachin-g5" target="_blank" class="hover:text-white transition-all">Founder Connect</a>
                 <a href="#" class="hover:text-white transition-all">Privacy</a>
             </div>
         </div>
