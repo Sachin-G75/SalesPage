@@ -1,324 +1,292 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinkedInFlow | The 2026 Inbox Engine</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedInFlow | 15+ Qualified Inbound Leads Guaranteed</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Bricolage Grotesque', 'sans-serif'],
-                    },
-                    animation: {
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        'gradient-x': {
-                            '0%, 100%': { 'background-position': '0% 50%' },
-                            '50%': { 'background-position': '100% 50%' },
-                        },
-                        'float': {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Bricolage Grotesque', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-    <style>
-        body { background-color: #050505; color: white; overflow-x: hidden; }
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .text-gradient {
-            background: linear-gradient(to right, #a855f7, #3b82f6, #a855f7);
-            background-size: 200% auto;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-x 5s linear infinite;
-        }
-        .mesh-bg {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-            background: 
-                radial-gradient(circle at 10% 10%, rgba(168, 85, 247, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 90% 90%, rgba(59, 130, 246, 0.12) 0%, transparent 40%);
-        }
-        [x-cloak] { display: none !important; }
-        
-        .transform-card {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .transform-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: rgba(168, 85, 247, 0.4);
-        }
-    </style>
+    <style>
+        body { background-color: #050505; color: white; overflow-x: hidden; }
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #a855f7, #3b82f6, #a855f7);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-x 5s linear infinite;
+        }
+        .mesh-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: 
+                radial-gradient(circle at 10% 10%, rgba(168, 85, 247, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(59, 130, 246, 0.12) 0%, transparent 40%);
+        }
+        [x-cloak] { display: none !important; }
+        
+        .transform-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .transform-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(168, 85, 247, 0.4);
+        }
+    </style>
 </head>
 <body x-data="{ scrolled: false }" @scroll.window="scrolled = window.pageYOffset > 50">
 
-    <div class="mesh-bg"></div>
+    <div class="mesh-bg"></div>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-300 px-6 py-4" :class="scrolled ? 'bg-black/80 backdrop-blur-lg border-b border-white/10' : ''">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="text-2xl font-extrabold tracking-tighter flex items-center gap-2">
-                <div class="w-10 h-10 bg-gradient-to-tr from-purple-600 to-blue-500 rounded-xl flex items-center justify-center animate-pulse-slow">
-                    <i data-lucide="zap" class="text-white w-5 h-5"></i>
-                </div>
-                <span>LINKEDIN<span class="text-purple-500">FLOW</span></span>
-            </div>
-            <div class="hidden md:flex gap-8 font-medium text-gray-400">
-                <a href="#why" class="hover:text-white transition-colors">The Problem</a>
-                <a href="#transformation" class="hover:text-white transition-colors">Results</a>
-                <a href="#process" class="hover:text-white transition-colors">The Workflow</a>
-                <a href="#pricing" class="hover:text-white transition-colors font-bold text-purple-400">Pricing</a>
-            </div>
-            <a href="#pricing" class="bg-white text-black px-6 py-3 rounded-full font-bold text-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-white/10">
-                Grab a Beta Slot 🚀
-            </a>
-        </div>
-    </nav>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 px-6 py-4" :class="scrolled ? 'bg-black/80 backdrop-blur-lg border-b border-white/10' : ''">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="text-2xl font-extrabold tracking-tighter flex items-center gap-2">
+                <div class="w-10 h-10 bg-gradient-to-tr from-purple-600 to-blue-500 rounded-xl flex items-center justify-center animate-pulse-slow">
+                    <i data-lucide="zap" class="text-white w-5 h-5"></i>
+                </div>
+                <span>LINKEDIN<span class="text-purple-500">FLOW</span></span>
+            </div>
+            <div class="hidden md:flex gap-8 font-medium text-gray-400">
+                <a href="#transformation" class="hover:text-white transition-colors">The Outcome</a>
+                <a href="#why" class="hover:text-white transition-colors">Why Agencies Fail</a>
+                <a href="#pricing" class="hover:text-white transition-colors font-bold text-purple-400">The Guarantee</a>
+            </div>
+            <a href="#pricing" class="bg-white text-black px-6 py-3 rounded-full font-bold text-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-white/10">
+                Claim Pilot Slot 🚀
+            </a>
+        </div>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="relative pt-44 pb-12 px-6 text-center">
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm mb-10">
-                <i data-lucide="sparkles" class="w-4 h-4"></i> Trusted by Founders building in public
-            </div>
-            
-            <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8 uppercase">
-                THE INBOX ENGINE. <br>
-                <span class="text-gradient underline decoration-purple-500/30 underline-offset-[12px]">NOT JUST CONTENT.</span>
-            </h1>
+    <!-- Hero Section -->
+    <section class="relative pt-44 pb-12 px-6 text-center">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm mb-10">
+                <i data-lucide="shield-check" class="w-4 h-4"></i> No-Questions-Asked Performance Guarantee
+            </div>
+            
+            <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8 uppercase">
+                Stop Chasing Views. <br>
+                <span class="text-gradient underline decoration-purple-500/30 underline-offset-[12px]">Start Closing DMs.</span>
+            </h1>
 
-            <p class="text-gray-400 text-xl md:text-2xl max-w-3xl mx-auto mb-12 font-medium leading-relaxed">
-                Most ghostwriters sell "Reach." I sell <span class="text-white font-bold italic">Intent.</span> <br class="hidden md:block">
-                I build the assets that trigger "I need this" DMs while you 
-                <span class="bg-white/10 px-2 py-1 rounded text-white border border-white/10">stay off-camera.</span>
-            </p>
+            <p class="text-gray-400 text-xl md:text-2xl max-w-3xl mx-auto mb-12 font-medium leading-relaxed">
+                Most agencies sell "engagement." I sell <span class="text-white font-bold italic underline decoration-purple-500">Revenue Triggers.</span> <br class="hidden md:block">
+                We guarantee 15+ qualified inbound conversations per month or <span class="bg-white/10 px-2 py-1 rounded text-white border border-white/10">you don't pay.</span>
+            </p>
 
-            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                <a href="#pricing" class="w-full md:w-auto px-12 py-6 bg-purple-600 hover:bg-purple-500 text-white rounded-2xl font-black text-2xl transition-all shadow-[0_20px_50px_rgba(147,51,234,0.3)] hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-3 group">
-                   Grab a Beta Slot 🚀 <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                <a href="#pricing" class="w-full md:w-auto px-12 py-6 bg-purple-600 hover:bg-purple-500 text-white rounded-2xl font-black text-2xl transition-all shadow-[0_20px_50px_rgba(147,51,234,0.3)] hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-3 group">
+                   Start Your Risk-Free Pilot <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+            <p class="mt-6 text-gray-500 text-sm font-bold uppercase tracking-widest">Only 2 Pilot Slots Remaining for March</p>
+        </div>
+    </section>
 
-    <!-- Transformation Section (Visual Case Study) -->
-    <section id="transformation" class="py-24 px-6 relative">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">The <span class="text-gradient">Transformation</span></h2>
-                <p class="text-gray-500 text-lg max-w-2xl mx-auto">See how we turn low-engagement "thoughts" into high-intent revenue triggers.</p>
-            </div>
+    <!-- The Outcome Section -->
+    <section id="transformation" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">The <span class="text-gradient">Financial Shift</span></h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto italic">Engagement is a vanity metric. Intent is a bankable asset.</p>
+            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                <!-- Before Card -->
-                <div class="space-y-6">
-                    <div class="flex items-center gap-4 px-6 py-2 bg-red-500/10 border border-red-500/20 rounded-full w-fit mx-auto md:mx-0">
-                        <i data-lucide="x-circle" class="text-red-500 w-5 h-5"></i>
-                        <span class="text-red-500 font-bold uppercase tracking-widest text-sm">Before (Standard Post)</span>
-                    </div>
-                    <div class="glass transform-card rounded-[32px] overflow-hidden border-white/5 shadow-2xl">
-                        <img src="before.png" alt="Before: Standard LinkedIn Post" class="w-full h-auto opacity-80 hover:opacity-100 transition-opacity">
-                        <div class="p-6 bg-black/40 border-t border-white/10">
-                            <p class="text-gray-400 text-sm leading-relaxed italic text-center">Generic formatting, unclear call-to-action, and standard storytelling that gets scrolled past.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <!-- Before Card -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 px-6 py-2 bg-red-500/10 border border-red-500/20 rounded-full w-fit mx-auto md:mx-0">
+                        <i data-lucide="trending-down" class="text-red-500 w-5 h-5"></i>
+                        <span class="text-red-500 font-bold uppercase tracking-widest text-sm">Agency Standard (Vague Reach)</span>
+                    </div>
+                    <div class="glass transform-card rounded-[32px] overflow-hidden border-white/5 shadow-2xl p-8">
+                        <div class="space-y-4 opacity-50">
+                            <div class="h-4 bg-gray-800 rounded w-3/4"></div>
+                            <div class="h-4 bg-gray-800 rounded w-full"></div>
+                            <div class="h-4 bg-gray-800 rounded w-5/6"></div>
+                            <div class="flex gap-4 pt-4">
+                                <div class="h-10 w-24 bg-gray-800 rounded-full"></div>
+                                <div class="h-10 w-24 bg-gray-800 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="mt-8 p-6 bg-red-500/5 rounded-2xl border border-red-500/10">
+                            <p class="text-red-200 font-bold mb-1">Result: The "Ghost" Profile</p>
+                            <p class="text-gray-400 text-sm">10,000 Impressions. 200 Likes from "Engagement Pods." 0 Sales Calls Booked. <strong>Total Waste.</strong></p>
+                        </div>
+                    </div>
+                </div>
 
-                <!-- After Card -->
-                <div class="space-y-6">
-                    <div class="flex items-center gap-4 px-6 py-2 bg-green-500/10 border border-green-500/20 rounded-full w-fit mx-auto md:mx-0">
-                        <i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i>
-                        <span class="text-green-500 font-bold uppercase tracking-widest text-sm">After (Intent Framework)</span>
-                    </div>
-                    <div class="glass transform-card rounded-[32px] overflow-hidden border-purple-500/30 shadow-[0_0_50px_rgba(168,85,247,0.15)]">
-                        <img src="after.png" alt="After: Rewritten Post with Framework" class="w-full h-auto">
-                        <div class="p-6 bg-purple-500/5 border-t border-purple-500/20">
-                            <p class="text-purple-200 text-sm leading-relaxed font-medium text-center">Engineered hook, scarcity-driven CTA, and "Tactical Shifts" that trigger direct intent signals.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <!-- After Card -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 px-6 py-2 bg-green-500/10 border border-green-500/20 rounded-full w-fit mx-auto md:mx-0">
+                        <i data-lucide="trending-up" class="text-green-500 w-5 h-5"></i>
+                        <span class="text-green-500 font-bold uppercase tracking-widest text-sm">LinkedInFlow (Inbound Engine)</span>
+                    </div>
+                    <div class="glass transform-card rounded-[32px] overflow-hidden border-purple-500/30 shadow-[0_0_50px_rgba(168,85,247,0.15)] p-8">
+                         <div class="space-y-4">
+                            <div class="h-4 bg-purple-500/20 rounded w-3/4"></div>
+                            <div class="h-4 bg-purple-500/20 rounded w-full"></div>
+                            <div class="h-4 bg-purple-500/40 rounded w-2/3"></div>
+                            <div class="flex gap-4 pt-4">
+                                <div class="h-10 w-32 bg-purple-600 rounded-full flex items-center justify-center text-[10px] font-black italic">ASSET READY</div>
+                            </div>
+                        </div>
+                        <div class="mt-8 p-6 bg-green-500/5 rounded-2xl border border-green-500/20">
+                            <p class="text-green-400 font-black mb-1">Result: The "Inbox" Engine</p>
+                            <p class="text-gray-200 text-sm">500 Highly Targeted Views. 18 "How do I get this?" Comments. <strong>5 Qualified DMs within 2 hours.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- Visual Proof Badge -->
-            <div class="mt-16 text-center">
-                <div class="inline-flex flex-col items-center gap-4 glass px-8 py-6 rounded-3xl border-white/10">
-                    <div class="flex -space-x-3">
-                        <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center border-2 border-black font-bold text-xs italic">Intent</div>
-                        <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center border-2 border-black font-bold text-xs italic">Asset</div>
-                        <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center border-2 border-black font-bold text-xs italic">Inbox</div>
-                    </div>
-                    <p class="text-gray-400 text-sm max-w-md">Our <strong>"Intent Engine"</strong> framework doesn't just rewrite text; it re-engineers the reader's journey from curiosity to commitment.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Why Agencies Fail Section -->
+    <section id="why" class="py-24 px-6 bg-white/[0.01] border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tight mb-6 uppercase">Why Your Last <br><span class="text-red-500 italic">Ghostwriter Failed.</span></h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed font-medium">
+                        They focused on "Viral Hooks" for an audience that will never buy from you. We focus on <span class="text-white underline decoration-purple-500 underline-offset-4 font-bold italic">Problem-Centric Assets</span> that attract your Top 1% clients.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10"><i data-lucide="target" class="text-purple-500 w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Hyper-Specific Targeting</h4>
+                                <p class="text-sm text-gray-400">We don't write for everyone. We write for the person who has the problem you solve today.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10"><i data-lucide="layers" class="text-purple-500 w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Asset-Driven CTAs</h4>
+                                <p class="text-sm text-gray-400">We build the PDFs, Notion Guides, and Loom Templates that force prospects to reach out to you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="glass p-10 rounded-[40px] border-purple-500/20 bg-purple-500/[0.02]">
+                        <h3 class="text-2xl font-black mb-6 italic">The "Guaranteed" Math:</h3>
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-end border-b border-white/5 pb-2">
+                                <span class="text-gray-400">Intent-Based Posts</span>
+                                <span class="text-2xl font-black">20</span>
+                            </div>
+                            <div class="flex justify-between items-end border-b border-white/5 pb-2">
+                                <span class="text-gray-400">Custom Lead Magnets</span>
+                                <span class="text-2xl font-black">5</span>
+                            </div>
+                            <div class="flex justify-between items-end border-b border-purple-500/30 pb-2">
+                                <span class="text-purple-400 font-bold italic">Guaranteed Inbound Leads</span>
+                                <span class="text-3xl font-black text-white">15+</span>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-xs text-gray-500 uppercase font-black tracking-widest text-center">If we miss the target, we refund the month. Period.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- The "Gap" Section -->
-    <section id="why" class="py-24 px-6 bg-white/[0.01] border-y border-white/5">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-black tracking-tight mb-6 uppercase">The 2026 Engagement <br><span class="text-red-500 italic">Is a Trap.</span></h2>
-                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-                        The 2024 LinkedIn playbook is being demoted. The algorithm now favors <span class="text-white underline decoration-blue-500 underline-offset-4">Deep Intent Signals.</span>
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-4 glass p-4 rounded-2xl">
-                            <div class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center shrink-0"><i data-lucide="x-circle" class="text-red-500 w-5 h-5"></i></div>
-                            <p class="text-sm text-gray-300"><strong>Generic Reach:</strong> 10k views, 0 conversations. A waste of your time.</p>
-                        </div>
-                        <div class="flex items-start gap-4 glass p-4 rounded-2xl border-green-500/20">
-                            <div class="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center shrink-0"><i data-lucide="check-circle" class="text-green-500 w-5 h-5"></i></div>
-                            <p class="text-sm text-gray-300"><strong>Intent Reach:</strong> 500 views, 15 "I want this" comments.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="glass p-8 rounded-[40px] transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-12 h-12 rounded-full bg-gray-800 border border-white/10 flex items-center justify-center">
-                                <i data-lucide="user" class="text-gray-400"></i>
-                            </div>
-                            <div>
-                                <div class="w-24 h-2 bg-gray-700 rounded mb-1"></div>
-                                <div class="w-16 h-2 bg-gray-800 rounded"></div>
-                            </div>
-                        </div>
-                        <p class="text-white font-medium italic mb-4">"Hey! I just saw your 'SaaS Workflow' post. Can you send me the link? This is exactly what we need."</p>
-                        <div class="flex items-center gap-2 text-purple-400 font-bold text-xs uppercase tracking-tighter">
-                            <i data-lucide="message-square" class="w-4 h-4"></i> New DM Intent Triggered
-                        </div>
-                    </div>
-                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-purple-600/20 blur-3xl rounded-full"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <!-- Pricing Section: PILOT MODE -->
+    <section id="pricing" class="py-32 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-6xl md:text-8xl font-black tracking-tighter mb-4 uppercase leading-none">THE <span class="text-gradient underline underline-offset-[12px]">NO-RISK</span> PILOT</h2>
+                <p class="text-gray-400 text-xl italic max-w-2xl mx-auto mt-8">I'm not looking for "clients." I'm looking for Case Studies. If I don't get you results, I don't want your money.</p>
+            </div>
 
-    <!-- The Workflow -->
-    <section id="process" class="py-24 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-5xl font-black uppercase tracking-tighter mb-4">How the Engine <span class="text-gradient">Runs</span></h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">No Zoom. No Slack noise. Just a high-output production line.</p>
-            </div>
+            <div class="max-w-2xl mx-auto">
+                <div class="relative glass p-12 rounded-[50px] border-2 border-purple-500 flex flex-col items-center bg-purple-500/[0.03] shadow-[0_0_80px_rgba(168,85,247,0.1)] group">
+                    <div class="absolute top-0 -translate-y-1/2 bg-purple-600 text-white px-8 py-2 rounded-full text-sm font-black uppercase tracking-widest shadow-lg shadow-purple-600/30">
+                        Performance Guaranteed
+                    </div>
+                    
+                    <h3 class="text-5xl font-black mb-2 italic text-white text-center">The "Wall of Proof" Slot</h3>
+                    <p class="text-purple-400 font-bold mb-8 uppercase tracking-widest text-sm">Full Implementation & Lead Engine</p>
 
-            <div class="grid md:grid-cols-4 gap-4 relative">
-                <div class="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-white/5 -translate-y-1/2 z-0"></div>
+                    <div class="flex flex-col items-center gap-2 mb-10">
+                        <div class="flex items-center gap-4">
+                            <span class="text-gray-500 text-4xl line-through decoration-red-500/50">$1,500</span>
+                            <span class="text-8xl font-black text-white">$499</span>
+                            <span class="text-gray-400 text-xl font-medium">/mo</span>
+                        </div>
+                        <p class="text-green-500 font-bold bg-green-500/10 px-4 py-1 rounded-full text-xs italic italic">Beta Pricing: Locked in for life</p>
+                    </div>
 
-                <div class="glass p-8 rounded-3xl relative z-10 hover:bg-white/5 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center mb-6 shadow-lg shadow-purple-600/30">
-                        <span class="text-xl font-black">01</span>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">The Intake</h4>
-                    <p class="text-gray-400 text-sm">Fill a 2-min Typeform. No kickoff calls. We clone your voice instantly.</p>
-                </div>
+                    <ul class="w-full space-y-5 mb-12">
+                        <li class="flex items-center gap-3 text-lg font-bold"><i data-lucide="check" class="text-purple-500 w-6 h-6"></i> 15+ Qualified Inbound Leads Guaranteed</li>
+                        <li class="flex items-center gap-3 text-lg font-bold"><i data-lucide="check" class="text-purple-500 w-6 h-6"></i> 20 Intent-Triggering Posts/mo</li>
+                        <li class="flex items-center gap-3 text-lg font-bold"><i data-lucide="check" class="text-purple-500 w-6 h-6"></i> 5 High-Conversion Lead Magnets</li>
+                        <li class="flex items-center gap-3 text-lg font-bold"><i data-lucide="check" class="text-purple-500 w-6 h-6"></i> Done-for-you DM Closing Scripts</li>
+                        <li class="flex items-center gap-3 text-purple-300 italic font-medium"><i data-lucide="info" class="text-purple-500 w-6 h-6"></i> Requirement: Honest Review & Case Study</li>
+                    </ul>
 
-                <div class="glass p-8 rounded-3xl relative z-10 hover:bg-white/5 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center mb-6 shadow-lg shadow-blue-600/30">
-                        <span class="text-xl font-black">02</span>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">The Portal</h4>
-                    <p class="text-gray-400 text-sm">Review drafts in your private Notion board. Click "Approve" & move on.</p>
-                </div>
+                    <a href="https://www.linkedin.com/in/sachin-g5" target="_blank" class="w-full py-6 bg-white text-black text-2xl font-black rounded-3xl hover:bg-purple-600 hover:text-white transition-all text-center shadow-2xl shadow-purple-500/20 active:scale-95 flex items-center justify-center gap-4">
+                        Claim Risk-Free Slot <i data-lucide="rocket" class="w-8 h-8"></i>
+                    </a>
+                    
+                    <p class="mt-6 text-gray-500 text-xs font-bold uppercase tracking-widest">Limited to the next 2 Founders only</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="glass p-8 rounded-3xl relative z-10 hover:bg-white/5 transition-all border-purple-500/20">
-                    <div class="w-12 h-12 rounded-xl bg-green-600 flex items-center justify-center mb-6 shadow-lg shadow-green-600/30">
-                        <span class="text-xl font-black">03</span>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">Asset Creation</h4>
-                    <p class="text-gray-400 text-sm">We build the "Lead Magnets" (PDFs/Notion docs) that drive the DMs.</p>
-                </div>
+    <footer class="py-24 border-t border-white/10 px-6 bg-black relative">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <div class="text-2xl font-extrabold tracking-tighter mb-2 uppercase">LINKEDIN<span class="text-purple-500">FLOW</span></div>
+                <p class="text-gray-500 text-sm italic">The Outcome-Based Engine for Modern Founders. © 2026</p>
+            </div>
+            <div class="flex gap-8 text-gray-500 font-medium">
+                <a href="https://www.linkedin.com/in/sachin-g5" target="_blank" class="hover:text-white transition-all hover:underline underline-offset-4 decoration-purple-500">Founder Connect</a>
+                <a href="#" class="hover:text-white transition-all">Outcome Guarantee</a>
+            </div>
+        </div>
+    </footer>
 
-                <div class="glass p-8 rounded-3xl relative z-10 hover:bg-white/5 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-white text-black flex items-center justify-center mb-6 shadow-lg shadow-white/30 animate-pulse">
-                        <i data-lucide="mail-open" class="w-6 h-6"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">The Handover</h4>
-                    <p class="text-gray-400 text-sm">Check your inbox. Every comment is an lead waiting for your asset.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   <!-- Pricing Section: BETA MODE -->
-    <section id="pricing" class="py-32 px-6 relative">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-6xl md:text-8xl font-black tracking-tighter mb-4 uppercase">FOUNDERS <span class="text-gradient underline underline-offset-[12px]">BETA</span></h2>
-                <p class="text-gray-400 text-xl italic max-w-2xl mx-auto">We are building our wall of proof. Grab the full "DM Machine" experience at a Pilot price in exchange for a video testimonial.</p>
-            </div>
-
-            <div class="max-w-2xl mx-auto">
-                <div class="relative glass p-12 rounded-[50px] border-2 border-purple-500 flex flex-col items-center bg-purple-500/[0.03] shadow-[0_0_80px_rgba(168,85,247,0.1)] group">
-                    <div class="absolute top-0 -translate-y-1/2 bg-purple-600 text-white px-8 py-2 rounded-full text-sm font-black uppercase tracking-widest shadow-lg shadow-purple-600/30">
-                        Only 2 Slots Available
-                    </div>
-                    
-                    <h3 class="text-5xl font-black mb-2 italic text-white">The "Proof" Slot</h3>
-                    <p class="text-purple-400 font-bold mb-8 uppercase tracking-widest text-sm">Full DM Machine Plan</p>
-
-                    <div class="flex flex-col items-center gap-2 mb-10">
-                        <div class="flex items-center gap-4">
-                            <span class="text-gray-500 text-4xl line-through decoration-red-500/50">$999</span>
-                            <span class="text-8xl font-black text-white">$499</span>
-                            <span class="text-gray-400 text-xl font-medium">/mo</span>
-                        </div>
-                        <p class="text-green-500 font-bold bg-green-500/10 px-4 py-1 rounded-full text-xs">Lock in this price for life</p>
-                    </div>
-
-                    <ul class="w-full space-y-5 mb-12">
-                        <li class="flex items-center gap-3 text-lg font-bold"><i data-lucide="zap" class="text-purple-500 w-6 h-6"></i> 20 Intent-Based Posts/mo</li>
-                        <li class="flex items-center gap-3 text-lg font-bold"><i data-lucide="zap" class="text-purple-500 w-6 h-6"></i> 5 Custom Lead Magnet Assets</li>
-                        <li class="flex items-center gap-3 text-lg font-bold"><i data-lucide="zap" class="text-purple-500 w-6 h-6"></i> DM Response Frameworks</li>
-                        <li class="flex items-center gap-3 text-lg font-bold"><i data-lucide="zap" class="text-purple-500 w-6 h-6"></i> 100% Async Notion Delivery</li>
-                        <li class="flex items-center gap-3 text-purple-300 italic"><i data-lucide="video" class="text-purple-500 w-6 h-6"></i> Required: Video Testimonial after 30 days</li>
-                    </ul>
-
-                    <a href="https://www.linkedin.com/in/sachin-g5" target="_blank" class="w-full py-6 bg-white text-black text-2xl font-black rounded-3xl hover:bg-purple-600 hover:text-white transition-all text-center shadow-2xl shadow-purple-500/20 active:scale-95">
-                        Apply for Beta Slot 🚀
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-24 border-t border-white/10 px-6 bg-black relative">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-center md:text-left">
-                <div class="text-2xl font-extrabold tracking-tighter mb-2 uppercase">LINKEDIN<span class="text-purple-500">FLOW</span></div>
-                <p class="text-gray-500 text-sm italic">Engineered for the 2026 Attention Economy. © 2026</p>
-            </div>
-            <div class="flex gap-8 text-gray-500 font-medium">
-                <a href="https://www.linkedin.com/in/sachin-g5" target="_blank" class="hover:text-white transition-all hover:underline underline-offset-4 decoration-purple-500">Founder Connect</a>
-                <a href="#" class="hover:text-white transition-all">Privacy</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        lucide.createIcons();
-    </script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
-</html>
+</html> 
