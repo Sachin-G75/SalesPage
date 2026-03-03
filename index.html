@@ -61,6 +61,15 @@
         .faq-icon {
             transition: transform 0.3s ease;
         }
+        .bonus-badge {
+            background: #FF5C00;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-[#FF5C00] selection:text-white">
@@ -70,18 +79,18 @@
         <div class="glass rounded-2xl px-6 py-4 flex justify-between items-center shadow-xl">
             <div class="font-black text-2xl tracking-tighter flex items-center gap-2">
                 <div class="bg-black p-1 rounded">
-                    <i data-lucide="refresh-ccw" class="text-white w-5 h-5"></i>
+                    <i data-lucide="zap" class="text-white w-5 h-5"></i>
                 </div>
                 DM<span class="text-[#FF5C00]">Engine</span>
             </div>
             <div class="hidden md:flex gap-8 font-bold text-xs uppercase tracking-widest">
-                <a href="#why" class="hover:text-[#FF5C00]">The Problem</a>
-                <a href="#process" class="hover:text-[#FF5C00]">Async Method</a>
-                <a href="#deliverables" class="hover:text-[#FF5C00]">Monthly Pack</a>
-                <a href="#faq" class="hover:text-[#FF5C00]">FAQ</a>
+                <a href="#why" class="hover:text-[#FF5C00]">Problem</a>
+                <a href="#deliverables" class="hover:text-[#FF5C00]">The Stack</a>
+                <a href="#guarantee" class="hover:text-[#FF5C00]">Guarantee</a>
+                <a href="#pricing" class="hover:text-[#FF5C00]">Pricing</a>
             </div>
             <a href="#pricing" class="bg-[#FF5C00] text-white px-5 py-2 rounded-xl text-sm font-black gumroad-shadow border-2 border-black">
-                CLAIM BETA SLOT
+                RESERVE SLOT
             </a>
         </div>
     </nav>
@@ -90,256 +99,232 @@
     <section class="pt-52 pb-32 px-6">
         <div class="max-w-5xl mx-auto text-center">
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-black bg-white mb-8 shadow-sm">
-                <span class="text-xs font-black uppercase tracking-widest">For Founders, Creators & Podcasters</span>
+                <span class="animate-pulse w-2 h-2 rounded-full bg-red-500"></span>
+                <span class="text-xs font-black uppercase tracking-widest">NOW ACCEPTING 4 NEW BETA CLIENTS</span>
             </div>
             <h1 class="text-6xl md:text-[100px] font-black tracking-tighter leading-[0.85] mb-8">
-                YOUR CONTENT.<br> OUR <span class="text-outline italic">AUTHORITY.</span>
+                STOP FILMING.<br> START <span class="text-outline italic">DOMINATING.</span>
             </h1>
             <p class="text-2xl md:text-3xl font-medium text-zinc-600 mb-12 max-w-3xl mx-auto leading-tight">
-                We turn your long-form <span class="text-black font-bold">Videos, Podcasts, and Webinars</span> into high-authority LinkedIn posts. Build your personal brand while you stay off Zoom.
+                We turn your long-form <span class="text-black font-bold underline decoration-[#FF5C00]">Videos & Podcasts</span> into 12 high-authority LinkedIn posts per month. Build a $1M personal brand while you sleep.
             </p>
             <div class="flex flex-col md:flex-row items-center justify-center gap-6">
                 <a href="#pricing" class="bg-black text-white text-2xl px-12 py-6 rounded-2xl font-black gumroad-shadow hover:bg-zinc-900 border-2 border-black">
-                    START REPURPOSING →
+                    ACTIVATE MY ENGINE →
                 </a>
-                <p class="text-sm font-bold text-gray-400 uppercase tracking-widest text-left">
-                    0 MEETINGS. 12+ POSTS/MO.<br>100% ASYNC REPURPOSING.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Comparison Table -->
-    <section class="py-24 px-6">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-4 border-heavy rounded-[32px] overflow-hidden bg-white gumroad-shadow">
-                <div class="p-10 bg-zinc-50 border-r-2 border-black">
-                    <h4 class="text-xl font-black uppercase mb-8 opacity-40">The Content Struggle</h4>
-                    <ul class="space-y-6">
-                        <li class="flex gap-3 text-gray-500 line-through"><i data-lucide="x-circle" class="shrink-0 text-red-500"></i> Repurposing takes 10+ hours/week</li>
-                        <li class="flex gap-3 text-gray-500 line-through"><i data-lucide="x-circle" class="shrink-0 text-red-500"></i> Ghostwriters who don't know your voice</li>
-                        <li class="flex gap-3 text-gray-500 line-through"><i data-lucide="x-circle" class="shrink-0 text-red-500"></i> Generic "AI-sounding" ChatGPT fluff</li>
-                        <li class="flex gap-3 text-gray-500 line-through"><i data-lucide="x-circle" class="shrink-0 text-red-500"></i> Constant "Strategy Calls" on your calendar</li>
-                    </ul>
-                </div>
-                <div class="p-10 bg-black text-white">
-                    <h4 class="text-xl font-black uppercase mb-8 text-[#FF5C00]">The Engine Way</h4>
-                    <ul class="space-y-6 font-bold">
-                        <li class="flex gap-3"><i data-lucide="check-circle" class="shrink-0 text-[#FF5C00]"></i> 100% Extracted from your actual ideas</li>
-                        <li class="flex gap-3"><i data-lucide="check-circle" class="shrink-0 text-[#FF5C00]"></i> Zero-meeting, Slack-based workflow</li>
-                        <li class="flex gap-3"><i data-lucide="check-circle" class="shrink-0 text-[#FF5C00]"></i> High-Authority "Insights" over Fluff</li>
-                        <li class="flex gap-3"><i data-lucide="check-circle" class="shrink-0 text-[#FF5C00]"></i> Done-for-you monthly content bank</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Problem -->
-    <section id="why" class="py-24 px-6 bg-white border-y-4 border-black overflow-hidden">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-            <div>
-                <h2 class="text-5xl font-black tracking-tighter mb-8 leading-none">Your genius is trapped in <span class="text-[#FF5C00]">long-form content.</span></h2>
-                <div class="space-y-6">
-                    <div class="p-6 border-2 border-black rounded-2xl bg-zinc-50 relative">
-                        <div class="absolute -left-3 top-1/2 -translate-y-1/2 bg-red-500 text-white p-1 rounded border-2 border-black">
-                            <i data-lucide="video" class="w-4 h-4"></i>
-                        </div>
-                        <p class="font-bold mb-1">The "Hidden" Expertise</p>
-                        <p class="text-sm text-gray-500">Your best insights are buried in 60-minute webinars that nobody has time to watch. We dig them out.</p>
-                    </div>
-                    <div class="p-6 border-2 border-black rounded-2xl bg-zinc-50 relative">
-                        <div class="absolute -left-3 top-1/2 -translate-y-1/2 bg-red-500 text-white p-1 rounded border-2 border-black">
-                            <i data-lucide="clock" class="w-4 h-4"></i>
-                        </div>
-                        <p class="font-bold mb-1">The Distribution Gap</p>
-                        <p class="text-sm text-gray-500">Creating content from scratch is hard. Repurposing is smart. We give you a month of LinkedIn presence from 1 single video.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="relative">
-                <div class="bg-black p-10 rounded-[40px] text-white space-y-8 transform rotate-2 gumroad-shadow border-heavy border-white">
-                    <h3 class="text-3xl font-black italic">The "Multiplication" Effect</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-4">
-                            <i data-lucide="youtube" class="text-red-400"></i>
-                            <span class="font-bold">1 YouTube Video / Podcast</span>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <i data-lucide="arrow-down" class="text-white mx-auto"></i>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <i data-lucide="linkedin" class="text-blue-400"></i>
-                            <span class="font-bold">12 Authority LinkedIn Posts</span>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <i data-lucide="check-circle" class="text-[#FF5C00]"></i>
-                            <span class="font-bold">Month-Long Expert Status</span>
-                        </div>
-                    </div>
-                    <div class="pt-6 border-t border-white/20 text-center">
-                        <p class="text-6xl font-black text-[#FF5C00]">12x</p>
-                        <p class="text-sm font-bold uppercase tracking-widest text-gray-400">Content Leverage Ratio</p>
+                <div class="text-left">
+                    <p class="text-sm font-bold text-black uppercase tracking-widest">
+                        0 MEETINGS. 0 HEADACHES.
+                    </p>
+                    <div class="flex gap-1 mt-1">
+                        <i data-lucide="star" class="w-4 h-4 fill-[#FF5C00] text-[#FF5C00]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#FF5C00] text-[#FF5C00]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#FF5C00] text-[#FF5C00]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#FF5C00] text-[#FF5C00]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#FF5C00] text-[#FF5C00]"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The 100% Async Process -->
-    <section id="process" class="py-32 px-6">
+    <!-- The Cost of Inaction (Hormozi Step: Pain Points) -->
+    <section id="why" class="py-24 px-6 bg-black text-white border-y-4 border-black">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-16 text-center italic">Every day you don't post, you're <span class="text-[#FF5C00]">losing authority.</span></h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-8 border-2 border-white/20 rounded-3xl">
+                    <i data-lucide="timer" class="w-12 h-12 text-[#FF5C00] mx-auto mb-6"></i>
+                    <h4 class="text-xl font-black mb-4 uppercase">The Time Sink</h4>
+                    <p class="text-gray-400">Spending 15+ hours a week trying to "summarize" your own videos is a waste of your $500/hr time.</p>
+                </div>
+                <div class="p-8 border-2 border-white/20 rounded-3xl">
+                    <i data-lucide="users" class="w-12 h-12 text-[#FF5C00] mx-auto mb-6"></i>
+                    <h4 class="text-xl font-black mb-4 uppercase">The Invisible Founder</h4>
+                    <p class="text-gray-400">If you only post once a month, you're invisible. If you're invisible, your competitors win the trust.</p>
+                </div>
+                <div class="p-8 border-2 border-white/20 rounded-3xl">
+                    <i data-lucide="brain-circuit" class="w-12 h-12 text-[#FF5C00] mx-auto mb-6"></i>
+                    <h4 class="text-xl font-black mb-4 uppercase">The "AI" Stink</h4>
+                    <p class="text-gray-400">Generic ChatGPT posts damage your brand. You need your actual insights, extracted with precision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Grand Slam Stack (Hormozi Step: Value Stacking) -->
+    <section id="deliverables" class="py-32 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-20">
-                <h2 class="text-6xl font-black tracking-tighter">The 100% <span class="text-[#FF5C00]">Async</span> Workflow.</h2>
-                <p class="text-xl text-gray-500">Zero scheduling. Zero Zoom fatigue. 100% output.</p>
+                <h2 class="text-6xl font-black tracking-tighter">The <span class="text-[#FF5C00]">Grand Slam</span> Content Stack.</h2>
+                <p class="text-xl text-gray-500 mt-4">We don't just "repurpose." We manufacture authority.</p>
             </div>
             
-            <div class="grid md:grid-cols-4 gap-4">
-                <div class="p-8 border-heavy rounded-3xl bg-white gumroad-shadow">
-                    <div class="text-[#FF5C00] font-black text-4xl mb-4">01</div>
-                    <h4 class="font-black text-xl mb-2">Drop Assets</h4>
-                    <p class="text-sm text-gray-500 italic">Simply paste your YouTube, Podcast, or Blog links into our shared Notion or Slack.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Core Value -->
+                <div class="p-8 border-heavy rounded-[32px] bg-white gumroad-shadow">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-black p-3 rounded-2xl"><i data-lucide="file-text" class="text-white"></i></div>
+                        <span class="font-black text-xs text-gray-400">VALUE: $1,200/mo</span>
+                    </div>
+                    <h4 class="text-2xl font-black mb-3 italic">12 Authority Posts</h4>
+                    <p class="text-gray-500 font-medium">Extracted directly from your transcripts. We find the "Gold Nuggets" you didn't even know you said.</p>
                 </div>
-                <div class="p-8 border-heavy rounded-3xl bg-white gumroad-shadow">
-                    <div class="text-[#FF5C00] font-black text-4xl mb-4">02</div>
-                    <h4 class="font-black text-xl mb-2">AI Extraction</h4>
-                    <p class="text-sm text-gray-500 italic">We use proprietary AI prompts to pull the highest-authority insights from your transcripts.</p>
+
+                <div class="p-8 border-heavy rounded-[32px] bg-white gumroad-shadow">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-black p-3 rounded-2xl"><i data-lucide="mouse-pointer-2" class="text-white"></i></div>
+                        <span class="font-black text-xs text-gray-400">VALUE: $400/mo</span>
+                    </div>
+                    <h4 class="text-2xl font-black mb-3 italic">36 Tested Hooks</h4>
+                    <p class="text-gray-500 font-medium">3 variations for every post. Designed to force the "See More" click on the LinkedIn feed.</p>
                 </div>
-                <div class="p-8 border-heavy rounded-3xl bg-white gumroad-shadow">
-                    <div class="text-[#FF5C00] font-black text-4xl mb-4">03</div>
-                    <h4 class="font-black text-xl mb-2">Human Polish</h4>
-                    <p class="text-sm text-gray-500 italic">We manually format for LinkedIn: adding hooks, line breaks, and CTA's that drive DMs.</p>
+
+                <div class="p-8 border-heavy rounded-[32px] bg-white gumroad-shadow">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-black p-3 rounded-2xl"><i data-lucide="layout" class="text-white"></i></div>
+                        <span class="font-black text-xs text-gray-400">VALUE: $300/mo</span>
+                    </div>
+                    <h4 class="text-2xl font-black mb-3 italic">Visual Frameworks</h4>
+                    <p class="text-gray-500 font-medium">Text-based carousels and images based on your unique logic to stop the scroll.</p>
                 </div>
-                <div class="p-8 border-heavy rounded-3xl bg-white gumroad-shadow">
-                    <div class="text-[#FF5C00] font-black text-4xl mb-4">04</div>
-                    <h4 class="font-black text-xl mb-2">The Bank</h4>
-                    <p class="text-sm text-gray-500 italic">Receive 12-15 ready-to-post assets every month. You just copy, paste, and lead.</p>
+
+                <!-- Bonuses -->
+                <div class="p-8 border-heavy border-[#FF5C00] rounded-[32px] bg-zinc-50 gumroad-shadow relative">
+                    <div class="absolute -top-3 left-8 bonus-badge">FREE BONUS #1</div>
+                    <div class="flex justify-between items-start mb-6 mt-2">
+                        <div class="bg-[#FF5C00] p-3 rounded-2xl"><i data-lucide="message-square" class="text-white"></i></div>
+                        <span class="font-black text-xs text-gray-400">VALUE: $500</span>
+                    </div>
+                    <h4 class="text-2xl font-black mb-3 italic">DM Conversion Script</h4>
+                    <p class="text-gray-500 font-medium">Our exact script to turn LinkedIn comments into high-ticket sales calls without being "salesy."</p>
+                </div>
+
+                <div class="p-8 border-heavy border-[#FF5C00] rounded-[32px] bg-zinc-50 gumroad-shadow relative">
+                    <div class="absolute -top-3 left-8 bonus-badge">FREE BONUS #2</div>
+                    <div class="flex justify-between items-start mb-6 mt-2">
+                        <div class="bg-[#FF5C00] p-3 rounded-2xl"><i data-lucide="calendar" class="text-white"></i></div>
+                        <span class="font-black text-xs text-gray-400">VALUE: $200</span>
+                    </div>
+                    <h4 class="text-2xl font-black mb-3 italic">Monthly Content Audit</h4>
+                    <p class="text-gray-500 font-medium">Monthly Loom video audit of your LinkedIn profile to ensure you're optimized for inbound leads.</p>
+                </div>
+
+                <div class="p-8 border-heavy border-[#FF5C00] rounded-[32px] bg-zinc-50 gumroad-shadow relative">
+                    <div class="absolute -top-3 left-8 bonus-badge">FREE BONUS #3</div>
+                    <div class="flex justify-between items-start mb-6 mt-2">
+                        <div class="bg-[#FF5C00] p-3 rounded-2xl"><i data-lucide="zap" class="text-white"></i></div>
+                        <span class="font-black text-xs text-gray-400">VALUE: PRICELESS</span>
+                    </div>
+                    <h4 class="text-2xl font-black mb-3 italic">The "Async" Portal</h4>
+                    <p class="text-gray-500 font-medium">Access to your private Slack/Notion board. Drop links, get content. 0 meetings forever.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Deliverables -->
-    <section id="deliverables" class="py-24 px-6 bg-zinc-50">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-6xl font-black tracking-tighter">The Monthly <span class="text-outline">Output.</span></h2>
-                <p class="text-xl text-gray-500">We don't sell hours. We sell a high-authority presence.</p>
+    <!-- The Guarantee (Hormozi Step: Risk Reversal) -->
+    <section id="guarantee" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto border-heavy bg-[#FF5C00] rounded-[40px] p-12 text-center gumroad-shadow relative">
+            <div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-white border-heavy rounded-full p-6">
+                <i data-lucide="shield-check" class="w-12 h-12 text-black"></i>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-10 border-heavy rounded-3xl glass gumroad-shadow relative">
-                    <div class="text-4xl mb-6">✍️</div>
-                    <h3 class="text-2xl font-black mb-4 italic">12 Authority Posts</h3>
-                    <p class="text-gray-500 font-medium">Extracted from your videos. Written to sound like you—only more concise and persuasive.</p>
-                </div>
-                <div class="p-10 border-heavy rounded-3xl glass gumroad-shadow relative">
-                    <div class="text-4xl mb-6">🪝</div>
-                    <h3 class="text-2xl font-black mb-4 italic">30+ Scroll Hooks</h3>
-                    <p class="text-gray-500 font-medium">A library of tested LinkedIn hooks for your content to maximize "See More" clicks.</p>
-                </div>
-                <div class="p-10 border-heavy rounded-3xl glass gumroad-shadow relative">
-                    <div class="text-4xl mb-6">🖼️</div>
-                    <h3 class="text-2xl font-black mb-4 italic">Visual Assets</h3>
-                    <p class="text-gray-500 font-medium">Text-based images and tactical frameworks pulled from your long-form logic.</p>
-                </div>
-            </div>
+            <h2 class="text-4xl md:text-5xl font-black mt-6 mb-6 tracking-tighter italic text-white">THE "NO-BRAINER" GUARANTEE</h2>
+            <p class="text-2xl font-bold text-black mb-8 leading-tight">
+                If you don't feel like your first batch of content sounds 10x more authoritative than your current feed, we will rewrite the entire month for free. If you're still not happy, <span class="underline">we'll refund every penny.</span> 
+            </p>
+            <p class="text-sm font-black uppercase tracking-widest text-white/80">I take all the risk. You get all the authority.</p>
         </div>
     </section>
 
-    <!-- Pricing -->
+    <!-- Pricing (Hormozi Step: Scarcity & Urgency) -->
     <section id="pricing" class="py-32 px-6">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-5xl md:text-7xl font-black tracking-tighter italic">Founding Member Rate.</h2>
-                <p class="text-xl text-gray-500 mt-4">Help us build our first 5 Case Studies. Lock in this price for life.</p>
+                <h2 class="text-7xl font-black tracking-tighter italic uppercase">Claim the Beta Rate.</h2>
+                <p class="text-xl text-gray-500 mt-4">Only 4 slots left at this price before we move to $1,499/mo.</p>
             </div>
 
             <div class="bg-white rounded-[40px] border-heavy p-8 md:p-16 gumroad-shadow relative overflow-hidden">
-                <div class="absolute top-10 right-[-40px] rotate-45 bg-[#FF5C00] text-white px-20 py-2 font-black border-2 border-black text-sm">
-                    4 SLOTS LEFT
+                <!-- Urgency Tag -->
+                <div class="absolute top-10 right-[-50px] rotate-45 bg-black text-white px-20 py-2 font-black border-2 border-white text-sm">
+                    4 SLOTS REMAINING
                 </div>
 
-                <div class="flex flex-col md:flex-row gap-12 items-center">
-                    <div class="md:w-1/2 space-y-6">
-                        <div class="inline-block px-4 py-1 bg-black text-white rounded-full text-xs font-black tracking-widest">MONTHLY SUBSCRIPTION</div>
-                        <h3 class="text-5xl font-black leading-none uppercase">Content <br> Engine.</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-3 font-bold"><i data-lucide="check-circle" class="text-green-500"></i> 12 High-Authority Posts / Mo</div>
-                            <div class="flex items-center gap-3 font-bold"><i data-lucide="check-circle" class="text-green-500"></i> Infinite Repurposing from Video/Audio</div>
-                            <div class="flex items-center gap-3 font-bold"><i data-lucide="check-circle" class="text-green-500"></i> 100% Async Slack Communication</div>
-                            <div class="flex items-center gap-3 font-bold"><i data-lucide="check-circle" class="text-green-500"></i> Zero Calls. Zero Headaches.</div>
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h3 class="text-6xl font-black italic mb-8">CONTENT <br><span class="text-[#FF5C00]">ENGINE.</span></h3>
+                        <div class="space-y-4 mb-10">
+                            <div class="flex items-center gap-3 font-bold text-lg"><i data-lucide="check" class="text-green-500 w-6 h-6 stroke-[4px]"></i> 12 Authority Posts / Mo</div>
+                            <div class="flex items-center gap-3 font-bold text-lg"><i data-lucide="check" class="text-green-500 w-6 h-6 stroke-[4px]"></i> 36 Multi-Variation Hooks</div>
+                            <div class="flex items-center gap-3 font-bold text-lg"><i data-lucide="check" class="text-green-500 w-6 h-6 stroke-[4px]"></i> Custom Visual Frameworks</div>
+                            <div class="flex items-center gap-3 font-bold text-lg"><i data-lucide="check" class="text-green-500 w-6 h-6 stroke-[4px]"></i> 100% Async Operations</div>
+                            <div class="flex items-center gap-3 font-bold text-lg text-[#FF5C00]"><i data-lucide="plus" class="w-6 h-6 stroke-[4px]"></i> All 3 Limited Bonuses Included</div>
+                        </div>
+                        <div class="p-6 bg-zinc-50 rounded-2xl border-2 border-dashed border-gray-300">
+                            <p class="font-black uppercase text-xs text-gray-400 mb-2">Total Value</p>
+                            <p class="text-3xl font-black text-gray-400 line-through">$2,600/mo</p>
                         </div>
                     </div>
 
-                    <div class="md:w-1/2 w-full text-center space-y-8 bg-zinc-50 p-10 rounded-3xl border-2 border-dashed border-black">
-                        <div>
-                            <p class="text-gray-400 font-bold line-through text-2xl mb-1">Was $1,200/mo</p>
-                            <div class="flex items-center justify-center gap-2">
-                                <span class="text-8xl font-black tracking-tighter text-[#FF5C00]">$799</span>
-                                <span class="text-gray-500 font-bold text-xl">/mo</span>
-                            </div>
-                            <p class="text-xs font-black uppercase tracking-widest mt-4">Price locked in for Beta Founders</p>
+                    <div class="text-center bg-black text-white p-12 rounded-[32px] border-heavy border-white gumroad-shadow">
+                        <p class="text-[#FF5C00] font-black uppercase tracking-widest mb-4">FOUNDING MEMBER PRICE</p>
+                        <div class="flex items-center justify-center gap-2 mb-8">
+                            <span class="text-9xl font-black tracking-tighter text-white">$799</span>
+                            <span class="text-gray-400 font-bold text-2xl">/mo</span>
                         </div>
                         
-                        <button class="w-full py-6 bg-black text-white text-2xl font-black rounded-2xl gumroad-shadow border-2 border-black hover:bg-zinc-900 transition-colors">
-                            RESERVE SLOT →
+                        <button class="w-full py-6 bg-[#FF5C00] text-white text-3xl font-black rounded-2xl gumroad-shadow border-2 border-black hover:scale-105 transition-transform">
+                            SECURE SLOT →
                         </button>
                         
-                        <div class="flex items-center justify-center gap-4 text-sm font-bold text-gray-500">
-                            <i data-lucide="shield-check" class="text-green-500"></i>
-                            <span>Cancel anytime. Fully Asynchronous.</span>
-                        </div>
+                        <p class="text-xs font-bold text-gray-400 mt-6 uppercase tracking-tighter">
+                            Cancel anytime. No lock-in. Risk-free guarantee applies.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ -->
     <section id="faq" class="py-32 px-6">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-5xl font-black tracking-tighter mb-16 italic">No Meetings. <span class="text-[#FF5C00]">Just Answers.</span></h2>
+            <h2 class="text-5xl font-black tracking-tighter mb-16 italic">Zero Calls. <span class="text-[#FF5C00]">Total Clarity.</span></h2>
             <div class="space-y-4">
                 <div class="faq-item p-8 border-heavy rounded-3xl bg-white gumroad-shadow cursor-pointer group">
                     <div class="flex justify-between items-center">
                         <h4 class="text-xl font-black uppercase">What if I don't have video content?</h4>
-                        <i data-lucide="arrow-right" class="faq-icon"></i>
+                        <i data-lucide="plus" class="faq-icon"></i>
                     </div>
-                    <p class="hidden group-hover:block mt-6 text-gray-500 font-medium">You can send us voice notes, old blog posts, or even a rough brain-dump. If you have ideas, we have the engine to turn them into authority content.</p>
+                    <p class="hidden group-hover:block mt-6 text-gray-500 font-medium">You can send voice notes, old blogs, or even raw transcripts. If you can talk, we can build your authority.</p>
                 </div>
                 <div class="faq-item p-8 border-heavy rounded-3xl bg-white gumroad-shadow cursor-pointer group">
                     <div class="flex justify-between items-center">
-                        <h4 class="text-xl font-black uppercase">How do you capture my "Voice"?</h4>
-                        <i data-lucide="arrow-right" class="faq-icon"></i>
+                        <h4 class="text-xl font-black uppercase">How much work is required from me?</h4>
+                        <i data-lucide="plus" class="faq-icon"></i>
                     </div>
-                    <p class="hidden group-hover:block mt-6 text-gray-500 font-medium">Because we use your actual videos/audio as the source, the "Voice" is already yours. We just refine the structure for the LinkedIn feed.</p>
+                    <p class="hidden group-hover:block mt-6 text-gray-500 font-medium">About 5 minutes a month. You just paste your video links into our Notion portal. We handle everything else—including formatting and visuals.</p>
                 </div>
                 <div class="faq-item p-8 border-heavy rounded-3xl bg-white gumroad-shadow cursor-pointer group">
                     <div class="flex justify-between items-center">
-                        <h4 class="text-xl font-black uppercase">Really, no calls?</h4>
-                        <i data-lucide="arrow-right" class="faq-icon"></i>
+                        <h4 class="text-xl font-black uppercase">Why is it so much cheaper than an agency?</h4>
+                        <i data-lucide="plus" class="faq-icon"></i>
                     </div>
-                    <p class="hidden group-hover:block mt-6 text-gray-500 font-medium">Really. We communicate via a dedicated Slack channel or Trello board. You drop links, we drop content. It's built to give you time back, not take more of it.</p>
+                    <p class="hidden group-hover:block mt-6 text-gray-500 font-medium">Agencies charge for "strategy calls" and account managers. We removed all the fluff. We focus 100% on output, which saves us time and saves you money.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Footer -->
-    <footer class="py-32 px-6 bg-white text-center">
+    <!-- Final CTA -->
+    <footer class="py-40 px-6 bg-white text-center">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-6xl md:text-8xl font-black tracking-tighter mb-12 text-outline">LEVERAGE YOUR MIND.</h2>
-            <a href="#pricing" class="bg-[#FF5C00] text-white text-3xl px-16 py-8 rounded-[40px] font-black border-heavy gumroad-shadow inline-block">
+            <h2 class="text-6xl md:text-[120px] font-black tracking-tighter mb-12 leading-none">THE ENGINE <br><span class="text-outline">AWAITS.</span></h2>
+            <a href="#pricing" class="bg-black text-white text-3xl px-16 py-8 rounded-[40px] font-black border-heavy gumroad-shadow inline-block hover:bg-zinc-900 transition-colors">
                 CLAIM MY BETA SLOT
             </a>
-            <div class="mt-20 flex flex-col md:flex-row justify-between items-center gap-8 border-t-2 border-black pt-10">
-                <div class="font-black text-2xl tracking-tighter">DM ENGINE.</div>
-                <div class="flex gap-8 text-xs font-black uppercase tracking-widest text-gray-400">
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                    <a href="#">LinkedIn</a>
-                </div>
-            </div>
+            <p class="mt-8 text-sm font-black text-red-500 animate-pulse uppercase tracking-widest">Only 4 Founding Slots Left</p>
         </div>
     </footer>
 
@@ -353,7 +338,7 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('section, .gumroad-shadow, h1').forEach(el => {
+        document.querySelectorAll('section, .gumroad-shadow, h1, .faq-item').forEach(el => {
             el.classList.add('reveal');
             observer.observe(el);
         });
