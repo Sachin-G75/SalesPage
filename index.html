@@ -70,6 +70,7 @@
             font-weight: 900;
             text-transform: uppercase;
         }
+        /* Updated Placeholder Styles */
         .post-placeholder {
             background: #fff;
             border: 2px dashed #ccc;
@@ -95,8 +96,15 @@
             align-items: center;
             justify-content: center;
             border-radius: 12px;
+            overflow: hidden; /* Ensures image fits container */
         }
-        .image-placeholder::after {
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Only show label if there is no image */
+        .image-placeholder:not(:has(img))::after {
             content: "ADD VISUAL / CAROUSEL PREVIEW";
             color: #888;
             font-size: 0.7rem;
@@ -306,7 +314,6 @@
             </h2>
             <div class="border-heavy rounded-[32px] overflow-hidden bg-white gumroad-shadow">
                 <div class="aspect-video w-full bg-zinc-100">
-                    <!-- YouTube Embed -->
                     <iframe 
                         width="100%" 
                         height="100%" 
@@ -353,7 +360,7 @@
                 </div>
                 <div class="pt-12">
                     <div class="image-placeholder border-heavy gumroad-shadow">
-                        <img src="post1.png" alt="Wealth Distribution Shock" onerror="this.src='post1.png'">
+                        <img src="post1.png" alt="Post 1 Visual" onerror="this.style.display='none'">
                     </div>
                     <p class="mt-4 text-sm text-gray-500 italic font-medium text-center">Visual: Tactical Framework Image</p>
                 </div>
@@ -368,12 +375,12 @@
                         <span class="text-xs font-bold text-gray-400 ml-auto uppercase tracking-widest">Type: Authority</span>
                     </div>
                     <div class="post-placeholder border-heavy gumroad-shadow p-8">
-                        
+                         <!-- YOU WILL PASTE YOUR LINKEDIN TEXT HERE -->
                     </div>
                 </div>
                 <div class="pt-12">
                     <div class="image-placeholder border-heavy gumroad-shadow">
-                        <img src="post2.png" alt="Wealth Distribution Shock" onerror="this.src='post2.png'">
+                        <img src="post2.png" alt="Post 2 Visual" onerror="this.style.display='none'">
                     </div>
                     <p class="mt-4 text-sm text-gray-500 italic font-medium text-center">Visual: Step-by-Step Carousel</p>
                 </div>
@@ -393,7 +400,7 @@
                 </div>
                 <div class="pt-12">
                     <div class="image-placeholder border-heavy gumroad-shadow">
-                        <img src="post3.png" alt="Wealth Distribution Shock" onerror="this.src='post3.png'">
+                        <img src="post3.png" alt="Post 3 Visual" onerror="this.style.display='none'">
                     </div>
                     <p class="mt-4 text-sm text-gray-500 italic font-medium text-center">Visual: Quote Graphic</p>
                 </div>
@@ -413,12 +420,11 @@
                 </div>
                 <div class="pt-12">
                     <div class="image-placeholder border-heavy gumroad-shadow">
-                        <img src="post4.png" alt="Wealth Distribution Shock" onerror="this.src='post4.png'">
+                        <img src="post4.png" alt="Post 4 Visual" onerror="this.style.display='none'">
                     </div>
                     <p class="mt-4 text-sm text-gray-500 italic font-medium text-center">Visual: Text-Only / Native Style</p>
                 </div>
             </div>
-
         </div>
     </div>
 
