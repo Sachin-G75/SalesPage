@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DM ENGINE | High-Authority LinkedIn Content from Long-Form</title>
+    <title>DM ENGINE | LinkedIn Inbound Lead System for B2B Coaches</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" type="image/png" href="icon.png">
@@ -69,31 +69,11 @@
             font-size: 10px;
             font-weight: 900;
             text-transform: uppercase;
-        }
-        .post-placeholder {
-            background: #fff;
-            border: 1px dashed #ccc;
-            height: 140px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            position: relative;
-            padding: 10px;
-        }
-        .image-placeholder {
-            background: #f9f9f9;
-            border: 1px dashed #ddd;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            overflow: hidden;
+            z-index: 10;
         }
 
         @media (min-width: 768px) {
-            .sticky-video {
+            .sticky-element {
                 position: sticky;
                 top: 8rem;
             }
@@ -112,9 +92,8 @@
                 DM<span class="text-[#FF5C00]">Engine</span>
             </div>
             <div class="hidden md:flex gap-8 font-bold text-xs uppercase tracking-widest">
-                <a href="#problem" class="hover:text-[#FF5C00]">The Pain</a>
-                <a href="#stack" class="hover:text-[#FF5C00]">The Offer</a>
-                <a href="#guarantee" class="hover:text-[#FF5C00]">Zero Risk</a>
+                <a href="#mechanism" class="hover:text-[#FF5C00]">The Mechanism</a>
+                <a href="#deliverables" class="hover:text-[#FF5C00]">The System</a>
                 <a href="#pricing" class="hover:text-[#FF5C00]">Pricing</a>
             </div>
             <a href="#pricing" class="bg-[#FF5C00] text-white px-5 py-2 rounded-xl text-sm font-black gumroad-shadow border-2 border-black">
@@ -123,18 +102,18 @@
         </div>
     </nav>
 
-    <!-- Hero: THE DREAM OUTCOME -->
+    <!-- Hero Section -->
     <section class="pt-52 pb-32 px-6">
         <div class="max-w-5xl mx-auto text-center">
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-black bg-white mb-8 shadow-sm">
                 <span class="animate-pulse w-2 h-2 rounded-full bg-red-500"></span>
-                <span class="text-xs font-black uppercase tracking-widest">URGENT: 4 BETA SLOTS LEFT FOR MARCH</span>
+                <span class="text-xs font-black uppercase tracking-widest">URGENT: 3 BETA SLOTS LEFT FOR MARCH</span>
             </div>
-            <h1 class="text-6xl md:text-[100px] font-black tracking-tighter leading-[0.85] mb-8">
-                TURN 1 VIDEO INTO<br> 30 DAYS OF <span class="text-outline italic">INBOUND DMs.</span>
+            <h1 class="text-5xl md:text-[90px] font-black tracking-tighter leading-[0.85] mb-8">
+                TURN LONG-FORM CONTENT INTO <span class="text-outline italic">INBOUND DMs.</span>
             </h1>
             <p class="text-2xl md:text-3xl font-medium text-zinc-600 mb-12 max-w-4xl mx-auto leading-tight">
-                We bridge the gap between your long-form insights and your prospect's inbox. High-authority LinkedIn content for B2B Founders that drives <span class="text-black font-bold underline decoration-[#FF5C00]">Revenue, not just Reach.</span>
+                Stop wasting hours on LinkedIn. We turn your Podcasts, Webinars, and YouTube videos into a <span class="text-black font-bold underline decoration-[#FF5C00]">LinkedIn Inbound Lead System</span> that attracts B2B clients while you sleep.
             </p>
             <div class="flex flex-col md:flex-row items-center justify-center gap-6">
                 <a href="#pricing" class="bg-black text-white text-2xl px-12 py-6 rounded-2xl font-black gumroad-shadow hover:bg-zinc-900 border-2 border-black">
@@ -142,7 +121,7 @@
                 </a>
                 <div class="text-left">
                     <p class="text-sm font-bold text-black uppercase tracking-widest">
-                        ZERO WRITING. ZERO MEETINGS.
+                        DESIGNED FOR COACHES & COURSE CREATORS
                     </p>
                     <div class="flex gap-1 mt-1">
                         <i data-lucide="star" class="w-4 h-4 fill-[#FF5C00] text-[#FF5C00]"></i>
@@ -156,246 +135,167 @@
         </div>
     </section>
 
-    <!-- Pain Points: THE COST OF INACTION -->
+    <!-- The Problem -->
     <section id="problem" class="py-24 px-6 bg-black text-white border-y-4 border-black">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-16 text-center italic">The "Content Treadmill" is <span class="text-[#FF5C00]">killing your growth.</span></h2>
+            <h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-16 text-center italic">The "Content Trap" is <span class="text-[#FF5C00]">stalling your sales.</span></h2>
             <div class="grid md:grid-cols-3 gap-8 text-center">
                 <div class="p-8 border-2 border-white/20 rounded-3xl">
-                    <i data-lucide="clock-8" class="w-12 h-12 text-[#FF5C00] mx-auto mb-6"></i>
-                    <h4 class="text-xl font-black mb-4 uppercase">The Efficiency Gap</h4>
-                    <p class="text-gray-400">You spend 5 hours recording a podcast that only 200 people see. That's a 98% waste of your intellectual property.</p>
+                    <i data-lucide="volume-x" class="w-12 h-12 text-[#FF5C00] mx-auto mb-6"></i>
+                    <h4 class="text-xl font-black mb-4 uppercase">The Invisible Expert</h4>
+                    <p class="text-gray-400">You have brilliant 60-minute videos, but your LinkedIn profile is a ghost town. You’re the best-kept secret in your niche.</p>
                 </div>
                 <div class="p-8 border-2 border-white/20 rounded-3xl">
-                    <i data-lucide="trending-down" class="w-12 h-12 text-[#FF5C00] mx-auto mb-6"></i>
-                    <h4 class="text-xl font-black mb-4 uppercase">Authority Decay</h4>
-                    <p class="text-gray-400">Inconsistent posting tells the market you're "busy," not "successful." In the B2B world, silence is expensive.</p>
+                    <i data-lucide="mouse-pointer-click" class="w-12 h-12 text-[#FF5C00] mx-auto mb-6"></i>
+                    <h4 class="text-xl font-black mb-4 uppercase">The Vanity Metric Trap</h4>
+                    <p class="text-gray-400">Likes and views don't pay bills. Generic content gets "good job" comments but zero "how can I work with you" DMs.</p>
                 </div>
                 <div class="p-8 border-2 border-white/20 rounded-3xl">
-                    <i data-lucide="bot" class="w-12 h-12 text-[#FF5C00] mx-auto mb-6"></i>
-                    <h4 class="text-xl font-black mb-4 uppercase">Generic AI Stink</h4>
-                    <p class="text-gray-400">ChatGPT summaries sound like robots. We extract your actual "voice" so you stay human in an automated world.</p>
+                    <i data-lucide="timer" class="w-12 h-12 text-[#FF5C00] mx-auto mb-6"></i>
+                    <h4 class="text-xl font-black mb-4 uppercase">The Founder Burnout</h4>
+                    <p class="text-gray-400">Spending 10 hours a week "writing posts" isn't high-ROI work. You should be coaching, not fighting the algorithm.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Grand Slam Stack: THE OFFER -->
-    <section id="stack" class="py-32 px-6">
+    <!-- The Mechanism: Authority -> Conversation -->
+    <section id="mechanism" class="py-32 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-20">
-                <h2 class="text-6xl font-black tracking-tighter italic">The <span class="text-[#FF5C00]">Grand Slam</span> Stack.</h2>
-                <p class="text-xl text-gray-500 mt-4">Everything you need to go from "Invisible" to "Inbound-Heavy."</p>
+                <h2 class="text-6xl font-black tracking-tighter italic">The <span class="text-[#FF5C00]">Authority → Conversation</span> Framework.</h2>
+                <p class="text-xl text-gray-500 mt-4">We don't just "post." We engineer a path to your inbox.</p>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Core 1 -->
-                <div class="p-8 border-heavy rounded-[32px] bg-white gumroad-shadow">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="bg-black p-3 rounded-2xl"><i data-lucide="layers" class="text-white"></i></div>
-                        <span class="font-black text-[10px] text-gray-400">VALUE: $1,500/mo</span>
-                    </div>
-                    <h4 class="text-2xl font-black mb-3 italic">12 High-Authority Posts</h4>
-                    <p class="text-gray-500 font-medium">Not just summaries. We find the "Lead-Gen" hooks buried in your videos and polish them for the LinkedIn feed.</p>
-                </div>
 
-                <!-- Core 2 -->
-                <div class="p-8 border-heavy rounded-[32px] bg-white gumroad-shadow">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="bg-black p-3 rounded-2xl"><i data-lucide="eye" class="text-white"></i></div>
-                        <span class="font-black text-[10px] text-gray-400">VALUE: $600/mo</span>
-                    </div>
-                    <h4 class="text-2xl font-black mb-3 italic">36 Tested Hooks</h4>
-                    <p class="text-gray-500 font-medium">We provide 3 hook variations per post. If one doesn't stop the scroll, the other two will. Pure psychological leverage.</p>
+            <div class="grid md:grid-cols-4 gap-4">
+                <div class="p-8 border-heavy rounded-3xl bg-white gumroad-shadow">
+                    <span class="text-4xl font-black text-zinc-200">01</span>
+                    <h4 class="text-xl font-black mt-2 italic uppercase">Extract</h4>
+                    <p class="text-gray-500 text-sm mt-4">We mine your long-form videos for "Authority Nuggets" that prove you're an expert.</p>
                 </div>
-
-                <!-- Core 3 -->
-                <div class="p-8 border-heavy rounded-[32px] bg-white gumroad-shadow">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="bg-black p-3 rounded-2xl"><i data-lucide="pen-tool" class="text-white"></i></div>
-                        <span class="font-black text-[10px] text-gray-400">VALUE: $400/mo</span>
-                    </div>
-                    <h4 class="text-2xl font-black mb-3 italic">4 Carousels</h4>
-                    <p class="text-gray-500 font-medium">Custom text-based carousels and infographics that align with your branding. No stock photos, ever.</p>
+                <div class="p-8 border-heavy rounded-3xl bg-white gumroad-shadow">
+                    <span class="text-4xl font-black text-zinc-200">02</span>
+                    <h4 class="text-xl font-black mt-2 italic uppercase">Translate</h4>
+                    <p class="text-gray-500 text-sm mt-4">We turn those nuggets into high-friction LinkedIn posts that stop the scroll.</p>
                 </div>
-
-                <!-- Bonus 1 -->
-                <div class="p-8 border-heavy border-[#FF5C00] rounded-[32px] bg-orange-50 gumroad-shadow relative">
-                    <div class="absolute -top-3 left-8 bonus-badge">FREE BONUS #1</div>
-                    <div class="flex justify-between items-start mb-6 mt-2">
-                        <div class="bg-[#FF5C00] p-3 rounded-2xl"><i data-lucide="mail-plus" class="text-white"></i></div>
-                        <span class="font-black text-[10px] text-gray-800 underline">VALUE: $497</span>
-                    </div>
-                    <h4 class="text-2xl font-black mb-3 italic">The "Hand-Raiser" Script</h4>
-                    <p class="text-gray-600 font-medium">The exact CTA sequence we use to get people to comment on your posts and start the DM conversation.</p>
+                <div class="p-8 border-heavy rounded-3xl bg-white gumroad-shadow">
+                    <span class="text-4xl font-black text-zinc-200">03</span>
+                    <h4 class="text-xl font-black mt-2 italic uppercase">Provoke</h4>
+                    <p class="text-gray-500 text-sm mt-4">Our "Hand-Raiser" CTAs force your ideal clients to identify themselves in the comments.</p>
                 </div>
-
-                <!-- Bonus 2 -->
-                <div class="p-8 border-heavy border-[#FF5C00] rounded-[32px] bg-orange-50 gumroad-shadow relative">
-                    <div class="absolute -top-3 left-8 bonus-badge">FREE BONUS #2</div>
-                    <div class="flex justify-between items-start mb-6 mt-2">
-                        <div class="bg-[#FF5C00] p-3 rounded-2xl"><i data-lucide="shield-check" class="text-white"></i></div>
-                        <span class="font-black text-[10px] text-gray-800 underline">VALUE: $299</span>
-                    </div>
-                    <h4 class="text-2xl font-black mb-3 italic">Profile SEO Audit</h4>
-                    <p class="text-gray-600 font-medium">A personalized Loom video auditing your LinkedIn profile to ensure your landing page (your profile) converts.</p>
-                </div>
-
-                <!-- Bonus 3 -->
-                <div class="p-8 border-heavy border-[#FF5C00] rounded-[32px] bg-orange-50 gumroad-shadow relative">
-                    <div class="absolute -top-3 left-8 bonus-badge">FREE BONUS #3</div>
-                    <div class="flex justify-between items-start mb-6 mt-2">
-                        <div class="bg-[#FF5C00] p-3 rounded-2xl"><i data-lucide="slack" class="text-white"></i></div>
-                        <span class="font-black text-[10px] text-gray-800 underline">VALUE: PRICELESS</span>
-                    </div>
-                    <h4 class="text-2xl font-black mb-3 italic">Zero-Meeting Portal</h4>
-                    <p class="text-gray-600 font-medium">24/7 access to your private Slack channel. No Zoom calls, just direct access to your content team.</p>
+                <div class="p-8 border-heavy rounded-3xl bg-white gumroad-shadow">
+                    <span class="text-4xl font-black text-zinc-200">04</span>
+                    <h4 class="text-xl font-black mt-2 italic uppercase">Convert</h4>
+                    <p class="text-gray-500 text-sm mt-4">You walk into a feed full of qualified prospects ready for a DM conversation.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Proof of Concept: LIKELIHOOD OF ACHIEVEMENT -->
-    <section class="py-24 px-6 bg-zinc-50 border-y-2 border-black">
+    <!-- The Deliverables -->
+    <section id="deliverables" class="py-32 px-6 bg-zinc-50 border-y-2 border-black">
         <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
-                <div>
-                    <h2 class="text-5xl font-black tracking-tighter italic">SEE THE <span class="text-[#FF5C00]">ENGINE</span> IN ACTION.</h2>
-                    <p class="text-gray-500 font-bold uppercase tracking-widest text-xs mt-2">How we turn 1 source into a month of content</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-                <div class="md:col-span-5 sticky-video">
-                    <div class="border-heavy rounded-3xl overflow-hidden bg-white gumroad-shadow">
-                        <div class="aspect-video w-full bg-black">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ZuJryiwxjDw" frameborder="0" allowfullscreen></iframe>
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                <div class="sticky-element">
+                    <h2 class="text-6xl font-black tracking-tighter italic leading-none mb-8">THE <span class="text-[#FF5C00]">FULL ENGINE</span><br>SPECIFICATIONS.</h2>
+                    <p class="text-xl text-gray-600 font-medium">This isn't a "writing service." It's a growth infrastructure built for B2B scale.</p>
+                    
+                    <div class="mt-12 space-y-6">
+                        <div class="flex gap-4">
+                            <div class="bg-black text-white p-2 rounded-lg h-fit"><i data-lucide="check" class="w-5 h-5"></i></div>
+                            <div>
+                                <h5 class="font-black italic uppercase">16 Authority LinkedIn Posts</h5>
+                                <p class="text-sm text-gray-500">Repurposed from your best video/audio assets.</p>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <span class="text-[10px] font-black text-gray-400 uppercase">Input Asset (The Source)</span>
-                            <h3 class="text-xl font-black leading-tight italic mt-1 underline decoration-[#FF5C00]">Alex Hormozi: The $100M Offer</h3>
+                        <div class="flex gap-4">
+                            <div class="bg-black text-white p-2 rounded-lg h-fit"><i data-lucide="check" class="w-5 h-5"></i></div>
+                            <div>
+                                <h5 class="font-black italic uppercase">8 High-Converting Carousels</h5>
+                                <p class="text-sm text-gray-500">Visual proof of your expertise and frameworks.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="bg-black text-white p-2 rounded-lg h-fit"><i data-lucide="check" class="w-5 h-5"></i></div>
+                            <div>
+                                <h5 class="font-black italic uppercase">8 Short-Form Video Clips</h5>
+                                <p class="text-sm text-gray-500">Subtitled and edited for maximum LinkedIn reach.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 text-[#FF5C00]">
+                            <div class="bg-[#FF5C00] text-white p-2 rounded-lg h-fit"><i data-lucide="rocket" class="w-5 h-5"></i></div>
+                            <div>
+                                <h5 class="font-black italic uppercase">Inbound Lead Layer</h5>
+                                <p class="text-sm font-bold underline">Profile SEO + Viral Hook Engineering + DM Framework.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="md:col-span-7">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="p-4 border-heavy bg-white rounded-2xl gumroad-shadow-sm space-y-4">
-                            <div class="flex justify-between items-center">
-                                <span class="text-xs font-black bg-[#FF5C00] text-white px-2 py-0.5 rounded italic">POST 1</span>
-                                <span class="text-[10px] font-bold text-gray-400 uppercase">Educational</span>
-                            </div>
-                            <div class="image-placeholder">
-                                <p class="text-[10px] font-black text-gray-300">"The Value Equation" Carousel</p>
-                            </div>
-                            <p class="text-xs font-medium text-gray-500 italic">"We extracted the 4 pillars of the Value Equation into a 7-slide carousel."</p>
-                        </div>
-                        <div class="p-4 border-heavy bg-white rounded-2xl gumroad-shadow-sm space-y-4">
-                            <div class="flex justify-between items-center">
-                                <span class="text-xs font-black bg-[#FF5C00] text-white px-2 py-0.5 rounded italic">POST 2</span>
-                                <span class="text-[10px] font-bold text-gray-400 uppercase">Controversial</span>
-                            </div>
-                            <div class="image-placeholder">
-                                <p class="text-[10px] font-black text-gray-300">"Why Lowering Prices Kills You"</p>
-                            </div>
-                            <p class="text-xs font-medium text-gray-500 italic">"A high-engagement hook questioning the 'race to the bottom'."</p>
-                        </div>
+                <div class="grid gap-6">
+                    <!-- Bonus Cards -->
+                    <div class="p-8 border-heavy border-[#FF5C00] rounded-[32px] bg-orange-50 gumroad-shadow relative">
+                        <div class="absolute -top-3 left-8 bonus-badge">BONUS #1</div>
+                        <h4 class="text-2xl font-black mb-3 italic">36 Viral Hooks Database</h4>
+                        <p class="text-gray-600 font-medium text-sm">Our library of proven "Scroll-Stoppers" tailored for B2B coaches.</p>
+                    </div>
+
+                    <div class="p-8 border-heavy border-[#FF5C00] rounded-[32px] bg-orange-50 gumroad-shadow relative">
+                        <div class="absolute -top-3 left-8 bonus-badge">BONUS #2</div>
+                        <h4 class="text-2xl font-black mb-3 italic">Inbound DM Scripts</h4>
+                        <p class="text-gray-600 font-medium text-sm">Don't guess what to say. Use our conversion scripts to move people from "Comment" to "Call."</p>
+                    </div>
+
+                    <div class="p-8 border-heavy border-[#FF5C00] rounded-[32px] bg-orange-50 gumroad-shadow relative">
+                        <div class="absolute -top-3 left-8 bonus-badge">BONUS #3</div>
+                        <h4 class="text-2xl font-black mb-3 italic">Authority Playbook</h4>
+                        <p class="text-gray-600 font-medium text-sm">The strategy for commenting on big players' posts to siphon their audience to your profile.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Risk Reversal: THE UNBEATABLE GUARANTEE -->
-    <section id="guarantee" class="py-32 px-6">
-        <div class="max-w-4xl mx-auto bg-[#FF5C00] border-heavy rounded-[40px] p-12 text-center gumroad-shadow relative">
-            <div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-white border-heavy rounded-full p-6">
-                <i data-lucide="shield-check" class="w-16 h-16 text-black"></i>
-            </div>
-            <h2 class="text-5xl md:text-6xl font-black mt-10 mb-6 tracking-tighter italic text-white uppercase">The "No-Brainer" Guarantee.</h2>
-            <p class="text-2xl font-bold text-black mb-10 leading-snug">
-                If you don't receive content that sounds 100% like you and gets more engagement than your current feed in the first 30 days... <span class="underline">we will refund 100% of your money</span> and you can keep all the content we've already made.
-            </p>
-            <div class="bg-black text-white py-3 px-8 rounded-full inline-block font-black text-sm uppercase tracking-widest">
-                I take 100% of the risk. You take 100% of the growth.
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing: SCARCITY & URGENCY -->
+    <!-- Pricing Section -->
     <section id="pricing" class="py-32 px-6">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-7xl font-black tracking-tighter italic uppercase leading-none">Stop Being <br><span class="text-[#FF5C00]">Invisible.</span></h2>
-                <p class="text-xl text-gray-500 mt-6 max-w-2xl mx-auto">This price reflects our <strong>"Founding Member"</strong> beta. Once the next 4 slots are filled, the price increases to $1,499/mo.</p>
+                <h2 class="text-7xl font-black tracking-tighter italic uppercase leading-none">BUILD YOUR <br><span class="text-[#FF5C00]">PROOFS.</span></h2>
+                <p class="text-xl text-gray-500 mt-6 max-w-2xl mx-auto">I'm building case studies. You're building a lead engine. Let's make a deal.</p>
             </div>
 
             <div class="bg-white rounded-[50px] border-heavy p-8 md:p-16 gumroad-shadow relative overflow-hidden">
                 <div class="absolute top-12 right-[-60px] rotate-45 bg-black text-white px-20 py-3 font-black border-2 border-white text-sm tracking-widest">
-                    4 SLOTS LEFT
+                    BETA PRICING
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-16 items-center">
                     <div>
-                        <h3 class="text-6xl font-black italic mb-8 leading-[0.85]">THE <br>AUTHORITY <br><span class="text-[#FF5C00]">ENGINE.</span></h3>
+                        <h3 class="text-6xl font-black italic mb-8 leading-[0.85]">THE <br>BETA <br><span class="text-[#FF5C00]">ENGINE.</span></h3>
                         <div class="space-y-4 mb-10">
-                            <div class="flex items-center gap-3 font-black text-lg"><i data-lucide="check-circle-2" class="text-green-500 w-6 h-6"></i> 12 Authority-First Posts</div>
-                            <div class="flex items-center gap-3 font-black text-lg"><i data-lucide="check-circle-2" class="text-green-500 w-6 h-6"></i> 36 Psych-Driven Hooks</div>
-                            <div class="flex items-center gap-3 font-black text-lg"><i data-lucide="check-circle-2" class="text-green-500 w-6 h-6"></i> 4 Carousels</div>
-                            <div class="flex items-center gap-3 font-black text-lg"><i data-lucide="check-circle-2" class="text-green-500 w-6 h-6"></i> Weekly Content Delivery</div>
-                            <div class="flex items-center gap-3 font-black text-lg text-[#FF5C00]"><i data-lucide="gift" class="w-6 h-6"></i> + All 3 High-Value Bonuses</div>
-                        </div>
-                        <div class="p-6 bg-zinc-50 rounded-2xl border-2 border-dashed border-gray-300">
-                            <p class="font-black uppercase text-[10px] text-gray-400 mb-2">Real World Value</p>
-                            <p class="text-4xl font-black text-gray-400 line-through tracking-tighter">$3,495/mo</p>
+                            <div class="flex items-center gap-3 font-black text-lg"><i data-lucide="check-circle-2" class="text-green-500 w-6 h-6"></i> Full Content Engine (32+ Assets)</div>
+                            <div class="flex items-center gap-3 font-black text-lg"><i data-lucide="check-circle-2" class="text-green-500 w-6 h-6"></i> Inbound Lead Layer Strategy</div>
+                            <div class="flex items-center gap-3 font-black text-lg"><i data-lucide="check-circle-2" class="text-green-500 w-6 h-6"></i> Profile SEO & Viral Hook Audit</div>
+                            <div class="flex items-center gap-3 font-black text-lg text-[#FF5C00]"><i data-lucide="gift" class="w-6 h-6"></i> + All 3 Strategy Bonuses</div>
                         </div>
                     </div>
 
                     <div class="text-center bg-black text-white p-12 rounded-[40px] border-heavy border-white gumroad-shadow">
-                        <p class="text-[#FF5C00] font-black uppercase tracking-widest mb-4 text-xs">BETA PRICING — LIMITED TIME</p>
+                        <p class="text-[#FF5C00] font-black uppercase tracking-widest mb-4 text-xs">FOUNDING MEMBER RATE — FIRST 3 ONLY</p>
                         <div class="flex items-center justify-center gap-2 mb-8">
-                            <span class="text-9xl font-black tracking-tighter text-white">$799</span>
+                            <span class="text-4xl text-gray-500 line-through font-black">$499</span>
+                            <span class="text-9xl font-black tracking-tighter text-white">$349</span>
                             <span class="text-gray-400 font-bold text-2xl">/mo</span>
                         </div>
                         
                         <button class="w-full py-6 bg-[#FF5C00] text-white text-3xl font-black rounded-2xl gumroad-shadow border-2 border-black hover:scale-[1.02] transition-transform flex items-center justify-center gap-4">
-                            ACTIVATE ENGINE <i data-lucide="arrow-right"></i>
+                            SECURE BETA SLOT <i data-lucide="arrow-right"></i>
                         </button>
                         
                         <p class="text-[10px] font-bold text-gray-500 mt-6 uppercase tracking-widest leading-relaxed">
-                            Cancel anytime. No contracts. <br>The Risk-Free Guarantee applies to your first month.
+                            Requires a testimonial & case study agreement. <br>Cancel anytime. No long-term contracts.
                         </p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-32 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-5xl font-black tracking-tighter mb-16 italic text-center uppercase">Common <span class="text-[#FF5C00]">Questions.</span></h2>
-            <div class="space-y-4">
-                <div class="faq-item p-8 border-heavy rounded-3xl bg-white gumroad-shadow cursor-pointer group">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-xl font-black uppercase tracking-tight">How do you get my "voice"?</h4>
-                        <i data-lucide="chevron-down" class="faq-icon"></i>
-                    </div>
-                    <p class="hidden group-hover:block mt-6 text-gray-500 font-medium">We don't guess. We transcribe your actual videos and use proprietary AI models to extract your syntax, favorite analogies, and tone. It's you, just distilled.</p>
-                </div>
-                <div class="faq-item p-8 border-heavy rounded-3xl bg-white gumroad-shadow cursor-pointer group">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-xl font-black uppercase tracking-tight">Do I have to record new videos?</h4>
-                        <i data-lucide="chevron-down" class="faq-icon"></i>
-                    </div>
-                    <p class="hidden group-hover:block mt-6 text-gray-500 font-medium">No. We can use your existing YouTube backlog, podcast episodes, or even 2-minute voice notes you send us via Slack while driving to the office.</p>
-                </div>
-                <div class="faq-item p-8 border-heavy rounded-3xl bg-white gumroad-shadow cursor-pointer group">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-xl font-black uppercase tracking-tight">What if I want to post more than 12 times?</h4>
-                        <i data-lucide="chevron-down" class="faq-icon"></i>
-                    </div>
-                    <p class="hidden group-hover:block mt-6 text-gray-500 font-medium">We find that 3 high-authority posts per week is the "sweet spot" for busy founders. However, we have an "Omnipresence" tier available for those who want daily coverage.</p>
                 </div>
             </div>
         </div>
@@ -404,16 +304,16 @@
     <!-- Footer -->
     <footer class="py-40 px-6 bg-white text-center border-t-4 border-black">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-6xl md:text-[120px] font-black tracking-tighter mb-12 leading-none">YOUR DMs <br><span class="text-outline">WAITING.</span></h2>
+            <h2 class="text-6xl md:text-[120px] font-black tracking-tighter mb-12 leading-none">STOP <br><span class="text-outline">GUESSING.</span></h2>
             <a href="#pricing" class="bg-black text-white text-3xl px-16 py-8 rounded-[40px] font-black border-heavy gumroad-shadow inline-block hover:bg-zinc-900 transition-colors">
-                CLAIM YOUR BETA SLOT
+                ACTIVATE THE ENGINE
             </a>
             <div class="mt-20 flex flex-col md:flex-row justify-between items-center gap-8 border-t-2 border-black pt-10">
                 <div class="font-black text-2xl tracking-tighter">DM ENGINE <span class="text-[#FF5C00]">/</span> 2024</div>
                 <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-gray-400">
-                    <a href="#" class="hover:text-black">Privacy</a>
-                    <a href="#" class="hover:text-black">Terms</a>
                     <a href="#" class="hover:text-black">LinkedIn</a>
+                    <a href="#" class="hover:text-black">Methodology</a>
+                    <a href="#" class="hover:text-black">Contact</a>
                 </div>
             </div>
         </div>
