@@ -256,48 +256,174 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-32 px-6">
-        <div class="max-w-5xl mx-auto">
+    <!-- Pricing / Offer Section -->
+    <section id="pricing" class="py-32 px-6 bg-zinc-50 relative overflow-hidden">
+        <!-- Background Accents -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-[#FF5C00]/5 rounded-full blur-3xl -mr-48 -mt-48"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#FF5C00]/5 rounded-full blur-3xl -ml-48 -mb-48"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-7xl font-black tracking-tighter italic uppercase leading-none">BUILD YOUR <br><span class="text-[#FF5C00]">PROOFS.</span></h2>
-                <p class="text-xl text-gray-500 mt-6 max-w-2xl mx-auto">I'm building case studies. You're building a lead engine. Let's make a deal.</p>
+                <h2 class="text-6xl md:text-8xl font-black tracking-tighter italic uppercase leading-[0.85] mb-6">
+                    THE <span class="text-[#FF5C00]">FOUNDING</span><br>OFFER.
+                </h2>
+                <div class="flex flex-col items-center gap-4">
+                    <p class="text-xl text-gray-500 max-w-2xl mx-auto font-medium">
+                        I am currently building 3 flagship case studies. To get them, I’m offering the full <span class="text-black font-bold">DM Engine System</span> at a price that makes saying "No" impossible.
+                    </p>
+                    <!-- Scarcity Tracker -->
+                    <div class="bg-white border-2 border-black rounded-2xl p-4 gumroad-shadow flex items-center gap-6">
+                        <div class="flex items-center gap-2">
+                            <span class="flex h-3 w-3 relative">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                            </span>
+                            <span class="text-xs font-black uppercase tracking-widest">Active Beta slots:</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="w-8 h-8 border-2 border-black rounded bg-zinc-100 flex items-center justify-center font-black text-zinc-400 line-through">1</div>
+                            <div class="w-8 h-8 border-2 border-black rounded bg-zinc-100 flex items-center justify-center font-black text-zinc-400 line-through">2</div>
+                            <div class="w-8 h-8 border-2 border-black rounded bg-white flex items-center justify-center font-black text-[#FF5C00] animate-bounce">3</div>
+                        </div>
+                        <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest italic">Only 1 Spot Left</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="bg-white rounded-[50px] border-heavy p-8 md:p-16 gumroad-shadow relative overflow-hidden">
-                <div class="absolute top-12 right-[-60px] rotate-45 bg-black text-white px-20 py-3 font-black border-2 border-white text-sm tracking-widest">
-                    BETA PRICING
+            <div class="grid lg:grid-cols-12 gap-0 border-heavy rounded-[40px] overflow-hidden bg-white gumroad-shadow">
+                
+                <!-- Left Column: The Stack -->
+                <div class="lg:col-span-7 p-8 md:p-12 border-b-4 lg:border-b-0 lg:border-r-4 border-black">
+                    <h3 class="text-4xl font-black italic mb-10 uppercase tracking-tighter">What's inside the Engine:</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 group">
+                            <div class="bg-zinc-100 border-2 border-black p-2 rounded-xl group-hover:bg-[#FF5C00] group-hover:text-white transition-colors">
+                                <i data-lucide="layout-grid" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <h5 class="font-black italic uppercase text-lg">16 Authority Posts / Mo</h5>
+                                    <span class="text-xs font-bold text-gray-400 tracking-widest">$1,200 VALUE</span>
+                                </div>
+                                <p class="text-sm text-gray-500 leading-relaxed">Scientific repurposing of your long-form videos into scroll-stopping LinkedIn authority posts.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 group">
+                            <div class="bg-zinc-100 border-2 border-black p-2 rounded-xl group-hover:bg-[#FF5C00] group-hover:text-white transition-colors">
+                                <i data-lucide="layers" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <h5 class="font-black italic uppercase text-lg">8 High-Conversion Carousels</h5>
+                                    <span class="text-xs font-bold text-gray-400 tracking-widest">$800 VALUE</span>
+                                </div>
+                                <p class="text-sm text-gray-500 leading-relaxed">Visual education assets that make your frameworks look like a $100M offer.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 group">
+                            <div class="bg-zinc-100 border-2 border-black p-2 rounded-xl group-hover:bg-[#FF5C00] group-hover:text-white transition-colors">
+                                <i data-lucide="video" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <h5 class="font-black italic uppercase text-lg">8 Authority Video Clips</h5>
+                                    <span class="text-xs font-bold text-gray-400 tracking-widest">$600 VALUE</span>
+                                </div>
+                                <p class="text-sm text-gray-500 leading-relaxed">The best moments of your podcasts/webinars edited for the LinkedIn feed.</p>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="border-t-2 border-dashed border-zinc-200 py-4"></div>
+
+                        <!-- Bonuses -->
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3 text-[#FF5C00]">
+                                <i data-lucide="plus-circle" class="w-5 h-5"></i>
+                                <span class="text-sm font-black italic uppercase">Bonus #1: 36 Viral LinkedIn Hooks</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-[#FF5C00]">
+                                <i data-lucide="plus-circle" class="w-5 h-5"></i>
+                                <span class="text-sm font-black italic uppercase">Bonus #2: Inbound DM Scripts</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-[#FF5C00]">
+                                <i data-lucide="plus-circle" class="w-5 h-5"></i>
+                                <span class="text-sm font-black italic uppercase">Bonus #3: Profile Optimization Audit</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <h3 class="text-6xl font-black italic mb-8 leading-[0.85]">THE <br>BETA <br><span class="text-[#FF5C00]">ENGINE.</span></h3>
-                        <div class="space-y-4 mb-10">
-                            <div class="flex items-center gap-3 font-black text-lg"><i data-lucide="check-circle-2" class="text-green-500 w-6 h-6"></i> Full Content Engine (32+ Assets)</div>
-                            <div class="flex items-center gap-3 font-black text-lg"><i data-lucide="check-circle-2" class="text-green-500 w-6 h-6"></i> Inbound Lead Layer Strategy</div>
-                            <div class="flex items-center gap-3 font-black text-lg"><i data-lucide="check-circle-2" class="text-green-500 w-6 h-6"></i> Profile SEO & Viral Hook Audit</div>
-                            <div class="flex items-center gap-3 font-black text-lg text-[#FF5C00]"><i data-lucide="gift" class="w-6 h-6"></i> + All 3 Strategy Bonuses</div>
+                <!-- Right Column: The Price Tag -->
+                <div class="lg:col-span-5 p-8 md:p-12 pricing-gradient flex flex-col justify-between items-center text-center">
+                    <div class="w-full">
+                        <p class="text-[10px] font-black tracking-[0.2em] text-gray-400 uppercase mb-8">Investment Breakdown</p>
+                        
+                        <div class="space-y-2 mb-10">
+                            <div class="flex justify-between text-sm font-bold text-gray-400">
+                                <span>Total Market Value:</span>
+                                <span class="line-through">$3,495</span>
+                            </div>
+                            <div class="flex justify-between text-lg font-black text-black italic">
+                                <span>Founding Member Price:</span>
+                                <span>$499</span>
+                            </div>
+                            <div class="flex justify-between text-2xl font-black text-[#FF5C00] italic bg-[#FF5C00]/10 p-4 rounded-2xl border-2 border-dashed border-[#FF5C00] mt-4">
+                                <span>YOUR PRICE:</span>
+                                <span>$349/mo</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-10">
+                            <h4 class="text-6xl font-black tracking-tighter mb-2 italic">$349<span class="text-xl text-gray-400">/mo</span></h4>
+                            <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Locked in for life as a beta member</p>
                         </div>
                     </div>
 
-                    <div class="text-center bg-black text-white p-12 rounded-[40px] border-heavy border-white gumroad-shadow">
-                        <p class="text-[#FF5C00] font-black uppercase tracking-widest mb-4 text-xs">FOUNDING MEMBER RATE — FIRST 3 ONLY</p>
-                        <div class="flex items-center justify-center gap-2 mb-8">
-                            <span class="text-4xl text-gray-500 line-through font-black">$499</span>
-                            <span class="text-9xl font-black tracking-tighter text-white">$349</span>
-                            <span class="text-gray-400 font-bold text-2xl">/mo</span>
-                        </div>
-                        
-                        <button class="w-full py-6 bg-[#FF5C00] text-white text-3xl font-black rounded-2xl gumroad-shadow border-2 border-black hover:scale-[1.02] transition-transform flex items-center justify-center gap-4">
-                            SECURE BETA SLOT <i data-lucide="arrow-right"></i>
+                    <div class="w-full space-y-4">
+                        <button class="w-full py-8 bg-black text-white text-3xl font-black rounded-[30px] gumroad-shadow border-2 border-black hover:bg-[#FF5C00] hover:text-white transition-all transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-4 group">
+                            ACTIVATE ENGINE 
+                            <i data-lucide="chevron-right" class="group-hover:translate-x-2 transition-transform"></i>
                         </button>
                         
-                        <p class="text-[10px] font-bold text-gray-500 mt-6 uppercase tracking-widest leading-relaxed">
-                            Requires a testimonial & case study agreement. <br>Cancel anytime. No long-term contracts.
-                        </p>
+                        <div class="flex flex-col items-center gap-4 mt-6">
+                            <div class="flex items-center gap-2 text-xs font-black italic uppercase tracking-widest text-zinc-600">
+                                <i data-lucide="shield-check" class="text-green-500 w-4 h-4"></i>
+                                30-Day Money Back Guarantee
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="flex -space-x-2">
+                                    <div class="w-6 h-6 rounded-full bg-zinc-200 border-2 border-white flex items-center justify-center text-[8px] font-black">JS</div>
+                                    <div class="w-6 h-6 rounded-full bg-zinc-300 border-2 border-white flex items-center justify-center text-[8px] font-black">MK</div>
+                                    <div class="w-6 h-6 rounded-full bg-zinc-400 border-2 border-white flex items-center justify-center text-[8px] font-black">?</div>
+                                </div>
+                                <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Joined by 2 other Founders this week</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Risk Reversal Section -->
+             <div class="mt-12 flex flex-col md:flex-row gap-6 max-w-4xl mx-auto">
+                <div class="flex-1 p-6 border-heavy rounded-3xl bg-white gumroad-shadow flex gap-4 items-start">
+                    <i data-lucide="refresh-cw" class="w-8 h-8 text-[#FF5C00] flex-shrink-0"></i>
+                    <div>
+                        <h5 class="font-black italic uppercase text-sm mb-1">Cancel Anytime</h5>
+                        <p class="text-xs text-gray-500 font-medium">No 6-month lock-ins. No fine print. We earn your business every single month.</p>
+                    </div>
+                </div>
+                <div class="flex-1 p-6 border-heavy rounded-3xl bg-black text-white gumroad-shadow flex gap-4 items-start">
+                    <i data-lucide="gem" class="w-8 h-8 text-[#FF5C00] flex-shrink-0"></i>
+                    <div>
+                        <h5 class="font-black italic uppercase text-sm mb-1">The Proof Guarantee</h5>
+                        <p class="text-xs text-gray-400 font-medium">If we don't land you a qualified inbound lead in 30 days, your next month is 100% free.</p>
+                    </div>
+                </div>
+             </div>
         </div>
     </section>
 
