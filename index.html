@@ -78,6 +78,30 @@
                 top: 8rem;
             }
         }
+    .ml-embedded, .ml-subscribe-form, .ml-form-embedContainer {
+        font-family: 'Bricolage Grotesque', sans-serif !important;
+    }
+    .ml-form-embedBody .ml-form-fieldRow input {
+        border: 4px solid black !important;
+        border-radius: 25px !important;
+        padding: 24px !important;
+        font-size: 1.25rem !important;
+        font-weight: 900 !important;
+    }
+    .ml-form-embedBody .ml-form-embedSubmit button {
+        background-color: black !important;
+        color: white !important;
+        border: 4px solid black !important;
+        border-radius: 25px !important;
+        font-weight: 900 !important;
+        text-transform: uppercase !important;
+        box-shadow: 4px 4px 0px 0px rgba(0,0,0,1) !important;
+        transition: all 0.2s ease !important;
+    }
+    .ml-form-embedBody .ml-form-embedSubmit button:hover {
+        background-color: #FF5C00 !important;
+        color: black !important;
+    }
     </style>
 </head>
 <body class="antialiased selection:bg-[#FF5C00] selection:text-white">
@@ -418,36 +442,7 @@
         </div>
     </div>
 </footer>
-
-<!-- 3. CSS Overrides to force MailerLite to match your theme -->
-<style>
-    /* Forces the MailerLite form to use your Bricolage font and styling */
-    .ml-embedded, .ml-subscribe-form, .ml-form-embedContainer {
-        font-family: 'Bricolage Grotesque', sans-serif !important;
-    }
-    .ml-form-embedBody .ml-form-fieldRow input {
-        border: 4px solid black !important;
-        border-radius: 25px !important;
-        padding: 24px !important;
-        font-size: 1.25rem !important;
-        font-weight: 900 !important;
-    }
-    .ml-form-embedBody .ml-form-embedSubmit button {
-        background-color: black !important;
-        color: white !important;
-        border: 4px solid black !important;
-        border-radius: 25px !important;
-        font-weight: 900 !important;
-        text-transform: uppercase !important;
-        box-shadow: 4px 4px 0px 0px rgba(0,0,0,1) !important;
-        transition: all 0.2s ease !important;
-    }
-    .ml-form-embedBody .ml-form-embedSubmit button:hover {
-        background-color: #FF5C00 !important;
-        color: black !important;
-    }
-</style>
-        lucide.createIcons();
+lucide.createIcons();
 
         // Reveal Animation
         const observer = new IntersectionObserver((entries) => {
