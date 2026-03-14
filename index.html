@@ -375,47 +375,65 @@
         </div>
     </section>
 
-    <!-- Footer with Email Automation Form -->
-    <footer class="py-32 px-6 bg-white text-center border-t-4 border-black">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-6xl md:text-[90px] font-black tracking-tighter mb-4 leading-none uppercase">
-                Ready to <br><span class="text-outline text-[#FF5C00]">Automate?</span>
-            </h2>
-            <p class="text-xl font-bold mb-12 tracking-tight">Enter your email to receive your secure checkout link immediately.</p>
-            
-            <!-- Subscription Form Container -->
-            <div class="max-w-2xl mx-auto mb-20">
-                <form action="#" method="POST" class="flex flex-col md:flex-row gap-4">
-                    <input 
-                        type="email" 
-                        placeholder="yourname@email.com" 
-                        required
-                        class="flex-1 bg-white border-4 border-black px-8 py-6 rounded-[25px] text-2xl font-black focus:outline-none focus:ring-4 focus:ring-[#FF5C00] transition-all"
-                    >
-                    <button 
-                        type="submit" 
-                        class="bg-black text-white text-2xl px-12 py-6 rounded-[25px] font-black border-4 border-black gumroad-shadow hover:bg-[#FF5C00] hover:text-black transition-all active:translate-y-1"
-                    >
-                        GET THE LINK
-                    </button>
-                </form>
-                <p class="mt-4 text-[12px] font-black uppercase tracking-widest text-gray-400">
-                    🔒 No spam. Just the engine access link.
-                </p>
-            </div>
+    <!-- MailerLite Universal Script -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2186819');
+</script>
+<!-- End MailerLite Universal -->
 
-            <!-- Bottom Navigation -->
-            <div class="mt-20 flex flex-col md:flex-row justify-between items-center gap-8 border-t-2 border-black pt-10">
-                <div class="font-black text-2xl tracking-tighter uppercase">DM ENGINE <span class="text-[#FF5C00]">/</span> 2025</div>
-                <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-gray-400">
-                    <a href="https://www.linkedin.com/in/sachin-g5" target="_blank" class="hover:text-black transition-colors">LinkedIn</a>
-                    <a href="#" class="hover:text-black transition-colors">Privacy Policy</a>
-                    <a href="mailto:growclients@wallnut.info" class="hover:text-black transition-colors">Contact</a>
-                </div>
+<!-- Footer with Email Automation Form -->
+<footer class="py-32 px-6 bg-white text-center border-t-4 border-black">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-6xl md:text-[90px] font-black tracking-tighter mb-4 leading-none uppercase">
+            Ready to <br><span class="text-outline text-[#FF5C00]">Automate?</span>
+        </h2>
+        <p class="text-xl font-bold mb-12 tracking-tight">Enter your email to receive your secure checkout link immediately.</p>
+        
+        <!-- Subscription Form Container -->
+        <div class="max-w-2xl mx-auto mb-20">
+            <!-- MailerLite Integration Point -->
+            <!-- Note: Ensure your MailerLite form ID is added to the data-code attribute if you have a specific form created -->
+            <form 
+                action="https://assets.mailerlite.com/jsonp/2186819/forms/YOUR_FORM_ID_HERE/subscribe" 
+                method="POST" 
+                class="ml-block-form flex flex-col md:flex-row gap-4"
+                target="_blank"
+            >
+                <input 
+                    type="email" 
+                    name="fields[email]" 
+                    placeholder="yourname@email.com" 
+                    required
+                    class="flex-1 bg-white border-4 border-black px-8 py-6 rounded-[25px] text-2xl font-black focus:outline-none focus:ring-4 focus:ring-[#FF5C00] transition-all"
+                >
+                <button 
+                    type="submit" 
+                    class="bg-black text-white text-2xl px-12 py-6 rounded-[25px] font-black border-4 border-black gumroad-shadow hover:bg-[#FF5C00] hover:text-black transition-all active:translate-y-1"
+                >
+                    GET THE LINK
+                </button>
+            </form>
+            
+            <p class="mt-4 text-[12px] font-black uppercase tracking-widest text-gray-400">
+                🔒 No spam. Just the engine access link.
+            </p>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="mt-20 flex flex-col md:flex-row justify-between items-center gap-8 border-t-2 border-black pt-10">
+            <div class="font-black text-2xl tracking-tighter uppercase">DM ENGINE <span class="text-[#FF5C00]">/</span> 2025</div>
+            <div class="flex gap-8 text-[10px] font-black uppercase tracking-widest text-gray-400">
+                <a href="https://www.linkedin.com/in/sachin-g5" target="_blank" class="hover:text-black transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-black transition-colors">Privacy Policy</a>
+                <a href="mailto:growclients@wallnut.info" class="hover:text-black transition-colors">Contact</a>
             </div>
         </div>
-    </footer>
-    <script>
+    </div>
+</footer>
         lucide.createIcons();
 
         // Reveal Animation
