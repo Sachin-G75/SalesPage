@@ -375,7 +375,8 @@
         </div>
     </section>
 
-    <!-- MailerLite Universal Script -->
+    <!-- 1. Add this script to your HTML <head> section -->
+<!-- MailerLite Universal -->
 <script>
     (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
     .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
@@ -385,7 +386,7 @@
 </script>
 <!-- End MailerLite Universal -->
 
-<!-- Footer with Email Automation Form -->
+<!-- 2. Updated Footer with Embedded Form -->
 <footer class="py-32 px-6 bg-white text-center border-t-4 border-black">
     <div class="max-w-4xl mx-auto">
         <h2 class="text-6xl md:text-[90px] font-black tracking-tighter mb-4 leading-none uppercase">
@@ -395,29 +396,12 @@
         
         <!-- Subscription Form Container -->
         <div class="max-w-2xl mx-auto mb-20">
-            <!-- MailerLite Integration Point -->
-            <!-- Note: Ensure your MailerLite form ID is added to the data-code attribute if you have a specific form created -->
-            <form 
-                action="https://assets.mailerlite.com/jsonp/2186819/forms/YOUR_FORM_ID_HERE/subscribe" 
-                method="POST" 
-                class="ml-block-form flex flex-col md:flex-row gap-4"
-                target="_blank"
-            >
-                <input 
-                    type="email" 
-                    name="fields[email]" 
-                    placeholder="yourname@email.com" 
-                    required
-                    class="flex-1 bg-white border-4 border-black px-8 py-6 rounded-[25px] text-2xl font-black focus:outline-none focus:ring-4 focus:ring-[#FF5C00] transition-all"
-                >
-                <button 
-                    type="submit" 
-                    class="bg-black text-white text-2xl px-12 py-6 rounded-[25px] font-black border-4 border-black gumroad-shadow hover:bg-[#FF5C00] hover:text-black transition-all active:translate-y-1"
-                >
-                    GET THE LINK
-                </button>
-            </form>
-            
+            <!-- 
+                We replace the static <form> with the MailerLite embed div.
+                The styles below ensure the MailerLite form matches your UI.
+            -->
+            <div class="ml-embedded" data-form="FiyOIi"></div>
+
             <p class="mt-4 text-[12px] font-black uppercase tracking-widest text-gray-400">
                 🔒 No spam. Just the engine access link.
             </p>
@@ -434,6 +418,35 @@
         </div>
     </div>
 </footer>
+
+<!-- 3. CSS Overrides to force MailerLite to match your theme -->
+<style>
+    /* Forces the MailerLite form to use your Bricolage font and styling */
+    .ml-embedded, .ml-subscribe-form, .ml-form-embedContainer {
+        font-family: 'Bricolage Grotesque', sans-serif !important;
+    }
+    .ml-form-embedBody .ml-form-fieldRow input {
+        border: 4px solid black !important;
+        border-radius: 25px !important;
+        padding: 24px !important;
+        font-size: 1.25rem !important;
+        font-weight: 900 !important;
+    }
+    .ml-form-embedBody .ml-form-embedSubmit button {
+        background-color: black !important;
+        color: white !important;
+        border: 4px solid black !important;
+        border-radius: 25px !important;
+        font-weight: 900 !important;
+        text-transform: uppercase !important;
+        box-shadow: 4px 4px 0px 0px rgba(0,0,0,1) !important;
+        transition: all 0.2s ease !important;
+    }
+    .ml-form-embedBody .ml-form-embedSubmit button:hover {
+        background-color: #FF5C00 !important;
+        color: black !important;
+    }
+</style>
         lucide.createIcons();
 
         // Reveal Animation
