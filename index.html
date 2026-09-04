@@ -3,567 +3,547 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Never lose a lead to a slow reply</title>
+<title>Never Miss Another Emergency Call</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #fbfbfd;
-    --bg-alt: #f5f5f7;
-    --ink: #1d1d1f;
-    --ink-soft: #6e6e73;
-    --line: #d2d2d7;
-    --white: #ffffff;
-    --hot: #ff453a;
-    --warm: #ff9f0a;
-    --cold: #64d2ff;
-    --accent: #0a7a4c;
-    --accent-soft: #e6f4ec;
-    --radius: 18px;
+    --bg:#FBFBFD;
+    --bg-alt:#F5F5F7;
+    --ink:#1D1D1F;
+    --ink-soft:#6E6E73;
+    --line:#D2D2D7;
+    --heat:#FF7A45;
+    --cool:#0071E3;
+    --grad: linear-gradient(90deg, var(--heat), var(--cool));
+    --dark:#1D1D1F;
+    --radius:22px;
   }
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-
-  html { scroll-behavior: smooth; }
-
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
   body{
-    font-family: 'Inter', -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.5;
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
-
-  a { color: inherit; }
-
-  .wrap{
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 24px;
+  h1,h2,h3{font-family:'Inter Tight','Inter',sans-serif; letter-spacing:-0.03em;}
+  img{max-width:100%;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:600; letter-spacing:0.02em;
+    color:var(--ink-soft); text-transform:uppercase;
+    padding:6px 14px; border:1px solid var(--line); border-radius:100px;
+    background:rgba(255,255,255,0.6);
+  }
+  .grad-text{
+    background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
   }
 
   /* NAV */
   nav{
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: rgba(251,251,253,0.8);
-    backdrop-filter: saturate(180%) blur(20px);
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+    background:rgba(251,251,253,0.75);
+    border-bottom:1px solid rgba(0,0,0,0.06);
   }
-  nav .wrap{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    height: 56px;
+  .nav-inner{
+    max-width:1120px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between;
   }
-  .logo{
-    font-weight:700;
-    font-size:15px;
-    letter-spacing:-0.01em;
-    display:flex;
-    align-items:center;
-    gap:8px;
-  }
-  .logo-dot{
-    width:8px; height:8px; border-radius:50%;
-    background: var(--accent);
-    display:inline-block;
-  }
+  .logo{font-weight:800; font-size:17px; letter-spacing:-0.02em; display:flex; align-items:center; gap:8px;}
+  .logo-dot{width:9px; height:9px; border-radius:50%; background:var(--grad); flex:none;}
   .nav-cta{
-    font-size:13px;
-    font-weight:600;
-    background: var(--ink);
-    color: var(--white);
-    padding: 8px 16px;
-    border-radius: 980px;
-    text-decoration:none;
-    transition: opacity 0.2s ease;
+    background:var(--ink); color:#fff; border:none; padding:9px 18px;
+    border-radius:100px; font-size:14px; font-weight:600; font-family:inherit;
+    cursor:pointer; transition:transform .2s ease, background .2s ease;
   }
-  .nav-cta:hover{ opacity:0.8; }
+  .nav-cta:hover{transform:scale(1.03); background:#000;}
 
   /* HERO */
   header.hero{
-    padding: 96px 0 64px;
-    text-align:center;
+    padding:150px 0 80px; text-align:center; position:relative;
   }
-  .eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    font-size:13px;
-    font-weight:600;
-    color: var(--accent);
-    background: var(--accent-soft);
-    padding: 6px 14px;
-    border-radius: 980px;
-    margin-bottom: 24px;
+  .hero h1{
+    font-size:clamp(38px, 6.4vw, 74px);
+    font-weight:800; line-height:1.05; margin:22px auto 20px; max-width:880px;
   }
-  h1{
-    font-size: clamp(36px, 6vw, 64px);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
-    max-width: 780px;
-    margin: 0 auto 20px;
+  .hero p.sub{
+    font-size:clamp(17px,2vw,21px); color:var(--ink-soft); max-width:600px; margin:0 auto 34px;
+    line-height:1.55;
   }
-  h1 span{ color: var(--ink-soft); }
-  .sub{
-    font-size: clamp(17px, 2vw, 21px);
-    color: var(--ink-soft);
-    max-width: 560px;
-    margin: 0 auto 40px;
-    font-weight: 400;
+  .cta-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--grad); color:#fff; border:none; padding:15px 30px;
+    border-radius:100px; font-size:16px; font-weight:700; font-family:inherit;
+    cursor:pointer; box-shadow:0 8px 24px rgba(255,122,69,0.25);
+    transition:transform .2s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-secondary{
+    background:transparent; color:var(--ink); border:1px solid var(--line); padding:15px 26px;
+    border-radius:100px; font-size:16px; font-weight:600; font-family:inherit; cursor:pointer;
+    transition:background .2s ease;
+  }
+  .btn-secondary:hover{background:var(--bg-alt);}
+
+  /* SIGNATURE FLOW DIAGRAM */
+  .flow{
+    max-width:900px; margin:70px auto 0; padding:36px 20px;
+    background:#fff; border-radius:28px; border:1px solid var(--line);
+    box-shadow:0 30px 60px -30px rgba(0,0,0,0.18);
+  }
+  .flow-row{display:flex; align-items:center; justify-content:space-between; gap:6px;}
+  .flow-node{
+    flex:1; text-align:center; padding:0 4px;
+  }
+  .flow-icon{
+    width:56px; height:56px; border-radius:16px; margin:0 auto 12px;
+    display:flex; align-items:center; justify-content:center; font-size:24px;
+  }
+  .flow-node:nth-child(1) .flow-icon{background:#FFEDE3; color:var(--heat);}
+  .flow-node:nth-child(3) .flow-icon{background:#EAF3FF; color:var(--cool);}
+  .flow-node:nth-child(5) .flow-icon{background:#E9FBF0; color:#1DA45E;}
+  .flow-node h4{font-size:14.5px; font-weight:700; margin-bottom:4px;}
+  .flow-node p{font-size:12.5px; color:var(--ink-soft); line-height:1.4;}
+  .flow-line{
+    flex:0 0 auto; width:60px; height:2px; background:var(--grad);
+    position:relative; top:-30px; border-radius:2px;
+  }
+  @media (max-width:640px){
+    .flow-row{flex-direction:column; gap:22px;}
+    .flow-line{width:2px; height:36px; top:0;}
   }
 
-  /* WAITLIST FORM */
-  .waitlist-form{
-    display:flex;
-    gap:10px;
-    max-width: 440px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    justify-content:center;
-  }
-  .waitlist-form input[type=email]{
-    flex: 1 1 260px;
-    padding: 14px 18px;
-    border-radius: 980px;
-    border: 1px solid var(--line);
-    font-size: 15px;
-    font-family: inherit;
-    background: var(--white);
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  }
-  .waitlist-form input[type=email]:focus{
-    border-color: var(--accent);
-    box-shadow: 0 0 0 4px var(--accent-soft);
-  }
-  .waitlist-form button{
-    padding: 14px 26px;
-    border-radius: 980px;
-    border: none;
-    background: var(--ink);
-    color: var(--white);
-    font-size: 15px;
-    font-weight: 600;
-    font-family: inherit;
-    cursor: pointer;
-    transition: transform 0.15s ease, opacity 0.2s ease;
-    white-space: nowrap;
-  }
-  .waitlist-form button:hover{ opacity:0.85; }
-  .waitlist-form button:active{ transform: scale(0.97); }
+  section{padding:100px 0;}
+  .section-alt{background:var(--bg-alt);}
+  .kicker{color:var(--ink-soft); font-size:14px; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:10px;}
+  h2.section-title{font-size:clamp(28px,4vw,42px); font-weight:800; margin-bottom:16px; line-height:1.1;}
+  p.section-lead{font-size:18px; color:var(--ink-soft); max-width:640px; line-height:1.6;}
 
-  .form-note{
-    font-size: 13px;
-    color: var(--ink-soft);
-    margin-top: 14px;
+  /* PROBLEM */
+  .stat-card{
+    background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+    padding:38px 30px; text-align:left;
   }
-
-  .success-box{
-    display:none;
-    max-width: 440px;
-    margin: 0 auto;
-    background: var(--accent-soft);
-    color: var(--accent);
-    border-radius: var(--radius);
-    padding: 18px 22px;
-    font-size: 15px;
-    font-weight: 600;
+  .stat-number{
+    font-family:'Inter Tight'; font-size:48px; font-weight:800; line-height:1;
+    background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+    margin-bottom:12px; letter-spacing:-0.02em;
   }
-
-  /* PHONE MOCKUP - the signature element */
-  .demo-wrap{
-    margin-top: 72px;
-    display:flex;
-    justify-content:center;
-  }
-  .phone{
-    width: 300px;
-    background: var(--ink);
-    border-radius: 40px;
-    padding: 12px;
-    box-shadow: 0 40px 80px -20px rgba(0,0,0,0.35);
-  }
-  .phone-screen{
-    background: #ece5dd;
-    border-radius: 28px;
-    height: 460px;
-    overflow: hidden;
-    display:flex;
-    flex-direction: column;
-  }
-  .phone-header{
-    background: var(--accent);
-    color:white;
-    padding: 14px 16px 12px;
-    font-size:13px;
-    font-weight:600;
-    display:flex;
-    align-items:center;
-    gap:8px;
-  }
-  .phone-header .avatar{
-    width:26px; height:26px; border-radius:50%;
-    background: rgba(255,255,255,0.25);
-    display:flex; align-items:center; justify-content:center;
-    font-size:12px;
-  }
-  .chat-body{
-    flex:1;
-    padding: 14px 12px;
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-    overflow-y:auto;
-  }
-  .bubble{
-    max-width: 78%;
-    padding: 8px 12px;
-    border-radius: 14px;
-    font-size: 12.5px;
-    line-height:1.4;
-    opacity:0;
-    transform: translateY(6px);
-    animation: rise 0.4s ease forwards;
-  }
-  .bubble.lead{
-    align-self:flex-start;
-    background: var(--white);
-    border-bottom-left-radius: 4px;
-  }
-  .bubble.bot{
-    align-self:flex-end;
-    background: #d9fdd3;
-    border-bottom-right-radius: 4px;
-  }
-  @keyframes rise{ to{ opacity:1; transform:translateY(0); } }
-
-  .tag{
-    align-self:flex-start;
-    margin-top: 6px;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 5px 10px;
-    border-radius: 980px;
-    opacity:0;
-    animation: rise 0.4s ease forwards;
-  }
-  .tag.hot{ background: rgba(255,69,58,0.12); color: var(--hot); }
-
-  /* PROBLEM STRIP */
-  .strip{
-    background: var(--bg-alt);
-    padding: 64px 0;
-  }
-  .strip .wrap{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    text-align:center;
-  }
-  .stat{
-    font-size: clamp(32px,4vw,44px);
-    font-weight: 800;
-    letter-spacing:-0.02em;
-  }
-  .stat-label{
-    font-size: 14px;
-    color: var(--ink-soft);
-    margin-top: 6px;
-  }
-
-  /* SECTION HEADINGS */
-  section{ padding: 96px 0; }
-  .section-head{
-    text-align:center;
-    max-width: 620px;
-    margin: 0 auto 56px;
-  }
-  .section-head h2{
-    font-size: clamp(28px,4vw,40px);
-    font-weight: 800;
-    letter-spacing: -0.025em;
-    margin-bottom: 14px;
-  }
-  .section-head p{
-    color: var(--ink-soft);
-    font-size: 17px;
-  }
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:48px;}
+  .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:820px){.grid-3{grid-template-columns:1fr;} .grid-2{grid-template-columns:1fr;}}
 
   /* HOW IT WORKS */
-  .steps{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
   .step{
-    background: var(--white);
-    border: 1px solid rgba(0,0,0,0.06);
-    border-radius: var(--radius);
-    padding: 32px 28px;
+    display:flex; gap:22px; padding:28px 0; border-bottom:1px solid var(--line);
   }
+  .step:last-child{border-bottom:none;}
   .step-num{
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 16px;
+    font-family:'Inter Tight'; font-size:15px; font-weight:800; color:#fff;
+    background:var(--grad); width:38px; height:38px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; flex:none;
   }
-  .step h3{
-    font-size: 19px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    letter-spacing: -0.01em;
-  }
-  .step p{
-    color: var(--ink-soft);
-    font-size: 15px;
+  .step h3{font-size:19px; font-weight:700; margin-bottom:6px;}
+  .step p{color:var(--ink-soft); font-size:15.5px; line-height:1.6;}
+  .step .tech-tag{
+    display:inline-block; margin-top:10px; font-size:12.5px; font-weight:600;
+    color:var(--cool); background:#EAF3FF; padding:4px 10px; border-radius:8px;
   }
 
-  /* PRICING PREVIEW */
-  .pricing-card{
-    max-width: 560px;
-    margin: 0 auto;
-    background: var(--ink);
-    color: var(--white);
-    border-radius: 28px;
-    padding: 48px 40px;
-    text-align:center;
+  /* STACK */
+  .stack-card{
+    background:#fff; border:1px solid var(--line); border-radius:18px; padding:26px;
   }
-  .pricing-card .price{
-    font-size: 48px;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    margin: 12px 0 4px;
+  .stack-card h4{font-size:15.5px; font-weight:700; margin-bottom:6px;}
+  .stack-card p{font-size:13.5px; color:var(--ink-soft); line-height:1.5;}
+  .grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:40px;}
+  @media (max-width:900px){.grid-4{grid-template-columns:repeat(2,1fr);}}
+
+  /* TRIAL */
+  .trial-box{
+    background:var(--dark); color:#fff; border-radius:32px; padding:60px 46px;
+    display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;
   }
-  .pricing-card .price span{
-    font-size: 16px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.6);
+  .trial-box h2{color:#fff;}
+  .trial-box p.section-lead{color:rgba(255,255,255,0.65);}
+  .trial-list{list-style:none; margin-top:26px;}
+  .trial-list li{
+    display:flex; gap:12px; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.1);
+    font-size:15px; color:rgba(255,255,255,0.9);
   }
-  .pricing-card .price-note{
-    font-size: 14px;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 28px;
+  .trial-list li:last-child{border-bottom:none;}
+  .check{
+    flex:none; width:20px; height:20px; border-radius:50%; background:var(--grad);
+    display:flex; align-items:center; justify-content:center; font-size:11px; color:#fff; margin-top:2px;
   }
-  .pricing-list{
-    list-style:none;
-    text-align:left;
-    display:inline-block;
-    margin: 0 auto 32px;
+  .lock-card{
+    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14);
+    border-radius:20px; padding:28px;
   }
-  .pricing-list li{
-    font-size: 15px;
-    padding: 8px 0;
-    display:flex;
-    gap:10px;
-    align-items:flex-start;
-    color: rgba(255,255,255,0.85);
+  .lock-card h3{font-size:17px; margin-bottom:10px; color:#fff;}
+  .lock-card p{font-size:14.5px; color:rgba(255,255,255,0.65); line-height:1.65;}
+  @media (max-width:820px){.trial-box{grid-template-columns:1fr; padding:40px 26px;}}
+
+  /* PRICING */
+  .price-grid{display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:48px;}
+  @media (max-width:820px){.price-grid{grid-template-columns:1fr;}}
+  .price-card{
+    background:#fff; border:1px solid var(--line); border-radius:28px; padding:40px 34px;
+    position:relative; display:flex; flex-direction:column;
   }
-  .pricing-list li::before{
-    content:"✓";
-    color: #34c759;
-    font-weight:700;
+  .price-card.featured{
+    border:2px solid transparent; background:linear-gradient(#fff,#fff) padding-box, var(--grad) border-box;
   }
+  .price-badge{
+    position:absolute; top:-13px; right:32px; background:var(--grad); color:#fff;
+    font-size:12px; font-weight:700; padding:5px 14px; border-radius:100px;
+  }
+  .price-card h3{font-size:22px; font-weight:800; margin-bottom:6px;}
+  .price-card .tagline{color:var(--ink-soft); font-size:14.5px; margin-bottom:22px;}
+  .price-row{display:flex; align-items:baseline; gap:8px; margin-bottom:4px;}
+  .price-amount{font-family:'Inter Tight'; font-size:38px; font-weight:800;}
+  .price-label{color:var(--ink-soft); font-size:14px;}
+  .price-monthly{font-size:15px; color:var(--ink-soft); margin-bottom:24px;}
+  .price-list{list-style:none; margin-bottom:28px; flex:1;}
+  .price-list li{
+    padding:10px 0; border-top:1px solid var(--bg-alt); font-size:14.5px;
+    display:flex; gap:10px; align-items:flex-start;
+  }
+  .price-list li:first-child{border-top:none;}
+  .price-list .check{background:var(--ink); margin-top:1px;}
+  .price-card.featured .price-list .check{background:var(--grad);}
+  .btn-full{width:100%; text-align:center;}
+
+  /* MAINTENANCE */
+  .maint-item{display:flex; gap:16px; padding:22px 0; border-top:1px solid var(--line);}
+  .maint-item:last-child{border-bottom:1px solid var(--line);}
+  .maint-icon{
+    flex:none; width:44px; height:44px; border-radius:12px; background:var(--bg-alt);
+    display:flex; align-items:center; justify-content:center; font-size:19px;
+  }
+  .maint-item h4{font-size:16.5px; font-weight:700; margin-bottom:4px;}
+  .maint-item p{font-size:14.5px; color:var(--ink-soft); line-height:1.55;}
+
+  /* FAQ */
+  .faq-item{border-top:1px solid var(--line); padding:22px 0;}
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+  .faq-q{
+    display:flex; justify-content:space-between; align-items:center; cursor:pointer;
+    font-size:16.5px; font-weight:600; gap:20px;
+  }
+  .faq-q .plus{font-size:22px; font-weight:300; color:var(--ink-soft); transition:transform .25s ease; flex:none;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{
+    max-height:0; overflow:hidden; transition:max-height .3s ease;
+    color:var(--ink-soft); font-size:15px; line-height:1.6;
+  }
+  .faq-item.open .faq-a{max-height:300px; margin-top:14px;}
 
   /* FINAL CTA */
   .final-cta{
-    text-align:center;
-    background: var(--accent-soft);
+    text-align:center; background:var(--dark); border-radius:32px; padding:70px 30px; color:#fff;
   }
+  .final-cta h2{color:#fff; font-size:clamp(28px,4vw,44px); margin-bottom:14px;}
+  .final-cta p{color:rgba(255,255,255,0.65); font-size:17px; max-width:520px; margin:0 auto 32px;}
 
-  footer{
-    padding: 40px 0 60px;
-    text-align:center;
-    font-size: 13px;
-    color: var(--ink-soft);
-  }
+  footer{padding:50px 0 40px; text-align:center;}
+  footer p{color:var(--ink-soft); font-size:13.5px;}
 
-  @media (max-width: 720px){
-    .strip .wrap{ grid-template-columns: 1fr; gap: 28px; }
-    .steps{ grid-template-columns: 1fr; }
-    header.hero{ padding: 64px 0 40px; }
-    section{ padding: 64px 0; }
-  }
-
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.visible{opacity:1; transform:translateY(0);}
   @media (prefers-reduced-motion: reduce){
-    .bubble, .tag{ animation: none; opacity:1; transform:none; }
-    html{ scroll-behavior:auto; }
-  }
-
-  button:focus-visible, input:focus-visible, a:focus-visible{
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
+    .reveal{opacity:1; transform:none; transition:none;}
+    html{scroll-behavior:auto;}
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="wrap">
-    <div class="logo"><span class="logo-dot"></span>LeadFlow</div>
-    <a class="nav-cta" href="#join">Join waitlist</a>
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-dot"></span>Dispatch AI</div>
+    <button class="nav-cta" onclick="document.getElementById('cta-final').scrollIntoView({behavior:'smooth'})">Book a call</button>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">Built for real estate agents</div>
-    <h1>Every lead gets a reply<br><span>before they forget they asked.</span></h1>
-    <p class="sub">An AI agent that qualifies your leads on WhatsApp in under 60 seconds, day or night, and hands you only the ones worth calling.</p>
+    <span class="eyebrow">Built for HVAC companies</span>
+    <h1>Every unanswered call is<br>a job walking to your <span class="grad-text">competitor.</span></h1>
+    <p class="sub">An AI dispatcher that answers every call in seconds, qualifies the job, and books it straight onto your calendar. Day or night, on the job or off.</p>
+    <div class="cta-row">
+      <button class="btn-primary" onclick="document.getElementById('cta-final').scrollIntoView({behavior:'smooth'})">Start a 7-day trial</button>
+      <button class="btn-secondary" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">See how it works</button>
+    </div>
 
-    <form class="waitlist-form" id="waitlistForm">
-      <input type="email" id="emailInput" placeholder="you@agency.com" required>
-      <button type="submit">Join the waitlist</button>
-    </form>
-    <div class="success-box" id="successBox">You're on the list. We'll reach out with early access details.</div>
-    <p class="form-note">Early access opens to the first 50 agents. No spam.</p>
-
-    <div class="demo-wrap">
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="phone-header">
-            <div class="avatar">RK</div>
-            <div>Rohan K. · New lead</div>
-          </div>
-          <div class="chat-body" id="chatBody"></div>
+    <div class="flow reveal">
+      <div class="flow-row">
+        <div class="flow-node">
+          <div class="flow-icon">☎</div>
+          <h4>Call comes in</h4>
+          <p>2am burst pipe, a job during a busy install, doesn't matter when.</p>
+        </div>
+        <div class="flow-line"></div>
+        <div class="flow-node">
+          <div class="flow-icon">🤖</div>
+          <h4>AI answers instantly</h4>
+          <p>Voice or text-back within 2 rings. No hold music, no voicemail.</p>
+        </div>
+        <div class="flow-line"></div>
+        <div class="flow-node">
+          <div class="flow-icon">✓</div>
+          <h4>Appointment booked</h4>
+          <p>Qualified and placed directly on your calendar, ready to work.</p>
         </div>
       </div>
     </div>
   </div>
 </header>
 
-<div class="strip">
+<section id="problem">
   <div class="wrap">
-    <div>
-      <div class="stat">78%</div>
-      <div class="stat-label">of buyers go with whoever replies first</div>
-    </div>
-    <div>
-      <div class="stat">&lt;60s</div>
-      <div class="stat-label">average time to first qualifying reply</div>
-    </div>
-    <div>
-      <div class="stat">24/7</div>
-      <div class="stat-label">no lead waits until office hours</div>
-    </div>
-  </div>
-</div>
+    <div class="kicker">The problem</div>
+    <h2 class="section-title reveal">Missed calls aren't a minor<br>inconvenience. They're lost revenue.</h2>
+    <p class="section-lead reveal">Your techs are on roofs and in crawlspaces, not next to a phone. Every ring that goes unanswered is a homeowner who calls the next number on the list.</p>
 
-<section id="how">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>How it works</h2>
-      <p>One setup, three things happen automatically for every lead that comes in.</p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <h3>Lead comes in</h3>
-        <p>From your website form, Instagram ad, or WhatsApp. The agent messages them within seconds.</p>
+    <div class="grid-3">
+      <div class="stat-card reveal">
+        <div class="stat-number">$3K&ndash;$10K</div>
+        <p>The typical cost of a single missed emergency replacement job during peak season.</p>
       </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <h3>Agent qualifies</h3>
-        <p>Asks about budget, location, timeline, and buy-or-rent, then scores the lead hot, warm, or cold.</p>
+      <div class="stat-card reveal">
+        <div class="stat-number">24/7</div>
+        <p>When homeowners actually call. Burst pipes and dead AC units don't wait for business hours.</p>
       </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <h3>You get the summary</h3>
-        <p>Hot leads land straight in your WhatsApp or sheet with a summary and a booked call, ready to close.</p>
+      <div class="stat-card reveal">
+        <div class="stat-number">2 rings</div>
+        <p>How fast your new dispatcher picks up, every single time, with no lunch break and no sick days.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="pricing" style="background:var(--bg-alt);">
+<section class="section-alt" id="how">
   <div class="wrap">
-    <div class="section-head">
-      <h2>Simple pricing</h2>
-      <p>One flat setup fee, then a small monthly fee to keep it running.</p>
-    </div>
-    <div class="pricing-card">
-      <div style="font-size:14px;color:rgba(255,255,255,0.6);font-weight:600;">Founding agent pricing</div>
-      <div class="price">₹5,000<span> setup</span></div>
-      <div class="price-note">then ₹2,000 per month</div>
-      <ul class="pricing-list">
-        <li>Custom qualifying questions for your listings</li>
-        <li>WhatsApp number connected in 48 hours</li>
-        <li>Hot lead alerts sent straight to you</li>
-        <li>Monthly review and tweaks included</li>
-      </ul>
-      <div style="font-size:13px;color:rgba(255,255,255,0.55);">Locked in for waitlist members only. Regular price ₹15,000 setup.</div>
+    <div class="kicker">How it works</div>
+    <h2 class="section-title reveal">From ringing phone to booked job,<br>with nobody lifting a finger.</h2>
+    <p class="section-lead reveal">The system runs quietly in the background of your existing phone number. No new hardware, no new number to hand out, no app your team needs to learn.</p>
+
+    <div style="margin-top:40px;">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <div>
+          <h3>The call comes in on your existing number</h3>
+          <p>Nothing changes for the customer. They dial the number on your truck, van, or Google listing like always.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Your AI dispatcher answers by voice or text</h3>
+          <p>A natural-sounding voice agent picks up live calls, or a text-back message reaches customers who prefer not to talk. It asks the right questions: what's broken, where, how urgent.</p>
+          <span class="tech-tag">Retell AI / Vapi + Twilio</span>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <div>
+          <h3>The job gets qualified in real time</h3>
+          <p>A fast reasoning layer decides if it's a true emergency, a routine service, or a tire-kicker, then routes it accordingly.</p>
+          <span class="tech-tag">GPT-4o mini</span>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <div>
+          <h3>The appointment lands directly on your calendar</h3>
+          <p>No back-and-forth texting. The system checks your real availability and books the slot, synced with the scheduling tool you already use.</p>
+          <span class="tech-tag">Cal.com / Calendly</span>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">5</div>
+        <div>
+          <h3>Everything routes silently behind the scenes</h3>
+          <p>A visual automation layer connects the phone system, the AI, and your calendar so the whole flow runs without a server or a developer on standby.</p>
+          <span class="tech-tag">Make.com</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="final-cta" id="join">
+<section id="stack">
   <div class="wrap">
-    <div class="section-head" style="margin-bottom:32px;">
-      <h2>Stop losing leads to slow replies</h2>
-      <p>Join the waitlist and lock in founding agent pricing before it opens up.</p>
+    <div class="kicker">What's running under the hood</div>
+    <h2 class="section-title reveal">Production-grade tools, not a demo built to impress once.</h2>
+    <p class="section-lead reveal">Everything is built on infrastructure trusted by companies far larger than a local HVAC shop, configured specifically for how your business takes calls.</p>
+
+    <div class="grid-4">
+      <div class="stack-card reveal">
+        <h4>Voice & telephony</h4>
+        <p>Real-time conversational AI with natural, low-latency speech, mapped to your business number.</p>
+      </div>
+      <div class="stack-card reveal">
+        <h4>Workflow orchestration</h4>
+        <p>Visual automation that routes information between your phone system, the AI, and your tools.</p>
+      </div>
+      <div class="stack-card reveal">
+        <h4>Cognitive layer</h4>
+        <p>A fast, sharp language model that qualifies every job in seconds, for pennies per call.</p>
+      </div>
+      <div class="stack-card reveal">
+        <h4>Scheduling</h4>
+        <p>Direct sync with the calendar tool your dispatch team already checks every morning.</p>
+      </div>
     </div>
-    <form class="waitlist-form" id="waitlistForm2">
-      <input type="email" id="emailInput2" placeholder="you@agency.com" required>
-      <button type="submit">Join the waitlist</button>
-    </form>
-    <div class="success-box" id="successBox2">You're on the list. We'll reach out with early access details.</div>
+  </div>
+</section>
+
+<section class="section-alt" id="trial">
+  <div class="wrap">
+    <div class="trial-box reveal">
+      <div>
+        <div class="kicker" style="color:rgba(255,255,255,0.5);">The risk-reversal trial</div>
+        <h2 class="section-title">Don't take my word for it.<br>Let the calendar prove it.</h2>
+        <p class="section-lead">You don't pay a setup fee upfront. You watch the system book real appointments first.</p>
+        <ul class="trial-list">
+          <li><span class="check">✓</span>I build your dispatcher in a private sandbox over 7 days, configured to your services and service area.</li>
+          <li><span class="check">✓</span>You connect your own card to the AI tools for usage only, typically under $20 for the whole trial.</li>
+          <li><span class="check">✓</span>Every call it handles and every appointment it books happens on your real phone number.</li>
+        </ul>
+      </div>
+      <div class="lock-card">
+        <h3>The auto-lock clause</h3>
+        <p>Written directly into the trial agreement: if the dispatcher books at least 2 qualified appointments during the 7 days, the setup automatically locks into your full contract at the agreed price. If it doesn't hit that bar, you owe nothing beyond your own tool usage and walk away.</p>
+        <p style="margin-top:14px;">No sales pressure. No demo built to look good on a screen share. Just the thing working, or not.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="kicker">Pricing</div>
+    <h2 class="section-title reveal">Priced like a hire, not like software.</h2>
+    <p class="section-lead reveal">One setup fee to build and configure your dispatcher, then a small monthly retainer to keep it sharp. No per-minute surprises, no long-term lock-in beyond the trial terms above.</p>
+
+    <div class="price-grid">
+      <div class="price-card reveal">
+        <h3>Core Dispatch</h3>
+        <p class="tagline">For shops that mainly need calls answered and booked.</p>
+        <div class="price-row"><span class="price-amount">$1,500</span><span class="price-label">one-time setup</span></div>
+        <div class="price-monthly">+ $300/month retainer</div>
+        <ul class="price-list">
+          <li><span class="check">✓</span>Missed-call text-back configured for your number</li>
+          <li><span class="check">✓</span>AI qualification of every inbound job</li>
+          <li><span class="check">✓</span>Direct calendar booking, synced to your scheduler</li>
+          <li><span class="check">✓</span>Monthly prompt tuning and error resolution</li>
+        </ul>
+        <button class="btn-secondary btn-full">Start the trial</button>
+      </div>
+      <div class="price-card featured reveal">
+        <span class="price-badge">Most booked jobs</span>
+        <h3>Full Voice Dispatch</h3>
+        <p class="tagline">Live voice answering plus everything in Core.</p>
+        <div class="price-row"><span class="price-amount">$2,500</span><span class="price-label">one-time setup</span></div>
+        <div class="price-monthly">+ $500/month retainer</div>
+        <ul class="price-list">
+          <li><span class="check">✓</span>Everything in Core Dispatch</li>
+          <li><span class="check">✓</span>Live conversational voice agent, not just text</li>
+          <li><span class="check">✓</span>Emergency vs. routine job triage logic</li>
+          <li><span class="check">✓</span>Monthly ROI report on salvaged calls</li>
+          <li><span class="check">✓</span>Priority error monitoring with same-day fixes</li>
+        </ul>
+        <button class="btn-primary btn-full">Start the trial</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" id="maintenance">
+  <div class="wrap">
+    <div class="kicker">After launch</div>
+    <h2 class="section-title reveal">A retainer that actually earns its keep.</h2>
+    <p class="section-lead reveal">The system is built to run itself, and to tell on itself the moment something looks off.</p>
+
+    <div style="margin-top:20px;">
+      <div class="maint-item reveal">
+        <div class="maint-icon">⚡</div>
+        <div><h4>Instant error alerts</h4><p>If any part of the automation breaks or an API call fails, an alert lands in a monitoring channel immediately, usually fixed before you'd have noticed a problem.</p></div>
+      </div>
+      <div class="maint-item reveal">
+        <div class="maint-icon">🧠</div>
+        <div><h4>Daily conversation review</h4><p>A lightweight monitoring pass runs over the day's call logs to flag frustrated customers or anything the AI got wrong, so it keeps improving instead of quietly drifting.</p></div>
+      </div>
+      <div class="maint-item reveal">
+        <div class="maint-icon">📊</div>
+        <div><h4>Monthly ROI report</h4><p>A one-page summary each month showing exactly how many missed calls were turned into booked, paying appointments.</p></div>
+      </div>
+      <div class="maint-item reveal">
+        <div class="maint-icon">🔒</div>
+        <div><h4>You keep ownership, I keep the wiring</h4><p>Everything is documented and exportable. The underlying automation stays under a standard retention agreement while it's active on your retainer.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap" style="max-width:760px;">
+    <div class="kicker">Questions</div>
+    <h2 class="section-title reveal">Before you get on a call.</h2>
+
+    <div style="margin-top:20px;">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need to change my phone number? <span class="plus">+</span></div>
+        <div class="faq-a">No. The dispatcher connects to the number you already use. Your customers never see a difference on their end, only faster responses.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What happens to calls the AI can't handle? <span class="plus">+</span></div>
+        <div class="faq-a">Anything outside a clear service request, like a complex complaint or a job it isn't confident qualifying, gets flagged and routed to a human on your team instead of guessed at.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Who pays for the AI usage during the trial? <span class="plus">+</span></div>
+        <div class="faq-a">You do, directly, by connecting your own card to the tools involved. It's typically under $20 for the full 7 days, since the AI models used cost fractions of a cent per call.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if the trial doesn't book 2 appointments? <span class="plus">+</span></div>
+        <div class="faq-a">Then the contract never locks in and you owe nothing beyond the small usage cost you already covered. No cancellation call, no awkward conversation.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I cancel the monthly retainer later? <span class="plus">+</span></div>
+        <div class="faq-a">Yes, with standard notice. If the retainer lapses, access to the live routing is paused so the system doesn't keep running unmanaged and unpaid.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cta-final">
+  <div class="wrap">
+    <div class="final-cta reveal">
+      <h2>Stop losing jobs to a ringing phone.</h2>
+      <p>Book a 15-minute call. If it's a fit, your dispatcher starts its 7-day trial this week.</p>
+      <button class="btn-primary" style="padding:16px 34px; font-size:16.5px;">Book your call</button>
+    </div>
   </div>
 </section>
 
 <footer>
-  LeadFlow · A no-code AI qualification agent for real estate agents
+  <div class="wrap">
+    <p>Dispatch AI &middot; Built and supported by an independent AI automation specialist.</p>
+  </div>
 </footer>
 
 <script>
-  const conversation = [
-    { type: 'lead', text: "Hi, I saw the 3BHK listing in Whitefield. Is it still available?" },
-    { type: 'bot', text: "Yes it is! Quick questions so I can help fast — what's your budget range?" },
-    { type: 'lead', text: "Around 85 lakhs, looking to buy not rent." },
-    { type: 'bot', text: "Great. And are you looking to move in within the next 30 days?" },
-    { type: 'lead', text: "Yes, ASAP actually." },
-    { type: 'tag', text: "🔥 Hot lead — sent to agent" }
-  ];
-
-  function playConversation(){
-    const body = document.getElementById('chatBody');
-    body.innerHTML = '';
-    conversation.forEach((msg, i) => {
-      setTimeout(() => {
-        const el = document.createElement('div');
-        if(msg.type === 'tag'){
-          el.className = 'tag hot';
-        } else {
-          el.className = 'bubble ' + msg.type;
-        }
-        el.textContent = msg.text;
-        body.appendChild(el);
-        body.scrollTop = body.scrollHeight;
-      }, i * 900);
-    });
-  }
-
-  playConversation();
-  setInterval(playConversation, conversation.length * 900 + 2500);
-
-  function handleSubmit(formId, inputId, boxId){
-    const form = document.getElementById(formId);
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      const input = document.getElementById(inputId);
-      const box = document.getElementById(boxId);
-      if(input.value){
-        form.style.display = 'none';
-        box.style.display = 'block';
-      }
-    });
-  }
-
-  handleSubmit('waitlistForm', 'emailInput', 'successBox');
-  handleSubmit('waitlistForm2', 'emailInput2', 'successBox2');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold: 0.15});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
 </body>
