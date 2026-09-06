@@ -3,547 +3,1144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Never Miss Another Emergency Call</title>
+<title>Reprise. Your podcast, said again.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#FBFBFD;
-    --bg-alt:#F5F5F7;
-    --ink:#1D1D1F;
-    --ink-soft:#6E6E73;
-    --line:#D2D2D7;
-    --heat:#FF7A45;
-    --cool:#0071E3;
-    --grad: linear-gradient(90deg, var(--heat), var(--cool));
-    --dark:#1D1D1F;
-    --radius:22px;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background:var(--bg);
-    color:var(--ink);
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  h1,h2,h3{font-family:'Inter Tight','Inter',sans-serif; letter-spacing:-0.03em;}
-  img{max-width:100%;}
-  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    font-size:13px; font-weight:600; letter-spacing:0.02em;
-    color:var(--ink-soft); text-transform:uppercase;
-    padding:6px 14px; border:1px solid var(--line); border-radius:100px;
-    background:rgba(255,255,255,0.6);
-  }
-  .grad-text{
-    background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+    --bg: #050507;
+    --bg-elevated: #0c0c10;
+    --border: rgba(255,255,255,0.09);
+    --border-soft: rgba(255,255,255,0.06);
+    --text-primary: #f5f5f7;
+    --text-secondary: #98989f;
+    --text-tertiary: #6e6e75;
+    --coral: #ff7a59;
+    --violet: #8b5cf6;
+    --blue: #4a90e2;
+    --gradient: linear-gradient(120deg, var(--coral) 0%, var(--violet) 52%, var(--blue) 100%);
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 10px;
   }
 
-  /* NAV */
-  nav{
-    position:fixed; top:0; left:0; right:0; z-index:100;
-    backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
-    background:rgba(251,251,253,0.75);
-    border-bottom:1px solid rgba(0,0,0,0.06);
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  a{ color: inherit; text-decoration:none; }
+  ul{ list-style:none; }
+  button{ font-family: inherit; cursor:pointer; border:none; background:none; }
+
+  .wrap{
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  ::selection{ background: var(--violet); color: #fff; }
+
+  :focus-visible{
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position: fixed;
+    top:0; left:0; right:0;
+    z-index: 100;
+    background: rgba(5,5,7,0.72);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    border-bottom: 1px solid var(--border-soft);
   }
   .nav-inner{
-    max-width:1120px; margin:0 auto; padding:14px 24px;
-    display:flex; align-items:center; justify-content:space-between;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
   }
-  .logo{font-weight:800; font-size:17px; letter-spacing:-0.02em; display:flex; align-items:center; gap:8px;}
-  .logo-dot{width:9px; height:9px; border-radius:50%; background:var(--grad); flex:none;}
+  .logo{
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: -0.02em;
+  }
+  .nav-links{
+    display:flex;
+    gap: 36px;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+  .nav-links a{ transition: color .2s ease; }
+  .nav-links a:hover{ color: var(--text-primary); }
   .nav-cta{
-    background:var(--ink); color:#fff; border:none; padding:9px 18px;
-    border-radius:100px; font-size:14px; font-weight:600; font-family:inherit;
-    cursor:pointer; transition:transform .2s ease, background .2s ease;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 9px 18px;
+    border-radius: 100px;
+    background: var(--text-primary);
+    color: #050507;
+    transition: transform .2s ease, opacity .2s ease;
   }
-  .nav-cta:hover{transform:scale(1.03); background:#000;}
+  .nav-cta:hover{ transform: translateY(-1px); opacity: .92; }
 
-  /* HERO */
-  header.hero{
-    padding:150px 0 80px; text-align:center; position:relative;
+  @media (max-width: 760px){
+    .nav-links{ display:none; }
   }
-  .hero h1{
-    font-size:clamp(38px, 6.4vw, 74px);
-    font-weight:800; line-height:1.05; margin:22px auto 20px; max-width:880px;
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position: relative;
+    padding: 200px 0 120px;
+    text-align:center;
+    overflow: hidden;
   }
-  .hero p.sub{
-    font-size:clamp(17px,2vw,21px); color:var(--ink-soft); max-width:600px; margin:0 auto 34px;
-    line-height:1.55;
+  .glow{
+    position:absolute;
+    border-radius: 50%;
+    filter: blur(110px);
+    opacity: 0.55;
+    z-index:0;
+    pointer-events:none;
   }
-  .cta-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .glow-1{ width:520px; height:520px; top:-220px; left:-160px; background: var(--coral); opacity:.25;}
+  .glow-2{ width:600px; height:600px; top:-260px; right:-220px; background: var(--blue); opacity:.22; }
+  .glow-3{ width:480px; height:480px; bottom:-260px; left:38%; background: var(--violet); opacity:.2; }
+
+  .hero-content{ position:relative; z-index:1; }
+
+  .eyebrow-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    padding: 7px 16px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+    opacity:0;
+    animation: rise .7s ease forwards;
+  }
+  .eyebrow-dot{
+    width:6px; height:6px; border-radius:50%;
+    background: var(--gradient);
+  }
+
+  h1.hero-title{
+    font-size: clamp(40px, 7vw, 84px);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.04;
+    max-width: 900px;
+    margin: 0 auto;
+    opacity:0;
+    animation: rise .8s ease .12s forwards;
+  }
+
+  .hero-sub{
+    max-width: 560px;
+    margin: 26px auto 0;
+    font-size: 19px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    opacity:0;
+    animation: rise .8s ease .26s forwards;
+  }
+
+  .hero-actions{
+    margin-top: 40px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap: 14px;
+    opacity:0;
+    animation: rise .8s ease .38s forwards;
+  }
+
   .btn-primary{
-    background:var(--grad); color:#fff; border:none; padding:15px 30px;
-    border-radius:100px; font-size:16px; font-weight:700; font-family:inherit;
-    cursor:pointer; box-shadow:0 8px 24px rgba(255,122,69,0.25);
-    transition:transform .2s ease;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 100px;
+    background: var(--gradient);
+    color: #fff;
+    transition: transform .25s ease, box-shadow .25s ease;
+    box-shadow: 0 10px 30px rgba(139,92,246,0.25);
   }
-  .btn-primary:hover{transform:translateY(-2px);}
-  .btn-secondary{
-    background:transparent; color:var(--ink); border:1px solid var(--line); padding:15px 26px;
-    border-radius:100px; font-size:16px; font-weight:600; font-family:inherit; cursor:pointer;
-    transition:background .2s ease;
-  }
-  .btn-secondary:hover{background:var(--bg-alt);}
+  .btn-primary:hover{ transform: translateY(-2px) scale(1.01); box-shadow: 0 14px 36px rgba(139,92,246,0.35); }
 
-  /* SIGNATURE FLOW DIAGRAM */
-  .flow{
-    max-width:900px; margin:70px auto 0; padding:36px 20px;
-    background:#fff; border-radius:28px; border:1px solid var(--line);
-    box-shadow:0 30px 60px -30px rgba(0,0,0,0.18);
-  }
-  .flow-row{display:flex; align-items:center; justify-content:space-between; gap:6px;}
-  .flow-node{
-    flex:1; text-align:center; padding:0 4px;
-  }
-  .flow-icon{
-    width:56px; height:56px; border-radius:16px; margin:0 auto 12px;
-    display:flex; align-items:center; justify-content:center; font-size:24px;
-  }
-  .flow-node:nth-child(1) .flow-icon{background:#FFEDE3; color:var(--heat);}
-  .flow-node:nth-child(3) .flow-icon{background:#EAF3FF; color:var(--cool);}
-  .flow-node:nth-child(5) .flow-icon{background:#E9FBF0; color:#1DA45E;}
-  .flow-node h4{font-size:14.5px; font-weight:700; margin-bottom:4px;}
-  .flow-node p{font-size:12.5px; color:var(--ink-soft); line-height:1.4;}
-  .flow-line{
-    flex:0 0 auto; width:60px; height:2px; background:var(--grad);
-    position:relative; top:-30px; border-radius:2px;
-  }
-  @media (max-width:640px){
-    .flow-row{flex-direction:column; gap:22px;}
-    .flow-line{width:2px; height:36px; top:0;}
+  .hero-fineprint{ font-size: 13px; color: var(--text-tertiary); }
+
+  @keyframes rise{
+    from{ opacity:0; transform: translateY(14px); }
+    to{ opacity:1; transform: translateY(0); }
   }
 
-  section{padding:100px 0;}
-  .section-alt{background:var(--bg-alt);}
-  .kicker{color:var(--ink-soft); font-size:14px; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:10px;}
-  h2.section-title{font-size:clamp(28px,4vw,42px); font-weight:800; margin-bottom:16px; line-height:1.1;}
-  p.section-lead{font-size:18px; color:var(--ink-soft); max-width:640px; line-height:1.6;}
-
-  /* PROBLEM */
-  .stat-card{
-    background:#fff; border:1px solid var(--line); border-radius:var(--radius);
-    padding:38px 30px; text-align:left;
+  /* ---------- DEMO VISUAL ---------- */
+  .demo{
+    position:relative;
+    z-index:1;
+    margin: 88px auto 0;
+    max-width: 920px;
+    opacity:0;
+    animation: rise 1s ease .5s forwards;
   }
-  .stat-number{
-    font-family:'Inter Tight'; font-size:48px; font-weight:800; line-height:1;
-    background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
-    margin-bottom:12px; letter-spacing:-0.02em;
+  .demo-card{
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 32px;
   }
-  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:48px;}
-  .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
-  @media (max-width:820px){.grid-3{grid-template-columns:1fr;} .grid-2{grid-template-columns:1fr;}}
+  .demo-scene{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 28px;
+    width:100%;
+  }
 
-  /* HOW IT WORKS */
+  /* podcast side */
+  .demo-podcast{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap: 4px;
+    flex-shrink:0;
+  }
+  .cover-art{
+    position:relative;
+    width:60px; height:60px;
+    border-radius:17px;
+    background: linear-gradient(160deg, var(--coral), var(--violet));
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom: 14px;
+  }
+  .cover-ring{
+    position:absolute; inset:-6px;
+    border-radius:21px;
+    border:1px solid rgba(255,255,255,0.14);
+  }
+  .cover-icon{ width:24px; height:24px; }
+  .podcast-title{ font-size: 14px; font-weight:600; }
+  .podcast-ep{ font-size: 12px; color: var(--text-tertiary); margin-bottom:12px; }
+
+  .waveform{
+    display:flex;
+    align-items:center;
+    gap:3px;
+    height: 34px;
+  }
+  .waveform span{
+    width:3px;
+    border-radius:3px;
+    background: linear-gradient(180deg, var(--coral), var(--violet));
+    animation: bounce 1.4s ease-in-out infinite;
+  }
+  @keyframes bounce{
+    0%, 100%{ transform: scaleY(0.35); }
+    50%{ transform: scaleY(1); }
+  }
+  .demo-label{ font-size: 12px; color: var(--text-tertiary); margin-top:12px; }
+
+  /* connecting beam and process node */
+  .demo-beam{
+    position:relative;
+    flex: 1;
+    min-width: 70px;
+    height: 52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .beam-line{
+    position:absolute;
+    left:0; right:0; top:50%;
+    height:1px;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.2), rgba(255,255,255,0.02));
+  }
+  .beam-dot{
+    position:absolute;
+    top:50%; left:0;
+    width:6px; height:6px;
+    margin-top:-3px;
+    border-radius:50%;
+    background: var(--gradient);
+    opacity:0;
+    animation: flow 2.6s linear infinite;
+  }
+  @keyframes flow{
+    0%{ left:0%; opacity:0; }
+    12%{ opacity:1; }
+    88%{ opacity:1; }
+    100%{ left:100%; opacity:0; }
+  }
+  .process-node{
+    position:relative;
+    width:50px; height:50px;
+    border-radius:50%;
+    background: var(--bg);
+    border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+    z-index:2;
+    flex-shrink:0;
+  }
+  .process-ring{
+    position:absolute;
+    inset:-7px;
+    border-radius:50%;
+    border:1.5px solid transparent;
+    border-top-color: var(--violet);
+    border-right-color: var(--blue);
+    animation: spin 3s linear infinite;
+  }
+  @keyframes spin{ to{ transform: rotate(360deg); } }
+  .process-mark{
+    width:26px; height:26px;
+    border-radius:50%;
+    background: var(--gradient);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .process-mark svg{ width:14px; height:14px; }
+
+  /* phone side */
+  .demo-phone{
+    position:relative;
+    flex-shrink:0;
+    width: 148px;
+  }
+  .phone-frame{
+    position:relative;
+    width:148px; height:280px;
+    border-radius:26px;
+    background:#0a0a0d;
+    border:1px solid var(--border);
+    padding:7px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  }
+  .phone-notch{
+    position:absolute;
+    top:14px; left:50%;
+    transform:translateX(-50%);
+    width:38px; height:4px;
+    border-radius:4px;
+    background: rgba(255,255,255,0.16);
+    z-index:5;
+  }
+  .phone-screen{
+    position:relative;
+    width:100%; height:100%;
+    border-radius:19px;
+    background:#0d0d10;
+    overflow:visible;
+  }
+  .carousel-slide{
+    position:absolute;
+    inset:0;
+    border-radius:19px;
+    padding: 30px 16px 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+  }
+  .slide-front{
+    background: linear-gradient(165deg,#18181d,#0c0c10);
+    border:1px solid var(--border);
+    z-index:3;
+    animation: slidepulse 5s ease-in-out infinite;
+  }
+  @keyframes slidepulse{
+    0%, 100%{ transform: scale(1); }
+    50%{ transform: scale(1.015); }
+  }
+  .slide-back-1{
+    background:#111114;
+    border:1px solid var(--border-soft);
+    transform: scale(0.94) translateY(10px);
+    z-index:2;
+    opacity:.65;
+  }
+  .slide-back-2{
+    background:#0d0d10;
+    border:1px solid var(--border-soft);
+    transform: scale(0.88) translateY(20px);
+    z-index:1;
+    opacity:.35;
+  }
+  .slide-quote-mark{
+    font-size: 30px;
+    font-weight:700;
+    line-height:1;
+    color: var(--violet);
+    margin-bottom:6px;
+  }
+  .slide-headline{
+    font-size: 13.5px;
+    font-weight:600;
+    line-height:1.4;
+    margin-bottom: 12px;
+  }
+  .slide-brand{ font-size: 10px; color: var(--text-tertiary); }
+  .slide-dots{
+    position:absolute;
+    bottom:10px; left:50%;
+    transform:translateX(-50%);
+    display:flex; gap:5px;
+    z-index:4;
+  }
+  .dot{ width:5px; height:5px; border-radius:50%; background: rgba(255,255,255,0.25); }
+  .dot.active{ width:14px; border-radius:3px; background: var(--text-primary); }
+
+  .avatar-bubble{
+    position:absolute;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size: 11px;
+    font-weight:700;
+    color:#fff;
+    border: 2px solid var(--bg);
+    animation: floaty 3.6s ease-in-out infinite;
+  }
+  .avatar-1{ top:-10px; right:-16px; width:34px; height:34px; background: linear-gradient(135deg, var(--coral), var(--violet)); animation-delay:0s; }
+  .avatar-2{ bottom:46px; left:-20px; width:32px; height:32px; background: linear-gradient(135deg, var(--blue), var(--violet)); animation-delay:.6s; }
+  .avatar-3{ bottom:-10px; right:14px; width:26px; height:26px; font-size:9.5px; background: linear-gradient(135deg, var(--violet), var(--coral)); animation-delay:1.2s; }
+
+  @keyframes floaty{
+    0%, 100%{ transform: translateY(0); }
+    50%{ transform: translateY(-8px); }
+  }
+
+  .reaction-badge{
+    position:absolute;
+    width:24px; height:24px;
+    border-radius:50%;
+    background: var(--bg-elevated);
+    border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+    font-size: 11px;
+    animation: floaty 3.2s ease-in-out infinite;
+  }
+  .reaction-heart{ top:40px; left:-22px; color:#ff5c7a; animation-delay:.3s; }
+  .reaction-comment{ top:110px; right:-20px; color: var(--blue); animation-delay:.9s; }
+
+  @media (max-width: 700px){
+    .demo-card{ padding: 36px 24px; }
+    .demo-scene{ flex-direction:column; gap:40px; }
+    .demo-beam{ width:2px; height:56px; flex:none; }
+    .beam-line{ left:50%; top:0; right:auto; width:1px; height:100%; transform: translateX(-50%); background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.2), rgba(255,255,255,0.02)); }
+    .beam-dot{ left:50%; top:0%; margin-left:-3px; margin-top:0; animation-name: flowVertical; }
+    @keyframes flowVertical{
+      0%{ top:0%; opacity:0; }
+      12%{ opacity:1; }
+      88%{ opacity:1; }
+      100%{ top:100%; opacity:0; }
+    }
+  }
+
+  /* ---------- SECTION BASICS ---------- */
+  section{ padding: 120px 0; position:relative; }
+  .section-head{ max-width: 620px; margin-bottom: 64px; }
+  .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+  .section-kicker{
+    font-size: 15px;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  h2.section-title{
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.12;
+  }
+  .section-desc{
+    margin-top: 18px;
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  .divider{ height:1px; background: var(--border-soft); }
+
+  /* ---------- PROBLEM ---------- */
+  .problem{ text-align:center; }
+  .problem p{
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 20px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .problem strong{ color: var(--text-primary); font-weight: 600; }
+
+  /* ---------- STEPS ---------- */
+  .steps{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    overflow:hidden;
+  }
   .step{
-    display:flex; gap:22px; padding:28px 0; border-bottom:1px solid var(--line);
+    background: var(--bg);
+    padding: 40px 28px;
   }
-  .step:last-child{border-bottom:none;}
   .step-num{
-    font-family:'Inter Tight'; font-size:15px; font-weight:800; color:#fff;
-    background:var(--grad); width:38px; height:38px; border-radius:50%;
-    display:flex; align-items:center; justify-content:center; flex:none;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    margin-bottom: 22px;
   }
-  .step h3{font-size:19px; font-weight:700; margin-bottom:6px;}
-  .step p{color:var(--ink-soft); font-size:15.5px; line-height:1.6;}
-  .step .tech-tag{
-    display:inline-block; margin-top:10px; font-size:12.5px; font-weight:600;
-    color:var(--cool); background:#EAF3FF; padding:4px 10px; border-radius:8px;
+  .step h3{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  .step p{
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  @media (max-width: 900px){
+    .steps{ grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px){
+    .steps{ grid-template-columns: 1fr; }
   }
 
-  /* STACK */
-  .stack-card{
-    background:#fff; border:1px solid var(--line); border-radius:18px; padding:26px;
+  /* ---------- SPECS ---------- */
+  .specs-layout{
+    display:grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 60px;
+    align-items:start;
   }
-  .stack-card h4{font-size:15.5px; font-weight:700; margin-bottom:6px;}
-  .stack-card p{font-size:13.5px; color:var(--ink-soft); line-height:1.5;}
-  .grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:40px;}
-  @media (max-width:900px){.grid-4{grid-template-columns:repeat(2,1fr);}}
+  .specs-copy p{
+    font-size: 16.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-top: 16px;
+  }
+  .specs-card{
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 8px 32px;
+  }
+  .spec-row{
+    display:flex;
+    justify-content:space-between;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 15px;
+  }
+  .spec-row:last-child{ border-bottom:none; }
+  .spec-key{ color: var(--text-secondary); }
+  .spec-val{ font-weight: 600; text-align:right; }
 
-  /* TRIAL */
-  .trial-box{
-    background:var(--dark); color:#fff; border-radius:32px; padding:60px 46px;
-    display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;
+  @media (max-width: 860px){
+    .specs-layout{ grid-template-columns: 1fr; gap: 36px; }
   }
-  .trial-box h2{color:#fff;}
-  .trial-box p.section-lead{color:rgba(255,255,255,0.65);}
-  .trial-list{list-style:none; margin-top:26px;}
-  .trial-list li{
-    display:flex; gap:12px; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.1);
-    font-size:15px; color:rgba(255,255,255,0.9);
+
+  /* ---------- WHO ---------- */
+  .who-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
-  .trial-list li:last-child{border-bottom:none;}
+  .who-card{
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 32px;
+  }
+  .who-card h3{
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .who-card p{
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  @media (max-width: 860px){
+    .who-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- PRICING ---------- */
+  .pricing-card{
+    position:relative;
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 52px;
+    overflow:hidden;
+  }
+  .pricing-card::before{
+    content:"";
+    position:absolute;
+    inset: -1px;
+    border-radius: var(--radius-lg);
+    padding: 1px;
+    background: var(--gradient);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: .5;
+    pointer-events:none;
+  }
+  .pricing-badge{
+    display:inline-block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: rgba(255,255,255,0.08);
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+  .price-row{
+    display:flex;
+    align-items:baseline;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .price-current{ font-size: 52px; font-weight: 800; letter-spacing: -0.03em; }
+  .price-period{ font-size: 16px; color: var(--text-secondary); }
+  .price-was{ font-size: 17px; color: var(--text-tertiary); text-decoration: line-through; }
+  .price-note{ font-size: 14.5px; color: var(--text-secondary); margin-top: 8px; margin-bottom: 32px; }
+
+  .price-includes{ margin-bottom: 36px; }
+  .price-includes li{
+    display:flex;
+    align-items:flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--text-secondary);
+    padding: 9px 0;
+  }
   .check{
-    flex:none; width:20px; height:20px; border-radius:50%; background:var(--grad);
-    display:flex; align-items:center; justify-content:center; font-size:11px; color:#fff; margin-top:2px;
+    width:18px; height:18px;
+    border-radius:50%;
+    background: var(--gradient);
+    flex-shrink:0;
+    margin-top:2px;
+    display:flex; align-items:center; justify-content:center;
   }
-  .lock-card{
-    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14);
-    border-radius:20px; padding:28px;
-  }
-  .lock-card h3{font-size:17px; margin-bottom:10px; color:#fff;}
-  .lock-card p{font-size:14.5px; color:rgba(255,255,255,0.65); line-height:1.65;}
-  @media (max-width:820px){.trial-box{grid-template-columns:1fr; padding:40px 26px;}}
+  .check svg{ width:10px; height:10px; }
 
-  /* PRICING */
-  .price-grid{display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:48px;}
-  @media (max-width:820px){.price-grid{grid-template-columns:1fr;}}
-  .price-card{
-    background:#fff; border:1px solid var(--line); border-radius:28px; padding:40px 34px;
-    position:relative; display:flex; flex-direction:column;
+  .spots-bar{
+    height: 6px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 100px;
+    overflow:hidden;
+    margin-bottom: 10px;
   }
-  .price-card.featured{
-    border:2px solid transparent; background:linear-gradient(#fff,#fff) padding-box, var(--grad) border-box;
+  .spots-fill{
+    height:100%;
+    width: 60%;
+    background: var(--gradient);
+    border-radius: 100px;
   }
-  .price-badge{
-    position:absolute; top:-13px; right:32px; background:var(--grad); color:#fff;
-    font-size:12px; font-weight:700; padding:5px 14px; border-radius:100px;
-  }
-  .price-card h3{font-size:22px; font-weight:800; margin-bottom:6px;}
-  .price-card .tagline{color:var(--ink-soft); font-size:14.5px; margin-bottom:22px;}
-  .price-row{display:flex; align-items:baseline; gap:8px; margin-bottom:4px;}
-  .price-amount{font-family:'Inter Tight'; font-size:38px; font-weight:800;}
-  .price-label{color:var(--ink-soft); font-size:14px;}
-  .price-monthly{font-size:15px; color:var(--ink-soft); margin-bottom:24px;}
-  .price-list{list-style:none; margin-bottom:28px; flex:1;}
-  .price-list li{
-    padding:10px 0; border-top:1px solid var(--bg-alt); font-size:14.5px;
-    display:flex; gap:10px; align-items:flex-start;
-  }
-  .price-list li:first-child{border-top:none;}
-  .price-list .check{background:var(--ink); margin-top:1px;}
-  .price-card.featured .price-list .check{background:var(--grad);}
-  .btn-full{width:100%; text-align:center;}
+  .spots-text{ font-size: 13.5px; color: var(--text-tertiary); margin-bottom: 30px; }
 
-  /* MAINTENANCE */
-  .maint-item{display:flex; gap:16px; padding:22px 0; border-top:1px solid var(--line);}
-  .maint-item:last-child{border-bottom:1px solid var(--line);}
-  .maint-icon{
-    flex:none; width:44px; height:44px; border-radius:12px; background:var(--bg-alt);
-    display:flex; align-items:center; justify-content:center; font-size:19px;
+  /* ---------- GUARANTEE ---------- */
+  .guarantee{
+    max-width: 720px;
+    margin: 0 auto;
+    text-align:center;
+    padding: 56px 40px;
+    border-radius: var(--radius-lg);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
   }
-  .maint-item h4{font-size:16.5px; font-weight:700; margin-bottom:4px;}
-  .maint-item p{font-size:14.5px; color:var(--ink-soft); line-height:1.55;}
+  .guarantee p{ font-size: 18px; color: var(--text-secondary); line-height: 1.7; }
+  .guarantee p strong{ color: var(--text-primary); font-weight: 600; }
 
-  /* FAQ */
-  .faq-item{border-top:1px solid var(--line); padding:22px 0;}
-  .faq-item:last-child{border-bottom:1px solid var(--line);}
+  /* ---------- FAQ ---------- */
+  .faq-list{ max-width: 760px; margin: 0 auto; }
+  .faq-item{
+    border-bottom: 1px solid var(--border-soft);
+  }
   .faq-q{
-    display:flex; justify-content:space-between; align-items:center; cursor:pointer;
-    font-size:16.5px; font-weight:600; gap:20px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 20px;
+    padding: 26px 4px;
+    font-size: 17px;
+    font-weight: 500;
+    text-align:left;
+    color: var(--text-primary);
   }
-  .faq-q .plus{font-size:22px; font-weight:300; color:var(--ink-soft); transition:transform .25s ease; flex:none;}
-  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-icon{
+    flex-shrink:0;
+    width: 22px; height: 22px;
+    position:relative;
+  }
+  .faq-icon::before, .faq-icon::after{
+    content:"";
+    position:absolute;
+    background: var(--text-secondary);
+    border-radius: 2px;
+    transition: transform .3s ease, opacity .3s ease;
+  }
+  .faq-icon::before{ width:14px; height:2px; top:10px; left:4px; }
+  .faq-icon::after{ width:2px; height:14px; top:4px; left:10px; }
+  .faq-item.open .faq-icon::after{ transform: rotate(90deg); opacity:0; }
+
   .faq-a{
-    max-height:0; overflow:hidden; transition:max-height .3s ease;
-    color:var(--ink-soft); font-size:15px; line-height:1.6;
+    max-height:0;
+    overflow:hidden;
+    transition: max-height .35s ease;
   }
-  .faq-item.open .faq-a{max-height:300px; margin-top:14px;}
+  .faq-a p{
+    padding: 0 4px 26px;
+    font-size: 15.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 640px;
+  }
 
-  /* FINAL CTA */
+  /* ---------- FINAL CTA ---------- */
   .final-cta{
-    text-align:center; background:var(--dark); border-radius:32px; padding:70px 30px; color:#fff;
+    text-align:center;
+    padding-bottom: 60px;
   }
-  .final-cta h2{color:#fff; font-size:clamp(28px,4vw,44px); margin-bottom:14px;}
-  .final-cta p{color:rgba(255,255,255,0.65); font-size:17px; max-width:520px; margin:0 auto 32px;}
-
-  footer{padding:50px 0 40px; text-align:center;}
-  footer p{color:var(--ink-soft); font-size:13.5px;}
-
-  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
-  .reveal.visible{opacity:1; transform:translateY(0);}
-  @media (prefers-reduced-motion: reduce){
-    .reveal{opacity:1; transform:none; transition:none;}
-    html{scroll-behavior:auto;}
+  .final-cta h2{
+    font-size: clamp(30px, 4.5vw, 48px);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    max-width: 640px;
+    margin: 0 auto 18px;
   }
+  .final-cta p{ font-size: 17px; color: var(--text-secondary); max-width: 480px; margin: 0 auto 40px; }
+
+  .waitlist-form{
+    display:flex;
+    gap: 10px;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+  .waitlist-form input{
+    flex:1;
+    font-family: inherit;
+    font-size: 15px;
+    padding: 15px 20px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+  }
+  .waitlist-form input::placeholder{ color: var(--text-tertiary); }
+  .waitlist-form button{
+    font-size: 15px;
+    font-weight: 600;
+    padding: 15px 26px;
+    border-radius: 100px;
+    background: var(--gradient);
+    color: #fff;
+    white-space: nowrap;
+    transition: transform .2s ease;
+  }
+  .waitlist-form button:hover{ transform: translateY(-1px); }
+
+  .form-status{
+    margin-top: 18px;
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    min-height: 20px;
+  }
+
+  @media (max-width: 540px){
+    .waitlist-form{ flex-direction:column; }
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top: 1px solid var(--border-soft);
+    padding: 44px 0;
+  }
+  .footer-inner{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 16px;
+    align-items:center;
+    justify-content:space-between;
+    font-size: 13.5px;
+    color: var(--text-tertiary);
+  }
+  .footer-inner a{ color: var(--text-secondary); }
+  .footer-inner a:hover{ color: var(--text-primary); }
 </style>
 </head>
 <body>
 
-<nav>
+<header class="nav">
   <div class="nav-inner">
-    <div class="logo"><span class="logo-dot"></span>Dispatch AI</div>
-    <button class="nav-cta" onclick="document.getElementById('cta-final').scrollIntoView({behavior:'smooth'})">Book a call</button>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Built for HVAC companies</span>
-    <h1>Every unanswered call is<br>a job walking to your <span class="grad-text">competitor.</span></h1>
-    <p class="sub">An AI dispatcher that answers every call in seconds, qualifies the job, and books it straight onto your calendar. Day or night, on the job or off.</p>
-    <div class="cta-row">
-      <button class="btn-primary" onclick="document.getElementById('cta-final').scrollIntoView({behavior:'smooth'})">Start a 7-day trial</button>
-      <button class="btn-secondary" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">See how it works</button>
-    </div>
-
-    <div class="flow reveal">
-      <div class="flow-row">
-        <div class="flow-node">
-          <div class="flow-icon">☎</div>
-          <h4>Call comes in</h4>
-          <p>2am burst pipe, a job during a busy install, doesn't matter when.</p>
-        </div>
-        <div class="flow-line"></div>
-        <div class="flow-node">
-          <div class="flow-icon">🤖</div>
-          <h4>AI answers instantly</h4>
-          <p>Voice or text-back within 2 rings. No hold music, no voicemail.</p>
-        </div>
-        <div class="flow-line"></div>
-        <div class="flow-node">
-          <div class="flow-icon">✓</div>
-          <h4>Appointment booked</h4>
-          <p>Qualified and placed directly on your calendar, ready to work.</p>
-        </div>
-      </div>
-    </div>
+    <div class="logo">Reprise</div>
+    <nav class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#specs">What you get</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#join" class="nav-cta">Join waitlist</a>
   </div>
 </header>
 
-<section id="problem">
-  <div class="wrap">
-    <div class="kicker">The problem</div>
-    <h2 class="section-title reveal">Missed calls aren't a minor<br>inconvenience. They're lost revenue.</h2>
-    <p class="section-lead reveal">Your techs are on roofs and in crawlspaces, not next to a phone. Every ring that goes unanswered is a homeowner who calls the next number on the list.</p>
+<main>
 
-    <div class="grid-3">
-      <div class="stat-card reveal">
-        <div class="stat-number">$3K&ndash;$10K</div>
-        <p>The typical cost of a single missed emergency replacement job during peak season.</p>
+  <section class="hero">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+    <div class="wrap hero-content">
+      <div class="eyebrow-pill"><span class="eyebrow-dot"></span> Now taking founding members</div>
+      <h1 class="hero-title">Say it once. Show it everywhere.</h1>
+      <p class="hero-sub">Reprise turns every episode of your podcast into carousels ready for Instagram and LinkedIn, without you writing a caption, picking a quote, or opening a design tool.</p>
+      <div class="hero-actions">
+        <a href="#join" class="btn-primary">Join the waitlist</a>
+        <div class="hero-fineprint">Founding pricing is limited to the first 30 podcasters.</div>
       </div>
-      <div class="stat-card reveal">
-        <div class="stat-number">24/7</div>
-        <p>When homeowners actually call. Burst pipes and dead AC units don't wait for business hours.</p>
-      </div>
-      <div class="stat-card reveal">
-        <div class="stat-number">2 rings</div>
-        <p>How fast your new dispatcher picks up, every single time, with no lunch break and no sick days.</p>
+
+      <div class="demo">
+        <div class="demo-card">
+          <div class="demo-scene">
+
+            <div class="demo-podcast">
+              <div class="cover-art" aria-hidden="true">
+                <div class="cover-ring"></div>
+                <svg class="cover-icon" viewBox="0 0 24 24" fill="none"><path d="M12 15a3 3 0 003-3V6a3 3 0 10-6 0v6a3 3 0 003 3z" stroke="white" stroke-width="1.6"/><path d="M19 11a7 7 0 01-14 0M12 18v3" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </div>
+              <div class="podcast-title">The Growth Lab</div>
+              <div class="podcast-ep">Episode 42, 48 min</div>
+              <div class="waveform" aria-hidden="true">
+                <span style="height:14px; animation-delay:0s"></span>
+                <span style="height:26px; animation-delay:.1s"></span>
+                <span style="height:34px; animation-delay:.2s"></span>
+                <span style="height:18px; animation-delay:.3s"></span>
+                <span style="height:28px; animation-delay:.4s"></span>
+                <span style="height:12px; animation-delay:.5s"></span>
+                <span style="height:22px; animation-delay:.6s"></span>
+              </div>
+              <div class="demo-label">Your episode</div>
+            </div>
+
+            <div class="demo-beam" aria-hidden="true">
+              <div class="beam-line"></div>
+              <div class="beam-dot" style="animation-delay:0s"></div>
+              <div class="beam-dot" style="animation-delay:.9s"></div>
+              <div class="beam-dot" style="animation-delay:1.8s"></div>
+              <div class="process-node">
+                <div class="process-ring"></div>
+                <div class="process-mark">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 15 L10 7 L14 12 L20 4" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="demo-phone">
+              <div class="phone-frame">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <div class="carousel-slide slide-back-2"></div>
+                  <div class="carousel-slide slide-back-1"></div>
+                  <div class="carousel-slide slide-front">
+                    <div class="slide-quote-mark">&#8220;</div>
+                    <div class="slide-headline">The best marketing is the thing you already made.</div>
+                    <div class="slide-brand">The Growth Lab</div>
+                  </div>
+                  <div class="slide-dots" aria-hidden="true">
+                    <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="avatar-bubble avatar-1" aria-hidden="true">AK</div>
+              <div class="avatar-bubble avatar-2" aria-hidden="true">JM</div>
+              <div class="avatar-bubble avatar-3" aria-hidden="true">R</div>
+              <div class="reaction-badge reaction-heart" aria-hidden="true">&#9825;</div>
+              <div class="reaction-badge reaction-comment" aria-hidden="true">&#9679;&#9679;</div>
+              <div class="demo-label" style="text-align:center; margin-top:16px;">Your carousel</div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section-alt" id="how">
-  <div class="wrap">
-    <div class="kicker">How it works</div>
-    <h2 class="section-title reveal">From ringing phone to booked job,<br>with nobody lifting a finger.</h2>
-    <p class="section-lead reveal">The system runs quietly in the background of your existing phone number. No new hardware, no new number to hand out, no app your team needs to learn.</p>
+  <section class="problem">
+    <div class="wrap">
+      <p>You already show up every week, hit record, and say something worth hearing. Then the episode goes live and mostly just sits there. Turning it into a carousel means relistening for the good part, writing a caption, and opening a design tool on a day you didn't plan for it. <strong>That part is what Reprise takes off your plate.</strong></p>
+    </div>
+  </section>
 
-    <div style="margin-top:40px;">
-      <div class="step reveal">
-        <div class="step-num">1</div>
-        <div>
-          <h3>The call comes in on your existing number</h3>
-          <p>Nothing changes for the customer. They dial the number on your truck, van, or Google listing like always.</p>
-        </div>
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="section-kicker">How it works</div>
+        <h2 class="section-title">From episode to feed in four steps</h2>
       </div>
-      <div class="step reveal">
-        <div class="step-num">2</div>
-        <div>
-          <h3>Your AI dispatcher answers by voice or text</h3>
-          <p>A natural-sounding voice agent picks up live calls, or a text-back message reaches customers who prefer not to talk. It asks the right questions: what's broken, where, how urgent.</p>
-          <span class="tech-tag">Retell AI / Vapi + Twilio</span>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Send your episode</h3>
+          <p>Drop in the audio, the video, or a transcript. Whatever you already have is enough.</p>
         </div>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">3</div>
-        <div>
-          <h3>The job gets qualified in real time</h3>
-          <p>A fast reasoning layer decides if it's a true emergency, a routine service, or a tire-kicker, then routes it accordingly.</p>
-          <span class="tech-tag">GPT-4o mini</span>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Reprise listens</h3>
+          <p>The agent goes through the full episode and pulls out the arguments, the stories, and the lines worth quoting.</p>
         </div>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">4</div>
-        <div>
-          <h3>The appointment lands directly on your calendar</h3>
-          <p>No back-and-forth texting. The system checks your real availability and books the slot, synced with the scheduling tool you already use.</p>
-          <span class="tech-tag">Cal.com / Calendly</span>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Slides get built</h3>
+          <p>A full carousel is designed in your fonts and colors, with captions and hashtags written to match.</p>
         </div>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">5</div>
-        <div>
-          <h3>Everything routes silently behind the scenes</h3>
-          <p>A visual automation layer connects the phone system, the AI, and your calendar so the whole flow runs without a server or a developer on standby.</p>
-          <span class="tech-tag">Make.com</span>
+        <div class="step">
+          <div class="step-num">04</div>
+          <h3>You approve, it posts</h3>
+          <p>Review from your phone over WhatsApp or email. Nothing goes out until you say so.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="stack">
-  <div class="wrap">
-    <div class="kicker">What's running under the hood</div>
-    <h2 class="section-title reveal">Production-grade tools, not a demo built to impress once.</h2>
-    <p class="section-lead reveal">Everything is built on infrastructure trusted by companies far larger than a local HVAC shop, configured specifically for how your business takes calls.</p>
-
-    <div class="grid-4">
-      <div class="stack-card reveal">
-        <h4>Voice & telephony</h4>
-        <p>Real-time conversational AI with natural, low-latency speech, mapped to your business number.</p>
-      </div>
-      <div class="stack-card reveal">
-        <h4>Workflow orchestration</h4>
-        <p>Visual automation that routes information between your phone system, the AI, and your tools.</p>
-      </div>
-      <div class="stack-card reveal">
-        <h4>Cognitive layer</h4>
-        <p>A fast, sharp language model that qualifies every job in seconds, for pennies per call.</p>
-      </div>
-      <div class="stack-card reveal">
-        <h4>Scheduling</h4>
-        <p>Direct sync with the calendar tool your dispatch team already checks every morning.</p>
+  <section id="specs">
+    <div class="wrap">
+      <div class="specs-layout">
+        <div class="specs-copy">
+          <div class="section-kicker">What you get</div>
+          <h2 class="section-title">Every episode, fully repurposed</h2>
+          <p>Each episode is turned into a set of carousels built for how people actually scroll: a strong opening slide, the idea broken into parts, and a close that gives them a reason to follow. Nothing goes out without your review first.</p>
+        </div>
+        <div class="specs-card">
+          <div class="spec-row"><span class="spec-key">Carousels per episode</span><span class="spec-val">Up to 3</span></div>
+          <div class="spec-row"><span class="spec-key">Slides per carousel</span><span class="spec-val">8 to 10</span></div>
+          <div class="spec-row"><span class="spec-key">Platforms</span><span class="spec-val">Instagram, LinkedIn</span></div>
+          <div class="spec-row"><span class="spec-key">Source formats accepted</span><span class="spec-val">Audio, video, transcript</span></div>
+          <div class="spec-row"><span class="spec-key">Branding</span><span class="spec-val">Matched to your fonts and colors</span></div>
+          <div class="spec-row"><span class="spec-key">Captions and hashtags</span><span class="spec-val">Included</span></div>
+          <div class="spec-row"><span class="spec-key">Turnaround</span><span class="spec-val">48 hours per episode</span></div>
+          <div class="spec-row"><span class="spec-key">Approval flow</span><span class="spec-val">WhatsApp or email</span></div>
+          <div class="spec-row"><span class="spec-key">Revisions</span><span class="spec-val">1 round included</span></div>
+          <div class="spec-row"><span class="spec-key">Posting</span><span class="spec-val">Done for you, or export and post yourself</span></div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section-alt" id="trial">
-  <div class="wrap">
-    <div class="trial-box reveal">
-      <div>
-        <div class="kicker" style="color:rgba(255,255,255,0.5);">The risk-reversal trial</div>
-        <h2 class="section-title">Don't take my word for it.<br>Let the calendar prove it.</h2>
-        <p class="section-lead">You don't pay a setup fee upfront. You watch the system book real appointments first.</p>
-        <ul class="trial-list">
-          <li><span class="check">✓</span>I build your dispatcher in a private sandbox over 7 days, configured to your services and service area.</li>
-          <li><span class="check">✓</span>You connect your own card to the AI tools for usage only, typically under $20 for the whole trial.</li>
-          <li><span class="check">✓</span>Every call it handles and every appointment it books happens on your real phone number.</li>
+  <div class="wrap"><div class="divider"></div></div>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="section-kicker">Who this is for</div>
+        <h2 class="section-title">Built for people who already have a podcast</h2>
+      </div>
+      <div class="who-grid">
+        <div class="who-card">
+          <h3>Weekly and biweekly podcasters</h3>
+          <p>You're already recording on a schedule. Reprise keeps every episode working on social without adding another task to your week.</p>
+        </div>
+        <div class="who-card">
+          <h3>Coaches and consultants</h3>
+          <p>Your podcast is a lead source. Carousels turn each episode into a second chance to be found by someone who hasn't listened yet.</p>
+        </div>
+        <div class="who-card">
+          <h3>Brands with a show</h3>
+          <p>No in-house designer or editor needed. Every episode gets the same treatment, in the same voice, every time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="section-kicker">Pricing</div>
+        <h2 class="section-title">Founding member pricing, locked in</h2>
+        <p class="section-desc" style="margin-left:auto; margin-right:auto;">The first 30 podcasters to join get a rate that never changes, for as long as they stay subscribed.</p>
+      </div>
+
+      <div class="pricing-card">
+        <span class="pricing-badge">Founding rate</span>
+        <div class="price-row">
+          <span class="price-current">$149</span>
+          <span class="price-period">/ month</span>
+          <span class="price-was">$299</span>
+        </div>
+        <p class="price-note">Locked for as long as you stay on. Regular pricing applies to everyone who joins after the first 30.</p>
+
+        <ul class="price-includes">
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12L9 17L20 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Up to 4 episodes repurposed per month</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12L9 17L20 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>3 carousels per episode, Instagram and LinkedIn formatted</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12L9 17L20 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Unlimited revisions during your first 60 days</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12L9 17L20 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Direct WhatsApp line for approvals and requests</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12L9 17L20 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>No setup fee, no contract, cancel anytime</li>
         </ul>
-      </div>
-      <div class="lock-card">
-        <h3>The auto-lock clause</h3>
-        <p>Written directly into the trial agreement: if the dispatcher books at least 2 qualified appointments during the 7 days, the setup automatically locks into your full contract at the agreed price. If it doesn't hit that bar, you owe nothing beyond your own tool usage and walk away.</p>
-        <p style="margin-top:14px;">No sales pressure. No demo built to look good on a screen share. Just the thing working, or not.</p>
+
+        <div class="spots-bar"><div class="spots-fill"></div></div>
+        <div class="spots-text">18 of 30 founding spots still open</div>
+
+        <a href="#join" class="btn-primary" style="display:block; text-align:center;">Claim a founding spot</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="pricing">
-  <div class="wrap">
-    <div class="kicker">Pricing</div>
-    <h2 class="section-title reveal">Priced like a hire, not like software.</h2>
-    <p class="section-lead reveal">One setup fee to build and configure your dispatcher, then a small monthly retainer to keep it sharp. No per-minute surprises, no long-term lock-in beyond the trial terms above.</p>
-
-    <div class="price-grid">
-      <div class="price-card reveal">
-        <h3>Core Dispatch</h3>
-        <p class="tagline">For shops that mainly need calls answered and booked.</p>
-        <div class="price-row"><span class="price-amount">$1,500</span><span class="price-label">one-time setup</span></div>
-        <div class="price-monthly">+ $300/month retainer</div>
-        <ul class="price-list">
-          <li><span class="check">✓</span>Missed-call text-back configured for your number</li>
-          <li><span class="check">✓</span>AI qualification of every inbound job</li>
-          <li><span class="check">✓</span>Direct calendar booking, synced to your scheduler</li>
-          <li><span class="check">✓</span>Monthly prompt tuning and error resolution</li>
-        </ul>
-        <button class="btn-secondary btn-full">Start the trial</button>
-      </div>
-      <div class="price-card featured reveal">
-        <span class="price-badge">Most booked jobs</span>
-        <h3>Full Voice Dispatch</h3>
-        <p class="tagline">Live voice answering plus everything in Core.</p>
-        <div class="price-row"><span class="price-amount">$2,500</span><span class="price-label">one-time setup</span></div>
-        <div class="price-monthly">+ $500/month retainer</div>
-        <ul class="price-list">
-          <li><span class="check">✓</span>Everything in Core Dispatch</li>
-          <li><span class="check">✓</span>Live conversational voice agent, not just text</li>
-          <li><span class="check">✓</span>Emergency vs. routine job triage logic</li>
-          <li><span class="check">✓</span>Monthly ROI report on salvaged calls</li>
-          <li><span class="check">✓</span>Priority error monitoring with same-day fixes</li>
-        </ul>
-        <button class="btn-primary btn-full">Start the trial</button>
+  <section>
+    <div class="wrap">
+      <div class="guarantee">
+        <p>If your first two episodes don't come back looking like something you'd actually post, we rework them at no charge. If they still miss, you don't pay for that month. <strong>Simple as that.</strong></p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section-alt" id="maintenance">
-  <div class="wrap">
-    <div class="kicker">After launch</div>
-    <h2 class="section-title reveal">A retainer that actually earns its keep.</h2>
-    <p class="section-lead reveal">The system is built to run itself, and to tell on itself the moment something looks off.</p>
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="section-kicker">Questions</div>
+        <h2 class="section-title">Everything else you'd want to know</h2>
+      </div>
+      <div class="faq-list">
 
-    <div style="margin-top:20px;">
-      <div class="maint-item reveal">
-        <div class="maint-icon">⚡</div>
-        <div><h4>Instant error alerts</h4><p>If any part of the automation breaks or an API call fails, an alert lands in a monitoring channel immediately, usually fixed before you'd have noticed a problem.</p></div>
-      </div>
-      <div class="maint-item reveal">
-        <div class="maint-icon">🧠</div>
-        <div><h4>Daily conversation review</h4><p>A lightweight monitoring pass runs over the day's call logs to flag frustrated customers or anything the AI got wrong, so it keeps improving instead of quietly drifting.</p></div>
-      </div>
-      <div class="maint-item reveal">
-        <div class="maint-icon">📊</div>
-        <div><h4>Monthly ROI report</h4><p>A one-page summary each month showing exactly how many missed calls were turned into booked, paying appointments.</p></div>
-      </div>
-      <div class="maint-item reveal">
-        <div class="maint-icon">🔒</div>
-        <div><h4>You keep ownership, I keep the wiring</h4><p>Everything is documented and exportable. The underlying automation stays under a standard retention agreement while it's active on your retainer.</p></div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Do I need my episode to already be published?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a"><p>No. Send a raw recording or even a rough cut before it goes live, and your carousels can be ready to post the same day the episode drops.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            My podcast is on video, not just audio. Does that work?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a"><p>Yes. Reprise works from audio, video, or a transcript, whichever you already have on hand. There's nothing extra to prepare.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Do I have to use WhatsApp for approvals?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a"><p>No. You can review and approve carousels over WhatsApp or email, whichever you tend to check first.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            What happens to the founding price after launch?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a"><p>It stays locked for as long as you remain subscribed. Founding members never get moved to the standard rate later.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Is there a contract, or can I cancel anytime?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a"><p>No contract and no lock-in period. You can pause or cancel whenever you want.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Do you post the carousels for me, or just design them?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a"><p>Both, if you want it. Reprise designs the carousels and can schedule and publish them once you've approved them. If you'd rather post them yourself, you'll get the files to download instead.</p></div>
+        </div>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="faq">
-  <div class="wrap" style="max-width:760px;">
-    <div class="kicker">Questions</div>
-    <h2 class="section-title reveal">Before you get on a call.</h2>
-
-    <div style="margin-top:20px;">
-      <div class="faq-item reveal">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need to change my phone number? <span class="plus">+</span></div>
-        <div class="faq-a">No. The dispatcher connects to the number you already use. Your customers never see a difference on their end, only faster responses.</div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What happens to calls the AI can't handle? <span class="plus">+</span></div>
-        <div class="faq-a">Anything outside a clear service request, like a complex complaint or a job it isn't confident qualifying, gets flagged and routed to a human on your team instead of guessed at.</div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Who pays for the AI usage during the trial? <span class="plus">+</span></div>
-        <div class="faq-a">You do, directly, by connecting your own card to the tools involved. It's typically under $20 for the full 7 days, since the AI models used cost fractions of a cent per call.</div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if the trial doesn't book 2 appointments? <span class="plus">+</span></div>
-        <div class="faq-a">Then the contract never locks in and you owe nothing beyond the small usage cost you already covered. No cancellation call, no awkward conversation.</div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I cancel the monthly retainer later? <span class="plus">+</span></div>
-        <div class="faq-a">Yes, with standard notice. If the retainer lapses, access to the live routing is paused so the system doesn't keep running unmanaged and unpaid.</div>
-      </div>
+  <section id="join" class="final-cta">
+    <div class="wrap">
+      <h2>Get on the list before the first 30 spots go</h2>
+      <p>Leave your email and we'll reach out the moment a founding spot opens up for you.</p>
+      <form class="waitlist-form" id="waitlistForm">
+        <input type="email" id="emailInput" placeholder="you@podcast.com" required aria-label="Email address">
+        <button type="submit">Join the waitlist</button>
+      </form>
+      <div class="form-status" id="formStatus"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="cta-final">
-  <div class="wrap">
-    <div class="final-cta reveal">
-      <h2>Stop losing jobs to a ringing phone.</h2>
-      <p>Book a 15-minute call. If it's a fit, your dispatcher starts its 7-day trial this week.</p>
-      <button class="btn-primary" style="padding:16px 34px; font-size:16.5px;">Book your call</button>
-    </div>
-  </div>
-</section>
+</main>
 
 <footer>
-  <div class="wrap">
-    <p>Dispatch AI &middot; Built and supported by an independent AI automation specialist.</p>
+  <div class="wrap footer-inner">
+    <div>Reprise, by Aeturn</div>
+    <div><a href="mailto:sachin@dmengine.site">sachin@dmengine.site</a></div>
   </div>
 </footer>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-  }, {threshold: 0.15});
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn = item.querySelector('.faq-q');
+    var answer = item.querySelector('.faq-a');
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(openItem){
+        if(openItem !== item){
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-a').style.maxHeight = null;
+          openItem.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        }
+      });
+      if(isOpen){
+        item.classList.remove('open');
+        answer.style.maxHeight = null;
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  document.getElementById('waitlistForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = document.getElementById('emailInput').value;
+    var status = document.getElementById('formStatus');
+    if(email){
+      status.textContent = "You're on the list. We'll email " + email + " as soon as a founding spot opens.";
+      document.getElementById('emailInput').value = '';
+    }
+  });
 </script>
 
 </body>
