@@ -530,6 +530,44 @@
     .steps{ grid-template-columns: 1fr; }
   }
 
+  /* ---------- ROI STAT STRIP ---------- */
+  .roi-strip{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    overflow:hidden;
+    margin-top: 56px;
+  }
+  .roi-cell{
+    background: var(--bg-elevated);
+    padding: 32px 24px;
+    text-align:center;
+  }
+  .roi-num{
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 8px;
+  }
+  .roi-label{
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  @media (max-width: 900px){
+    .roi-strip{ grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px){
+    .roi-strip{ grid-template-columns: 1fr; }
+  }
+
   /* ---------- SPECS ---------- */
   .specs-layout{
     display:grid;
@@ -669,6 +707,33 @@
     border-radius: 100px;
   }
   .spots-text{ font-size: 13.5px; color: var(--text-tertiary); margin-bottom: 30px; }
+
+  /* ---------- BREAK-EVEN NOTE ---------- */
+  .breakeven-note{
+    display:flex;
+    align-items:center;
+    gap: 14px;
+    background: rgba(139,92,246,0.08);
+    border: 1px solid rgba(139,92,246,0.22);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-bottom: 32px;
+  }
+  .breakeven-note .glyph{
+    flex-shrink:0;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display:flex; align-items:center; justify-content:center;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .breakeven-note p{
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+  .breakeven-note p strong{ color: var(--text-primary); }
 
   /* ---------- GUARANTEE ---------- */
   .guarantee{
@@ -823,12 +888,12 @@
     <div class="glow glow-2"></div>
     <div class="glow glow-3"></div>
     <div class="wrap hero-content">
-      <div class="eyebrow-pill"><span class="eyebrow-dot"></span> Now taking founding members</div>
-      <h1 class="hero-title">Say it once. Show it everywhere.</h1>
-      <p class="hero-sub">Reprise turns every episode of your podcast into carousels ready for Instagram and LinkedIn, without you writing a caption, picking a quote, or opening a design tool.</p>
+      <div class="eyebrow-pill"><span class="eyebrow-dot"></span> Now taking founding members: 18 of 30 spots left</div>
+      <h1 class="hero-title">Your next client is already in your podcast.</h1>
+      <p class="hero-sub">You've said the thing that would make them book a call. It's just buried in a 48-minute episode nobody has time to relisten to. Reprise pulls it out and turns it into carousels built to get coaches and consultants replies, not just likes.</p>
       <div class="hero-actions">
-        <a href="#join" class="btn-primary">Join the waitlist</a>
-        <div class="hero-fineprint">Founding pricing is limited to the first 30 podcasters.</div>
+        <a href="#join" class="btn-primary">Claim a founding spot</a>
+        <div class="hero-fineprint">One new client covers months of this. Founding pricing is capped at 30 podcasters.</div>
       </div>
 
       <div class="demo">
@@ -851,7 +916,7 @@
                 <span style="height:12px; animation-delay:.5s"></span>
                 <span style="height:22px; animation-delay:.6s"></span>
               </div>
-              <div class="demo-label">Your episode</div>
+              <div class="demo-label">One episode you already recorded</div>
             </div>
 
             <div class="demo-beam" aria-hidden="true">
@@ -888,7 +953,7 @@
               <div class="avatar-bubble avatar-3" aria-hidden="true">R</div>
               <div class="reaction-badge reaction-heart" aria-hidden="true">&#9825;</div>
               <div class="reaction-badge reaction-comment" aria-hidden="true">&#9679;&#9679;</div>
-              <div class="demo-label" style="text-align:center; margin-top:16px;">Your carousel</div>
+              <div class="demo-label" style="text-align:center; margin-top:16px;">A new lead magnet, on autopilot</div>
             </div>
 
           </div>
@@ -899,7 +964,26 @@
 
   <section class="problem">
     <div class="wrap">
-      <p>You already show up every week, hit record, and say something worth hearing. Then the episode goes live and mostly just sits there. Turning it into a carousel means relistening for the good part, writing a caption, and opening a design tool on a day you didn't plan for it. <strong>That part is what Reprise takes off your plate.</strong></p>
+      <p>Every episode you publish already has a client-getting idea buried in it. But between relistening for the good part, writing a caption, and opening a design tool, most coaches let it sit there and quietly stop paying them back. <strong>That's the gap Reprise closes, turning what you already said into the thing that gets you booked.</strong></p>
+
+      <div class="roi-strip">
+        <div class="roi-cell">
+          <div class="roi-num">0 hrs</div>
+          <div class="roi-label">Of your time spent writing captions or opening a design tool</div>
+        </div>
+        <div class="roi-cell">
+          <div class="roi-num">4×</div>
+          <div class="roi-label">More surfaces for the same episode to be found on</div>
+        </div>
+        <div class="roi-cell">
+          <div class="roi-num">48h</div>
+          <div class="roi-label">From raw episode to carousels sitting in your approval inbox</div>
+        </div>
+        <div class="roi-cell">
+          <div class="roi-num">1 client</div>
+          <div class="roi-label">Is usually all it takes to cover months of the subscription</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -909,28 +993,28 @@
     <div class="wrap">
       <div class="section-head center">
         <div class="section-kicker">How it works</div>
-        <h2 class="section-title">From episode to feed in four steps</h2>
+        <h2 class="section-title">From episode to inbound leads in four steps</h2>
       </div>
       <div class="steps">
         <div class="step">
           <div class="step-num">01</div>
           <h3>Send your episode</h3>
-          <p>Drop in the audio, the video, or a transcript. Whatever you already have is enough.</p>
+          <p>Drop in the audio, the video, or a transcript. Whatever you already have is enough, nothing to prep or clean up first.</p>
         </div>
         <div class="step">
           <div class="step-num">02</div>
           <h3>Reprise listens</h3>
-          <p>The agent goes through the full episode and pulls out the arguments, the stories, and the lines worth quoting.</p>
+          <p>The agent goes through the full episode and pulls out the arguments, the stories, and the lines that make a stranger want to work with you.</p>
         </div>
         <div class="step">
           <div class="step-num">03</div>
           <h3>Slides get built</h3>
-          <p>A full carousel is designed in your fonts and colors, with captions and hashtags written to match.</p>
+          <p>A full carousel is designed in your fonts and colors, with captions and hashtags written to move someone from scrolling to booking a call.</p>
         </div>
         <div class="step">
           <div class="step-num">04</div>
           <h3>You approve, it posts</h3>
-          <p>Review from your phone over WhatsApp or email. Nothing goes out until you say so.</p>
+          <p>Review from your phone over WhatsApp or email in under two minutes. Nothing goes out, and nothing represents you, until you say so.</p>
         </div>
       </div>
     </div>
@@ -941,8 +1025,8 @@
       <div class="specs-layout">
         <div class="specs-copy">
           <div class="section-kicker">What you get</div>
-          <h2 class="section-title">Every episode, fully repurposed</h2>
-          <p>Each episode is turned into a set of carousels built for how people actually scroll: a strong opening slide, the idea broken into parts, and a close that gives them a reason to follow. Nothing goes out without your review first.</p>
+          <h2 class="section-title">Every episode, turned into pipeline</h2>
+          <p>Each episode is turned into a set of carousels built for how people actually scroll: a hook that stops the thumb, the idea broken into parts a prospect can act on, and a close that gives them a reason to book a call or follow for the next one. Nothing goes out without your review first.</p>
         </div>
         <div class="specs-card">
           <div class="spec-row"><span class="spec-key">Carousels per episode</span><span class="spec-val">Up to 3</span></div>
@@ -950,7 +1034,7 @@
           <div class="spec-row"><span class="spec-key">Platforms</span><span class="spec-val">Instagram, LinkedIn</span></div>
           <div class="spec-row"><span class="spec-key">Source formats accepted</span><span class="spec-val">Audio, video, transcript</span></div>
           <div class="spec-row"><span class="spec-key">Branding</span><span class="spec-val">Matched to your fonts and colors</span></div>
-          <div class="spec-row"><span class="spec-key">Captions and hashtags</span><span class="spec-val">Included</span></div>
+          <div class="spec-row"><span class="spec-key">Captions and hashtags</span><span class="spec-val">Written to drive replies, not just views</span></div>
           <div class="spec-row"><span class="spec-key">Turnaround</span><span class="spec-val">48 hours per episode</span></div>
           <div class="spec-row"><span class="spec-key">Approval flow</span><span class="spec-val">WhatsApp or email</span></div>
           <div class="spec-row"><span class="spec-key">Revisions</span><span class="spec-val">1 round included</span></div>
@@ -966,20 +1050,20 @@
     <div class="wrap">
       <div class="section-head center">
         <div class="section-kicker">Who this is for</div>
-        <h2 class="section-title">Built for people who already have a podcast</h2>
+        <h2 class="section-title">Built for coaches and consultants who sell through trust, not ads</h2>
       </div>
       <div class="who-grid">
         <div class="who-card">
-          <h3>Weekly and biweekly podcasters</h3>
-          <p>You're already recording on a schedule. Reprise keeps every episode working on social without adding another task to your week.</p>
+          <h3>Coaches who close on discovery calls</h3>
+          <p>Your best clients already believe in your method before they book. Carousels get more strangers to that point without you doing another sales call to earn it.</p>
         </div>
         <div class="who-card">
-          <h3>Coaches and consultants</h3>
-          <p>Your podcast is a lead source. Carousels turn each episode into a second chance to be found by someone who hasn't listened yet.</p>
+          <h3>Consultants running a podcast for authority</h3>
+          <p>Your show is already your credibility engine. Reprise gets it in front of the people scrolling LinkedIn instead of subscribing to a podcast feed.</p>
         </div>
         <div class="who-card">
-          <h3>Brands with a show</h3>
-          <p>No in-house designer or editor needed. Every episode gets the same treatment, in the same voice, every time.</p>
+          <h3>Solo practices with no marketing team</h3>
+          <p>No in-house designer, no editor, no extra hour in your week. Every episode gets the same treatment, in your voice, on repeat.</p>
         </div>
       </div>
     </div>
@@ -1002,6 +1086,11 @@
         </div>
         <p class="price-note">Locked for as long as you stay on. Regular pricing applies to everyone who joins after the first 30.</p>
 
+        <div class="breakeven-note">
+          <span class="glyph">$</span>
+          <p>Most coaches and consultants price a single client well above $249. If Reprise gets you even one booked call a month that turns into work, it's already paid for itself before you count anything else it does.</p>
+        </div>
+
         <ul class="price-includes">
           <li><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12L9 17L20 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Up to 4 episodes repurposed per month</li>
           <li><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12L9 17L20 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>3 carousels per episode, Instagram and LinkedIn formatted</li>
@@ -1021,7 +1110,7 @@
   <section>
     <div class="wrap">
       <div class="guarantee">
-        <p>If your first two episodes don't come back looking like something you'd actually post, we rework them at no charge. If they still miss, you don't pay for that month. <strong>Simple as that.</strong></p>
+        <p>If your first two episodes don't come back looking like something that would actually get you a reply, we rework them at no charge. If they still miss, you don't pay for that month. <strong>You're only ever paying for carousels you'd be proud to post.</strong></p>
       </div>
     </div>
   </section>
@@ -1039,7 +1128,7 @@
             Do I need my episode to already be published?
             <span class="faq-icon"></span>
           </button>
-          <div class="faq-a"><p>No. Send a raw recording or even a rough cut before it goes live, and your carousels can be ready to post the same day the episode drops.</p></div>
+          <div class="faq-a"><p>No. Send a raw recording or even a rough cut before it goes live, and your carousels can be ready to post the same day the episode drops, so it's working for you from day one instead of catching up later.</p></div>
         </div>
 
         <div class="faq-item">
@@ -1047,7 +1136,15 @@
             My podcast is on video, not just audio. Does that work?
             <span class="faq-icon"></span>
           </button>
-          <div class="faq-a"><p>Yes. Reprise works from audio, video, or a transcript, whichever you already have on hand. There's nothing extra to prepare.</p></div>
+          <div class="faq-a"><p>Yes. Reprise works from audio, video, or a transcript, whichever you already have on hand. There's nothing extra to prepare, so it never adds to your workload.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            How is this different from just hiring a VA or designer?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-a"><p>A VA still needs you to brief them, relisten with them, and manage revisions. Reprise listens to the full episode itself and comes back with carousels ready for your yes or no, usually at a fraction of what a freelance designer and copywriter would cost you separately.</p></div>
         </div>
 
         <div class="faq-item">
@@ -1071,7 +1168,7 @@
             Is there a contract, or can I cancel anytime?
             <span class="faq-icon"></span>
           </button>
-          <div class="faq-a"><p>No contract and no lock-in period. You can pause or cancel whenever you want.</p></div>
+          <div class="faq-a"><p>No contract and no lock-in period. You can pause or cancel whenever you want, so the downside of trying it is one month, not a commitment.</p></div>
         </div>
 
         <div class="faq-item">
@@ -1088,8 +1185,8 @@
 
   <section id="join" class="final-cta">
     <div class="wrap">
-      <h2>Get on the list before the first 30 spots go</h2>
-      <p>Leave your email and we'll reach out the moment a founding spot opens up for you.</p>
+      <h2>Your next episode could already be working for you</h2>
+      <p>Leave your email and we'll reach out the moment a founding spot opens up, before the price for everyone else takes effect.</p>
       <form class="waitlist-form" id="waitlistForm">
         <input type="email" id="emailInput" placeholder="you@podcast.com" required aria-label="Email address">
         <button type="submit">Join the waitlist</button>
